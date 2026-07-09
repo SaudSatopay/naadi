@@ -90,7 +90,7 @@ Every connector lands raw payloads into an immutable bronze zone, then normalize
 
 **Scale path (post-PoC)**: connectors stream to Kafka → Iceberg lakehouse; **Feast** feature registry serves online (Redis) + offline (Iceberg) with the same definitions; dbt for transformation lineage; great-expectations data-quality gates at every hop.
 
-Feature families (≈120 features in the demo engine): turnover level/trend/volatility, filing-delay distributions, ITC utilization, inflow-outflow ratios, balance percentiles, EOD-negative days, bounce counts, UPI payer-concentration (HHI), refund rates, weekday/festival seasonality fingerprints, payroll regularity, wage-base growth, sector-relative z-scores.
+Feature families (27 engineered features in the demo engine, scaling to 100+ on production rails): turnover level/trend/volatility, filing-delay distributions, ITC utilization, inflow-outflow ratios, balance percentiles, EOD-negative days, bounce counts, UPI payer-concentration (HHI), refund rates, weekday/festival seasonality fingerprints, payroll regularity, wage-base growth, sector-relative z-scores.
 
 ## 7. Scoring brain
 

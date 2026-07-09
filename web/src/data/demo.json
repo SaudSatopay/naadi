@@ -1,0 +1,2730 @@
+{
+ "generated_for": "IDBI Innovate 2026 \u00b7 Track 03 \u00b7 concept build (synthetic data)",
+ "validation": {
+  "n_train": 3000,
+  "n_val": 1000,
+  "n_test": 1000,
+  "default_rate": 0.168,
+  "auroc_test": 0.8709,
+  "ks_test": 0.5755,
+  "dimension_auroc_test": {
+   "L": 0.8643,
+   "S": 0.7394,
+   "G": 0.8493,
+   "R": 0.735,
+   "C": 0.8686,
+   "K": 0.7987
+  },
+  "n_features": 27,
+  "note": "Synthetic-population validation of the architecture \u2014 not a real-world performance claim. Re-estimated on IDBI sandbox data post-shortlist."
+ },
+ "dimensions": {
+  "L": {
+   "label": "Liquidity",
+   "question": "Can the business absorb a shock this month?"
+  },
+  "S": {
+   "label": "Stability",
+   "question": "How steady is the cash engine?"
+  },
+  "G": {
+   "label": "Growth",
+   "question": "Which direction is the business moving?"
+  },
+  "R": {
+   "label": "Repayment",
+   "question": "Does it honour its obligations?"
+  },
+  "C": {
+   "label": "Compliance",
+   "question": "Is the regulatory house in order?"
+  },
+  "K": {
+   "label": "Concentration",
+   "question": "How fragile is the revenue base?"
+  }
+ },
+ "portfolio": {
+  "n": 8,
+  "avg_score": 644,
+  "avg_pd_pct": 13.48,
+  "total_recommended_limit": 1960530000,
+  "approvals": 3,
+  "referrals": 3,
+  "grade_distribution": {
+   "A": 1,
+   "A+": 1,
+   "B": 1,
+   "C": 3,
+   "D": 1,
+   "E": 1
+  }
+ },
+ "msmes": [
+  {
+   "id": "MSME-2401",
+   "name": "Chandra Kirana Stores",
+   "city": "Indore",
+   "state": "MP",
+   "sector": "Retail Trade",
+   "archetype": "Kirana / General Store",
+   "vintage_years": 6,
+   "proprietor": "Ramesh Chandra",
+   "story": "New-to-credit neighbourhood store. No audited financials, no bureau file \u2014 but a vivid daily UPI pulse and six years of steady trade.",
+   "tier": "T1",
+   "headcount": 1,
+   "monthly_turnover": 494767,
+   "scoring": {
+    "subscores": {
+     "L": 83.3,
+     "S": 88.3,
+     "G": 65.6,
+     "R": 89.7,
+     "C": 82.1,
+     "K": 82.8
+    },
+    "pd_12m": 0.0135,
+    "score": 762,
+    "band": 40,
+    "grade": "A",
+    "posture": "Fast-track approve"
+   },
+   "reasons": {
+    "positive": [
+     {
+      "code": "RC-C05",
+      "dimension": "C",
+      "dimension_label": "Compliance",
+      "points": 88.2,
+      "subscore": 82.1,
+      "text": "EPFO deposit regularity of 100%; 22 consecutive months of on-time GST filing"
+     },
+     {
+      "code": "RC-K06",
+      "dimension": "K",
+      "dimension_label": "Concentration",
+      "points": 25.9,
+      "subscore": 82.8,
+      "text": "refund/reversal rate of 0.9%; top-3 payers at 13% of revenue"
+     },
+     {
+      "code": "RC-S02",
+      "dimension": "S",
+      "dimension_label": "Stability",
+      "points": 20.9,
+      "subscore": 88.3,
+      "text": "seasonal swing of 53% around mean revenue; turnover volatility of 14%"
+     },
+     {
+      "code": "RC-L01",
+      "dimension": "L",
+      "dimension_label": "Liquidity",
+      "points": 7.3,
+      "subscore": 83.3,
+      "text": "worst-decile balance at 5% of monthly outflow; 0 end-of-day negative balance days"
+     },
+     {
+      "code": "RC-R04",
+      "dimension": "R",
+      "dimension_label": "Repayment",
+      "points": 1.1,
+      "subscore": 89.7,
+      "text": "0 EMI/NACH bounce(s) in 12 months; existing obligations at 8.7% of turnover"
+     }
+    ],
+    "negative": [
+     {
+      "code": "RC-G03",
+      "dimension": "G",
+      "dimension_label": "Growth",
+      "points": -7.7,
+      "subscore": 65.6,
+      "text": "new-customer acquisition at 13.8%/month; payroll wage growth of +5.9%"
+     }
+    ]
+   },
+   "what_if": [
+    {
+     "action": "File GSTR-3B on time for the next 3 months",
+     "delta": 24,
+     "new_score": 786
+    },
+    {
+     "action": "Hold a 30-day cash buffer in the current account",
+     "delta": 23,
+     "new_score": 785
+    }
+   ],
+   "recommendation": {
+    "decision": "APPROVE",
+    "decision_label": "Approve",
+    "limit": 920000,
+    "tenor_months": 36,
+    "indicative_rate": 0.11,
+    "serviceable_emi": 37743,
+    "monthly_surplus": 75486,
+    "guards": [
+     "Liquidity floor: buffer < 15 days \u2014 limit reduced 20%"
+    ],
+    "covenants": [
+     "Maintain minimum average balance of 15 days' outflow",
+     "File GSTR-3B on or before due date throughout the loan tenor",
+     "Route >= 60% of business receipts through the IDBI current account"
+    ],
+    "early_warning": [
+     "3-month turnover drawdown > 25% vs trailing average",
+     "Two consecutive delayed GSTR-3B filings",
+     "End-of-day negative balance on > 5 days in any month"
+    ]
+   },
+   "red_flags": [
+    "Turnover declining 2.2%/month over 6 months"
+   ],
+   "features": {
+    "cash_buffer_days": 2.1356,
+    "balance_to_outflow": 0.0712,
+    "balance_p10_ratio": 0.0457,
+    "eod_negative_days": 0.0,
+    "turnover_cv": 0.1432,
+    "upi_inflow_cv": 0.1723,
+    "worst_3mo_drawdown": 0.3055,
+    "seasonal_amplitude": 0.5265,
+    "turnover_slope_6m": -0.0217,
+    "turnover_slope_12m": 0.0243,
+    "upi_txn_momentum": -0.0183,
+    "new_payer_rate": 0.1384,
+    "wage_growth": 0.0592,
+    "bounce_count": 0.0,
+    "bounce_rate": 0.0,
+    "emi_coverage": 1.3669,
+    "obligation_ratio": 0.0874,
+    "filing_delay_mean": 0.1563,
+    "filing_delay_max": 3.7508,
+    "on_time_streak": 22.0,
+    "itc_mismatch": 0.0079,
+    "epfo_regularity": 1.0,
+    "top_payer_share": 0.02,
+    "payer_hhi": 0.0529,
+    "top3_payer_share": 0.1307,
+    "b2b_share": 0.05,
+    "refund_rate": 0.0086
+   },
+   "series": {
+    "months": [
+     "Jul '24",
+     "Aug '24",
+     "Sep '24",
+     "Oct '24",
+     "Nov '24",
+     "Dec '24",
+     "Jan '25",
+     "Feb '25",
+     "Mar '25",
+     "Apr '25",
+     "May '25",
+     "Jun '25",
+     "Jul '25",
+     "Aug '25",
+     "Sep '25",
+     "Oct '25",
+     "Nov '25",
+     "Dec '25",
+     "Jan '26",
+     "Feb '26",
+     "Mar '26",
+     "Apr '26",
+     "May '26",
+     "Jun '26"
+    ],
+    "turnover": [
+     370717,
+     377521,
+     341384,
+     385259,
+     474552,
+     461868,
+     460504,
+     469561,
+     392505,
+     479910,
+     344550,
+     391943,
+     380787,
+     327713,
+     405655,
+     519534,
+     432899,
+     410679,
+     486650,
+     555792,
+     515838,
+     497245,
+     411340,
+     501737
+    ],
+    "upi_inflow": [
+     259453,
+     258671,
+     301117,
+     293618,
+     420922,
+     385670,
+     390728,
+     434464,
+     324541,
+     307342,
+     249336,
+     352333,
+     371529,
+     270457,
+     318932,
+     386529,
+     376094,
+     295785,
+     366329,
+     467276,
+     432507,
+     405058,
+     372465,
+     377758
+    ],
+    "balance": [
+     20924,
+     17928,
+     14844,
+     31299,
+     29088,
+     46047,
+     24769,
+     27556,
+     28568,
+     17411,
+     10977,
+     21684,
+     22955,
+     17415,
+     21313,
+     26427,
+     32442,
+     26497,
+     25018,
+     44352,
+     58952,
+     35836,
+     17600,
+     31744
+    ],
+    "upi_txn_count": [
+     169,
+     169,
+     196,
+     191,
+     275,
+     251,
+     255,
+     283,
+     212,
+     200,
+     162,
+     230,
+     242,
+     176,
+     208,
+     252,
+     245,
+     193,
+     239,
+     305,
+     282,
+     264,
+     243,
+     246
+    ]
+   },
+   "memo": "## Underwriting Memo \u2014 Chandra Kirana Stores\n*Retail Trade \u00b7 Indore, MP \u00b7 6 yrs vintage \u00b7 Data tier T1 \u00b7 Proprietor: Ramesh Chandra*\n\n**NAADI Score: 762 \u00b1 40 (Grade A) \u00b7 PD(12m) 1.4% \u00b7 Fast-track approve**\n\n### Recommendation: Approve\nWorking-capital line of **\u20b9920,000** over **36 months** at an indicative 11.0% p.a. Serviceable EMI \u20b937,743 against a verified monthly surplus of \u20b975,486.\n\n### Why (evidence-linked)\n- **+88.2 pts \u00b7 Compliance** \u2014 EPFO deposit regularity of 100%; 22 consecutive months of on-time GST filing `[RC-C05]`\n- **+25.9 pts \u00b7 Concentration** \u2014 refund/reversal rate of 0.9%; top-3 payers at 13% of revenue `[RC-K06]`\n- **+20.9 pts \u00b7 Stability** \u2014 seasonal swing of 53% around mean revenue; turnover volatility of 14% `[RC-S02]`\n- **-7.7 pts \u00b7 Growth** \u2014 new-customer acquisition at 13.8%/month; payroll wage growth of +5.9% `[RC-G03]`\n\n### Policy guards applied\n- Liquidity floor: buffer < 15 days \u2014 limit reduced 20%\n\n### Covenants\n- Maintain minimum average balance of 15 days' outflow\n- File GSTR-3B on or before due date throughout the loan tenor\n- Route >= 60% of business receipts through the IDBI current account\n\n### Early-warning triggers\n- 3-month turnover drawdown > 25% vs trailing average\n- Two consecutive delayed GSTR-3B filings\n- End-of-day negative balance on > 5 days in any month\n\n*Prepared by Munshi. Every figure traces to a consented data rail; final authority rests with the sanctioning officer.*",
+   "trace": [
+    {
+     "step": "verify_consent",
+     "label": "Consent verified",
+     "detail": "AA consent artefact MSME-2401-CA-0626 \u00b7 GSTN OTP \u00b7 purpose-bound (DPDP)",
+     "ms": 420
+    },
+    {
+     "step": "pull_gst",
+     "label": "GST rail",
+     "detail": "24 GSTR-3B returns fetched \u00b7 turnover & filing discipline extracted",
+     "ms": 1180
+    },
+    {
+     "step": "pull_upi",
+     "label": "UPI rail",
+     "detail": "5,488 transactions aggregated \u00b7 payer graph built",
+     "ms": 940
+    },
+    {
+     "step": "pull_aa",
+     "label": "Account Aggregator",
+     "detail": "Bank statement FI data normalized \u00b7 balances, bounces, obligations",
+     "ms": 1320
+    },
+    {
+     "step": "pull_epfo",
+     "label": "EPFO rail",
+     "detail": "ECR filings parsed \u00b7 headcount 1 \u00b7 wage trend computed",
+     "ms": 610
+    },
+    {
+     "step": "features",
+     "label": "Feature fusion",
+     "detail": "27 point-in-time features across 6 dimensions",
+     "ms": 240
+    },
+    {
+     "step": "score",
+     "label": "Score computed",
+     "detail": "NAADI 762 \u00b1 40 \u00b7 Grade A \u00b7 PD(12m) 1.4%",
+     "ms": 90
+    },
+    {
+     "step": "policy",
+     "label": "Policy & limits",
+     "detail": "Approve \u00b7 limit \u20b9920,000",
+     "ms": 60
+    },
+    {
+     "step": "memo",
+     "label": "Memo drafted",
+     "detail": "Evidence-linked underwriting memo ready for officer review",
+     "ms": 850
+    }
+   ]
+  },
+  {
+   "id": "MSME-2402",
+   "name": "Meenakshi Textiles",
+   "city": "Surat",
+   "state": "GJ",
+   "sector": "Textiles",
+   "archetype": "Textile Exporter",
+   "vintage_years": 11,
+   "proprietor": "Meenakshi Patel",
+   "story": "Established exporter with strong compliance \u2014 but over half of revenue rides on a single overseas buyer.",
+   "tier": "T3",
+   "headcount": 49,
+   "monthly_turnover": 11977524,
+   "scoring": {
+    "subscores": {
+     "L": 77.6,
+     "S": 8.5,
+     "G": 92.3,
+     "R": 89.7,
+     "C": 61.4,
+     "K": 71.6
+    },
+    "pd_12m": 0.0203,
+    "score": 711,
+    "band": 15,
+    "grade": "B",
+    "posture": "Approve with standard covenants"
+   },
+   "reasons": {
+    "positive": [
+     {
+      "code": "RC-C05",
+      "dimension": "C",
+      "dimension_label": "Compliance",
+      "points": 53.8,
+      "subscore": 61.4,
+      "text": "EPFO deposit regularity of 88%; worst GSTR-3B filing delay of 2 days"
+     },
+     {
+      "code": "RC-G03",
+      "dimension": "G",
+      "dimension_label": "Growth",
+      "points": 36.4,
+      "subscore": 92.3,
+      "text": "payroll wage growth of +8.4%; 12-month turnover trend of +6.2%/month"
+     },
+     {
+      "code": "RC-L01",
+      "dimension": "L",
+      "dimension_label": "Liquidity",
+      "points": 9.9,
+      "subscore": 77.6,
+      "text": "0 end-of-day negative balance days; cash buffer of 3 days of outflow"
+     },
+     {
+      "code": "RC-R04",
+      "dimension": "R",
+      "dimension_label": "Repayment",
+      "points": 1.2,
+      "subscore": 89.7,
+      "text": "0 EMI/NACH bounce(s) in 12 months; existing obligations at 5.6% of turnover"
+     }
+    ],
+    "negative": [
+     {
+      "code": "RC-S02",
+      "dimension": "S",
+      "dimension_label": "Stability",
+      "points": -8.4,
+      "subscore": 8.5,
+      "text": "seasonal swing of 108% around mean revenue; turnover volatility of 28%"
+     },
+     {
+      "code": "RC-K06",
+      "dimension": "K",
+      "dimension_label": "Concentration",
+      "points": -8.4,
+      "subscore": 71.6,
+      "text": "refund/reversal rate of 0.3%; payer concentration (HHI) of 0.34"
+     }
+    ]
+   },
+   "what_if": [],
+   "recommendation": {
+    "decision": "APPROVE",
+    "decision_label": "Approve",
+    "limit": 18870000,
+    "tenor_months": 24,
+    "indicative_rate": 0.12,
+    "serviceable_emi": 1480370,
+    "monthly_surplus": 3289711,
+    "guards": [
+     "Liquidity floor: buffer < 15 days \u2014 limit reduced 20%",
+     "Concentration cap: top payer > 50% \u2014 limit reduced 25%"
+    ],
+    "covenants": [
+     "Maintain minimum average balance of 15 days' outflow",
+     "Diversify: no single payer above 50% of receipts by month 12",
+     "File GSTR-3B on or before due date throughout the loan tenor",
+     "Route >= 60% of business receipts through the IDBI current account"
+    ],
+    "early_warning": [
+     "3-month turnover drawdown > 25% vs trailing average",
+     "Two consecutive delayed GSTR-3B filings",
+     "End-of-day negative balance on > 5 days in any month"
+    ]
+   },
+   "red_flags": [
+    "Top payer concentration at 56%"
+   ],
+   "features": {
+    "cash_buffer_days": 2.6724,
+    "balance_to_outflow": 0.0891,
+    "balance_p10_ratio": 0.034,
+    "eod_negative_days": 0.0,
+    "turnover_cv": 0.2763,
+    "upi_inflow_cv": 0.2804,
+    "worst_3mo_drawdown": 0.5535,
+    "seasonal_amplitude": 1.0818,
+    "turnover_slope_6m": 0.0795,
+    "turnover_slope_12m": 0.0616,
+    "upi_txn_momentum": 0.075,
+    "new_payer_rate": 0.1446,
+    "wage_growth": 0.0844,
+    "bounce_count": 0.0,
+    "bounce_rate": 0.0,
+    "emi_coverage": 2.0017,
+    "obligation_ratio": 0.0559,
+    "filing_delay_mean": 0.0803,
+    "filing_delay_max": 1.9284,
+    "on_time_streak": 19.0,
+    "itc_mismatch": 0.0253,
+    "epfo_regularity": 0.8843,
+    "top_payer_share": 0.56,
+    "payer_hhi": 0.3352,
+    "top3_payer_share": 0.6232,
+    "b2b_share": 0.9,
+    "refund_rate": 0.0031
+   },
+   "series": {
+    "months": [
+     "Jul '24",
+     "Aug '24",
+     "Sep '24",
+     "Oct '24",
+     "Nov '24",
+     "Dec '24",
+     "Jan '25",
+     "Feb '25",
+     "Mar '25",
+     "Apr '25",
+     "May '25",
+     "Jun '25",
+     "Jul '25",
+     "Aug '25",
+     "Sep '25",
+     "Oct '25",
+     "Nov '25",
+     "Dec '25",
+     "Jan '26",
+     "Feb '26",
+     "Mar '26",
+     "Apr '26",
+     "May '26",
+     "Jun '26"
+    ],
+    "turnover": [
+     8503778,
+     6015762,
+     5850862,
+     6765276,
+     6398276,
+     8257464,
+     6517933,
+     11823275,
+     12517474,
+     8782970,
+     9931474,
+     9030132,
+     8448154,
+     8911936,
+     6877598,
+     6393089,
+     8159735,
+     9828653,
+     9081436,
+     11169716,
+     9889398,
+     13720199,
+     15807104,
+     12197289
+    ],
+    "upi_inflow": [
+     848574,
+     627731,
+     507921,
+     682910,
+     713919,
+     913640,
+     578748,
+     1285232,
+     1304446,
+     813579,
+     891794,
+     896439,
+     952342,
+     931992,
+     639017,
+     648045,
+     894434,
+     980412,
+     878288,
+     1166287,
+     836038,
+     1429621,
+     1418386,
+     1216771
+    ],
+    "balance": [
+     672935,
+     272871,
+     225936,
+     415702,
+     280274,
+     878267,
+     454374,
+     1726949,
+     927869,
+     516882,
+     697313,
+     448262,
+     472647,
+     771283,
+     276421,
+     287752,
+     745690,
+     795237,
+     714418,
+     952613,
+     631699,
+     1301801,
+     2033969,
+     972243
+    ],
+    "upi_txn_count": [
+     73,
+     54,
+     44,
+     59,
+     62,
+     79,
+     50,
+     111,
+     113,
+     70,
+     77,
+     78,
+     82,
+     81,
+     55,
+     56,
+     77,
+     85,
+     76,
+     101,
+     72,
+     124,
+     123,
+     105
+    ]
+   },
+   "memo": "## Underwriting Memo \u2014 Meenakshi Textiles\n*Textiles \u00b7 Surat, GJ \u00b7 11 yrs vintage \u00b7 Data tier T3 \u00b7 Proprietor: Meenakshi Patel*\n\n**NAADI Score: 711 \u00b1 15 (Grade B) \u00b7 PD(12m) 2.0% \u00b7 Approve with standard covenants**\n\n### Recommendation: Approve\nWorking-capital line of **\u20b918,870,000** over **24 months** at an indicative 12.0% p.a. Serviceable EMI \u20b91,480,370 against a verified monthly surplus of \u20b93,289,711.\n\n### Why (evidence-linked)\n- **+53.8 pts \u00b7 Compliance** \u2014 EPFO deposit regularity of 88%; worst GSTR-3B filing delay of 2 days `[RC-C05]`\n- **+36.4 pts \u00b7 Growth** \u2014 payroll wage growth of +8.4%; 12-month turnover trend of +6.2%/month `[RC-G03]`\n- **+9.9 pts \u00b7 Liquidity** \u2014 0 end-of-day negative balance days; cash buffer of 3 days of outflow `[RC-L01]`\n- **-8.4 pts \u00b7 Stability** \u2014 seasonal swing of 108% around mean revenue; turnover volatility of 28% `[RC-S02]`\n- **-8.4 pts \u00b7 Concentration** \u2014 refund/reversal rate of 0.3%; payer concentration (HHI) of 0.34 `[RC-K06]`\n\n### Policy guards applied\n- Liquidity floor: buffer < 15 days \u2014 limit reduced 20%\n- Concentration cap: top payer > 50% \u2014 limit reduced 25%\n\n### Covenants\n- Maintain minimum average balance of 15 days' outflow\n- Diversify: no single payer above 50% of receipts by month 12\n- File GSTR-3B on or before due date throughout the loan tenor\n- Route >= 60% of business receipts through the IDBI current account\n\n### Early-warning triggers\n- 3-month turnover drawdown > 25% vs trailing average\n- Two consecutive delayed GSTR-3B filings\n- End-of-day negative balance on > 5 days in any month\n\n*Prepared by Munshi. Every figure traces to a consented data rail; final authority rests with the sanctioning officer.*",
+   "trace": [
+    {
+     "step": "verify_consent",
+     "label": "Consent verified",
+     "detail": "AA consent artefact MSME-2402-CA-0626 \u00b7 GSTN OTP \u00b7 purpose-bound (DPDP)",
+     "ms": 420
+    },
+    {
+     "step": "pull_gst",
+     "label": "GST rail",
+     "detail": "24 GSTR-3B returns fetched \u00b7 turnover & filing discipline extracted",
+     "ms": 1180
+    },
+    {
+     "step": "pull_upi",
+     "label": "UPI rail",
+     "detail": "1,907 transactions aggregated \u00b7 payer graph built",
+     "ms": 940
+    },
+    {
+     "step": "pull_aa",
+     "label": "Account Aggregator",
+     "detail": "Bank statement FI data normalized \u00b7 balances, bounces, obligations",
+     "ms": 1320
+    },
+    {
+     "step": "pull_epfo",
+     "label": "EPFO rail",
+     "detail": "ECR filings parsed \u00b7 headcount 49 \u00b7 wage trend computed",
+     "ms": 610
+    },
+    {
+     "step": "features",
+     "label": "Feature fusion",
+     "detail": "27 point-in-time features across 6 dimensions",
+     "ms": 240
+    },
+    {
+     "step": "score",
+     "label": "Score computed",
+     "detail": "NAADI 711 \u00b1 15 \u00b7 Grade B \u00b7 PD(12m) 2.0%",
+     "ms": 90
+    },
+    {
+     "step": "policy",
+     "label": "Policy & limits",
+     "detail": "Approve \u00b7 limit \u20b918,870,000",
+     "ms": 60
+    },
+    {
+     "step": "memo",
+     "label": "Memo drafted",
+     "detail": "Evidence-linked underwriting memo ready for officer review",
+     "ms": 850
+    }
+   ]
+  },
+  {
+   "id": "MSME-2403",
+   "name": "Rathod Auto Components",
+   "city": "Pune",
+   "state": "MH",
+   "sector": "Manufacturing",
+   "archetype": "Auto Components Mfg",
+   "vintage_years": 14,
+   "proprietor": "Vikram Rathod",
+   "story": "Tier-2 OEM supplier sliding for five months: shrinking orders, stretching receivables, two EMI bounces. The early-warning case.",
+   "tier": "T3",
+   "headcount": 11,
+   "monthly_turnover": 3007991,
+   "scoring": {
+    "subscores": {
+     "L": 5.7,
+     "S": 3.2,
+     "G": 12.8,
+     "R": 22.0,
+     "C": 14.2,
+     "K": 30.8
+    },
+    "pd_12m": 0.629,
+    "score": 442,
+    "band": 15,
+    "grade": "E",
+    "posture": "Decline with improvement path"
+   },
+   "reasons": {
+    "positive": [],
+    "negative": [
+     {
+      "code": "RC-C05",
+      "dimension": "C",
+      "dimension_label": "Compliance",
+      "points": -113.6,
+      "subscore": 14.2,
+      "text": "EPFO deposit regularity of 49%; ITC mismatch rate of 9.3%"
+     },
+     {
+      "code": "RC-S02",
+      "dimension": "S",
+      "dimension_label": "Stability",
+      "points": -23.9,
+      "subscore": 3.2,
+      "text": "seasonal swing of 111% around mean revenue; UPI inflow volatility of 33%"
+     },
+     {
+      "code": "RC-L01",
+      "dimension": "L",
+      "dimension_label": "Liquidity",
+      "points": -23.8,
+      "subscore": 5.7,
+      "text": "cash buffer of 0 days of outflow; worst-decile balance at 0% of monthly outflow"
+     },
+     {
+      "code": "RC-G03",
+      "dimension": "G",
+      "dimension_label": "Growth",
+      "points": -15.6,
+      "subscore": 12.8,
+      "text": "payroll wage growth of -2.1%; new-customer acquisition at 6.1%/month"
+     },
+     {
+      "code": "RC-K06",
+      "dimension": "K",
+      "dimension_label": "Concentration",
+      "points": -7.9,
+      "subscore": 30.8,
+      "text": "refund/reversal rate of 1.6%; top-3 payers at 59% of revenue"
+     }
+    ]
+   },
+   "what_if": [
+    {
+     "action": "File GSTR-3B on time for the next 3 months",
+     "delta": 40,
+     "new_score": 482
+    },
+    {
+     "action": "Hold a 30-day cash buffer in the current account",
+     "delta": 22,
+     "new_score": 464
+    },
+    {
+     "action": "Route all EMIs through the surplus account (zero bounces for 6 months)",
+     "delta": 3,
+     "new_score": 445
+    }
+   ],
+   "recommendation": {
+    "decision": "DECLINE",
+    "decision_label": "Decline with improvement path",
+    "limit": 0,
+    "tenor_months": 0,
+    "indicative_rate": 0.0,
+    "serviceable_emi": 0,
+    "monthly_surplus": 0,
+    "guards": [
+     "Liquidity floor: buffer < 15 days \u2014 limit reduced 20%"
+    ],
+    "covenants": [
+     "Maintain minimum average balance of 15 days' outflow",
+     "File GSTR-3B on or before due date throughout the loan tenor",
+     "Zero EMI/NACH bounces; auto-review on first bounce",
+     "Route >= 60% of business receipts through the IDBI current account"
+    ],
+    "early_warning": [
+     "3-month turnover drawdown > 25% vs trailing average",
+     "Two consecutive delayed GSTR-3B filings",
+     "End-of-day negative balance on > 5 days in any month"
+    ]
+   },
+   "red_flags": [
+    "2 EMI/NACH bounce(s) in the last 12 months",
+    "11 end-of-day negative balance days"
+   ],
+   "features": {
+    "cash_buffer_days": 0.0616,
+    "balance_to_outflow": 0.0021,
+    "balance_p10_ratio": 0.0007,
+    "eod_negative_days": 11.0,
+    "turnover_cv": 0.2932,
+    "upi_inflow_cv": 0.3343,
+    "worst_3mo_drawdown": 0.5309,
+    "seasonal_amplitude": 1.1109,
+    "turnover_slope_6m": 0.0283,
+    "turnover_slope_12m": -0.0419,
+    "upi_txn_momentum": 0.0171,
+    "new_payer_rate": 0.0609,
+    "wage_growth": -0.0209,
+    "bounce_count": 2.0,
+    "bounce_rate": 0.1667,
+    "emi_coverage": 5.185,
+    "obligation_ratio": 0.0227,
+    "filing_delay_mean": 2.1206,
+    "filing_delay_max": 9.4114,
+    "on_time_streak": 4.0,
+    "itc_mismatch": 0.0927,
+    "epfo_regularity": 0.4888,
+    "top_payer_share": 0.4606,
+    "payer_hhi": 0.2303,
+    "top3_payer_share": 0.5871,
+    "b2b_share": 0.95,
+    "refund_rate": 0.0158
+   },
+   "series": {
+    "months": [
+     "Jul '24",
+     "Aug '24",
+     "Sep '24",
+     "Oct '24",
+     "Nov '24",
+     "Dec '24",
+     "Jan '25",
+     "Feb '25",
+     "Mar '25",
+     "Apr '25",
+     "May '25",
+     "Jun '25",
+     "Jul '25",
+     "Aug '25",
+     "Sep '25",
+     "Oct '25",
+     "Nov '25",
+     "Dec '25",
+     "Jan '26",
+     "Feb '26",
+     "Mar '26",
+     "Apr '26",
+     "May '26",
+     "Jun '26"
+    ],
+    "turnover": [
+     6330715,
+     4403498,
+     7096326,
+     4047698,
+     4631794,
+     4445233,
+     3015212,
+     5143750,
+     2918964,
+     2940881,
+     3384371,
+     4489150,
+     3324630,
+     6068983,
+     4019717,
+     3744399,
+     4189866,
+     3489307,
+     2665142,
+     2734477,
+     2965211,
+     3805283,
+     2858263,
+     3019572
+    ],
+    "upi_inflow": [
+     236996,
+     168511,
+     317232,
+     153320,
+     175797,
+     176715,
+     131663,
+     207318,
+     103955,
+     114627,
+     131493,
+     156561,
+     121479,
+     242011,
+     150596,
+     166175,
+     167165,
+     130443,
+     102765,
+     98610,
+     109092,
+     157081,
+     110320,
+     100450
+    ],
+    "balance": [
+     19406,
+     6037,
+     13724,
+     6202,
+     11989,
+     8046,
+     4984,
+     13388,
+     2397,
+     3276,
+     4163,
+     7533,
+     5613,
+     19587,
+     7268,
+     7105,
+     5652,
+     5596,
+     2042,
+     2567,
+     2412,
+     7387,
+     2753,
+     4149
+    ],
+    "upi_txn_count": [
+     8,
+     5,
+     11,
+     5,
+     6,
+     6,
+     4,
+     7,
+     3,
+     4,
+     4,
+     5,
+     4,
+     8,
+     5,
+     5,
+     5,
+     4,
+     3,
+     3,
+     3,
+     5,
+     3,
+     3
+    ]
+   },
+   "memo": "## Underwriting Memo \u2014 Rathod Auto Components\n*Manufacturing \u00b7 Pune, MH \u00b7 14 yrs vintage \u00b7 Data tier T3 \u00b7 Proprietor: Vikram Rathod*\n\n**NAADI Score: 442 \u00b1 15 (Grade E) \u00b7 PD(12m) 62.9% \u00b7 Decline with improvement path**\n\n### Recommendation: Decline with improvement path\n\n### Why (evidence-linked)\n- **-113.6 pts \u00b7 Compliance** \u2014 EPFO deposit regularity of 49%; ITC mismatch rate of 9.3% `[RC-C05]`\n- **-23.9 pts \u00b7 Stability** \u2014 seasonal swing of 111% around mean revenue; UPI inflow volatility of 33% `[RC-S02]`\n- **-23.8 pts \u00b7 Liquidity** \u2014 cash buffer of 0 days of outflow; worst-decile balance at 0% of monthly outflow `[RC-L01]`\n\n### Policy guards applied\n- Liquidity floor: buffer < 15 days \u2014 limit reduced 20%\n\n### Covenants\n- Maintain minimum average balance of 15 days' outflow\n- File GSTR-3B on or before due date throughout the loan tenor\n- Zero EMI/NACH bounces; auto-review on first bounce\n- Route >= 60% of business receipts through the IDBI current account\n\n### Early-warning triggers\n- 3-month turnover drawdown > 25% vs trailing average\n- Two consecutive delayed GSTR-3B filings\n- End-of-day negative balance on > 5 days in any month\n\n*Prepared by Munshi. Every figure traces to a consented data rail; final authority rests with the sanctioning officer.*",
+   "trace": [
+    {
+     "step": "verify_consent",
+     "label": "Consent verified",
+     "detail": "AA consent artefact MSME-2403-CA-0626 \u00b7 GSTN OTP \u00b7 purpose-bound (DPDP)",
+     "ms": 420
+    },
+    {
+     "step": "pull_gst",
+     "label": "GST rail",
+     "detail": "24 GSTR-3B returns fetched \u00b7 turnover & filing discipline extracted",
+     "ms": 1180
+    },
+    {
+     "step": "pull_upi",
+     "label": "UPI rail",
+     "detail": "119 transactions aggregated \u00b7 payer graph built",
+     "ms": 940
+    },
+    {
+     "step": "pull_aa",
+     "label": "Account Aggregator",
+     "detail": "Bank statement FI data normalized \u00b7 balances, bounces, obligations",
+     "ms": 1320
+    },
+    {
+     "step": "pull_epfo",
+     "label": "EPFO rail",
+     "detail": "ECR filings parsed \u00b7 headcount 11 \u00b7 wage trend computed",
+     "ms": 610
+    },
+    {
+     "step": "features",
+     "label": "Feature fusion",
+     "detail": "27 point-in-time features across 6 dimensions",
+     "ms": 240
+    },
+    {
+     "step": "score",
+     "label": "Score computed",
+     "detail": "NAADI 442 \u00b1 15 \u00b7 Grade E \u00b7 PD(12m) 62.9%",
+     "ms": 90
+    },
+    {
+     "step": "policy",
+     "label": "Policy & limits",
+     "detail": "Decline with improvement path \u00b7 limit \u20b90",
+     "ms": 60
+    },
+    {
+     "step": "memo",
+     "label": "Memo drafted",
+     "detail": "Evidence-linked underwriting memo ready for officer review",
+     "ms": 850
+    }
+   ]
+  },
+  {
+   "id": "MSME-2404",
+   "name": "Blue Tiffin Kitchens",
+   "city": "Bengaluru",
+   "state": "KA",
+   "sector": "Food Services",
+   "archetype": "Cloud Kitchen",
+   "vintage_years": 2,
+   "proprietor": "Ananya Rao",
+   "story": "Hyper-growth cloud kitchen: order volumes doubling yearly, cash-flow volatile, aggregator-dependent.",
+   "tier": "T2",
+   "headcount": 588,
+   "monthly_turnover": 703351329,
+   "scoring": {
+    "subscores": {
+     "L": 34.9,
+     "S": 0.5,
+     "G": 86.2,
+     "R": 89.7,
+     "C": 59.1,
+     "K": 16.8
+    },
+    "pd_12m": 0.0654,
+    "score": 632,
+    "band": 25,
+    "grade": "C",
+    "posture": "Refer: mitigants / secured variant"
+   },
+   "reasons": {
+    "positive": [
+     {
+      "code": "RC-C05",
+      "dimension": "C",
+      "dimension_label": "Compliance",
+      "points": 50.6,
+      "subscore": 59.1,
+      "text": "EPFO deposit regularity of 89%; 9 consecutive months of on-time GST filing"
+     },
+     {
+      "code": "RC-G03",
+      "dimension": "G",
+      "dimension_label": "Growth",
+      "points": 6.4,
+      "subscore": 86.2,
+      "text": "payroll wage growth of +6.6%; 12-month turnover trend of +26.5%/month"
+     },
+     {
+      "code": "RC-R04",
+      "dimension": "R",
+      "dimension_label": "Repayment",
+      "points": 1.3,
+      "subscore": 89.7,
+      "text": "0 EMI/NACH bounce(s) in 12 months; existing obligations at 8.8% of turnover"
+     }
+    ],
+    "negative": [
+     {
+      "code": "RC-S02",
+      "dimension": "S",
+      "dimension_label": "Stability",
+      "points": -22.0,
+      "subscore": 0.5,
+      "text": "seasonal swing of 637% around mean revenue; turnover volatility of 172%"
+     },
+     {
+      "code": "RC-K06",
+      "dimension": "K",
+      "dimension_label": "Concentration",
+      "points": -15.7,
+      "subscore": 16.8,
+      "text": "top-3 payers at 77% of revenue; top payer at 62% of revenue"
+     },
+     {
+      "code": "RC-L01",
+      "dimension": "L",
+      "dimension_label": "Liquidity",
+      "points": -15.0,
+      "subscore": 34.9,
+      "text": "worst-decile balance at 0% of monthly outflow; cash buffer of 6 days of outflow"
+     }
+    ]
+   },
+   "what_if": [
+    {
+     "action": "Hold a 30-day cash buffer in the current account",
+     "delta": 26,
+     "new_score": 658
+    },
+    {
+     "action": "Bring top-payer share below 40% by adding 2-3 anchor customers",
+     "delta": 4,
+     "new_score": 636
+    }
+   ],
+   "recommendation": {
+    "decision": "REFER",
+    "decision_label": "Refer to credit committee",
+    "limit": 1924530000,
+    "tenor_months": 18,
+    "indicative_rate": 0.13,
+    "serviceable_emi": 197096130,
+    "monthly_surplus": 492740326,
+    "guards": [
+     "Liquidity floor: buffer < 15 days \u2014 limit reduced 20%",
+     "Concentration cap: top payer > 50% \u2014 limit reduced 25%"
+    ],
+    "covenants": [
+     "Maintain minimum average balance of 15 days' outflow",
+     "Diversify: no single payer above 50% of receipts by month 12",
+     "File GSTR-3B on or before due date throughout the loan tenor",
+     "Route >= 60% of business receipts through the IDBI current account"
+    ],
+    "early_warning": [
+     "3-month turnover drawdown > 25% vs trailing average",
+     "Two consecutive delayed GSTR-3B filings",
+     "End-of-day negative balance on > 5 days in any month"
+    ]
+   },
+   "red_flags": [
+    "Top payer concentration at 62%"
+   ],
+   "features": {
+    "cash_buffer_days": 5.6584,
+    "balance_to_outflow": 0.1886,
+    "balance_p10_ratio": 0.0,
+    "eod_negative_days": 4.0,
+    "turnover_cv": 1.7184,
+    "upi_inflow_cv": 1.6623,
+    "worst_3mo_drawdown": 0.9986,
+    "seasonal_amplitude": 6.3705,
+    "turnover_slope_6m": 0.3245,
+    "turnover_slope_12m": 0.2653,
+    "upi_txn_momentum": 0.2925,
+    "new_payer_rate": 0.1222,
+    "wage_growth": 0.0661,
+    "bounce_count": 0.0,
+    "bounce_rate": 0.0,
+    "emi_coverage": 0.7606,
+    "obligation_ratio": 0.0884,
+    "filing_delay_mean": 0.2447,
+    "filing_delay_max": 4.4518,
+    "on_time_streak": 9.0,
+    "itc_mismatch": 0.011,
+    "epfo_regularity": 0.8942,
+    "top_payer_share": 0.62,
+    "payer_hhi": 0.4499,
+    "top3_payer_share": 0.766,
+    "b2b_share": 0.05,
+    "refund_rate": 0.0136
+   },
+   "series": {
+    "months": [
+     "Jul '24",
+     "Aug '24",
+     "Sep '24",
+     "Oct '24",
+     "Nov '24",
+     "Dec '24",
+     "Jan '25",
+     "Feb '25",
+     "Mar '25",
+     "Apr '25",
+     "May '25",
+     "Jun '25",
+     "Jul '25",
+     "Aug '25",
+     "Sep '25",
+     "Oct '25",
+     "Nov '25",
+     "Dec '25",
+     "Jan '26",
+     "Feb '26",
+     "Mar '26",
+     "Apr '26",
+     "May '26",
+     "Jun '26"
+    ],
+    "turnover": [
+     1050487,
+     1491883,
+     1908915,
+     2449167,
+     4281119,
+     4012494,
+     5544890,
+     7728124,
+     13845469,
+     16244662,
+     24090738,
+     38111841,
+     50108528,
+     50922462,
+     96817174,
+     98972378,
+     140668426,
+     171531180,
+     289079020,
+     307464497,
+     428122977,
+     715661320,
+     1164846154,
+     1314934005
+    ],
+    "upi_inflow": [
+     1002606,
+     1547683,
+     1922741,
+     2739049,
+     4477153,
+     4210921,
+     4860855,
+     7050874,
+     12597735,
+     14847982,
+     22205206,
+     40406205,
+     49145281,
+     50200822,
+     88492000,
+     90322782,
+     124066502,
+     183667317,
+     286537684,
+     319835902,
+     428296120,
+     652856018,
+     1136646550,
+     1085937433
+    ],
+    "balance": [
+     211,
+     491,
+     931,
+     1111,
+     2621,
+     2047,
+     5846,
+     10084,
+     45151,
+     80705,
+     96852,
+     410723,
+     694018,
+     414124,
+     1704454,
+     2392458,
+     3288039,
+     4654925,
+     20744675,
+     16624533,
+     31818780,
+     123515680,
+     286267788,
+     378058815
+    ],
+    "upi_txn_count": [
+     1116,
+     1723,
+     2141,
+     3050,
+     4986,
+     4689,
+     5413,
+     7852,
+     14030,
+     16536,
+     24730,
+     45000,
+     54733,
+     55909,
+     98554,
+     100593,
+     138174,
+     204552,
+     319120,
+     356204,
+     476997,
+     727092,
+     1265895,
+     1209420
+    ]
+   },
+   "memo": "## Underwriting Memo \u2014 Blue Tiffin Kitchens\n*Food Services \u00b7 Bengaluru, KA \u00b7 2 yrs vintage \u00b7 Data tier T2 \u00b7 Proprietor: Ananya Rao*\n\n**NAADI Score: 632 \u00b1 25 (Grade C) \u00b7 PD(12m) 6.5% \u00b7 Refer: mitigants / secured variant**\n\n### Recommendation: Refer to credit committee\nWorking-capital line of **\u20b91,924,530,000** over **18 months** at an indicative 13.0% p.a. Serviceable EMI \u20b9197,096,130 against a verified monthly surplus of \u20b9492,740,326.\n\n### Why (evidence-linked)\n- **+50.6 pts \u00b7 Compliance** \u2014 EPFO deposit regularity of 89%; 9 consecutive months of on-time GST filing `[RC-C05]`\n- **+6.4 pts \u00b7 Growth** \u2014 payroll wage growth of +6.6%; 12-month turnover trend of +26.5%/month `[RC-G03]`\n- **+1.3 pts \u00b7 Repayment** \u2014 0 EMI/NACH bounce(s) in 12 months; existing obligations at 8.8% of turnover `[RC-R04]`\n- **-22.0 pts \u00b7 Stability** \u2014 seasonal swing of 637% around mean revenue; turnover volatility of 172% `[RC-S02]`\n- **-15.7 pts \u00b7 Concentration** \u2014 top-3 payers at 77% of revenue; top payer at 62% of revenue `[RC-K06]`\n- **-15.0 pts \u00b7 Liquidity** \u2014 worst-decile balance at 0% of monthly outflow; cash buffer of 6 days of outflow `[RC-L01]`\n\n### Policy guards applied\n- Liquidity floor: buffer < 15 days \u2014 limit reduced 20%\n- Concentration cap: top payer > 50% \u2014 limit reduced 25%\n\n### Covenants\n- Maintain minimum average balance of 15 days' outflow\n- Diversify: no single payer above 50% of receipts by month 12\n- File GSTR-3B on or before due date throughout the loan tenor\n- Route >= 60% of business receipts through the IDBI current account\n\n### Early-warning triggers\n- 3-month turnover drawdown > 25% vs trailing average\n- Two consecutive delayed GSTR-3B filings\n- End-of-day negative balance on > 5 days in any month\n\n*Prepared by Munshi. Every figure traces to a consented data rail; final authority rests with the sanctioning officer.*",
+   "trace": [
+    {
+     "step": "verify_consent",
+     "label": "Consent verified",
+     "detail": "AA consent artefact MSME-2404-CA-0626 \u00b7 GSTN OTP \u00b7 purpose-bound (DPDP)",
+     "ms": 420
+    },
+    {
+     "step": "pull_gst",
+     "label": "GST rail",
+     "detail": "24 GSTR-3B returns fetched \u00b7 turnover & filing discipline extracted",
+     "ms": 1180
+    },
+    {
+     "step": "pull_upi",
+     "label": "UPI rail",
+     "detail": "5,138,509 transactions aggregated \u00b7 payer graph built",
+     "ms": 940
+    },
+    {
+     "step": "pull_aa",
+     "label": "Account Aggregator",
+     "detail": "Bank statement FI data normalized \u00b7 balances, bounces, obligations",
+     "ms": 1320
+    },
+    {
+     "step": "pull_epfo",
+     "label": "EPFO rail",
+     "detail": "ECR filings parsed \u00b7 headcount 588 \u00b7 wage trend computed",
+     "ms": 610
+    },
+    {
+     "step": "features",
+     "label": "Feature fusion",
+     "detail": "27 point-in-time features across 6 dimensions",
+     "ms": 240
+    },
+    {
+     "step": "score",
+     "label": "Score computed",
+     "detail": "NAADI 632 \u00b1 25 \u00b7 Grade C \u00b7 PD(12m) 6.5%",
+     "ms": 90
+    },
+    {
+     "step": "policy",
+     "label": "Policy & limits",
+     "detail": "Refer to credit committee \u00b7 limit \u20b91,924,530,000",
+     "ms": 60
+    },
+    {
+     "step": "memo",
+     "label": "Memo drafted",
+     "detail": "Evidence-linked underwriting memo ready for officer review",
+     "ms": 850
+    }
+   ]
+  },
+  {
+   "id": "MSME-2405",
+   "name": "Shree Balaji Pharma Distributors",
+   "city": "Nagpur",
+   "state": "MH",
+   "sector": "Pharma Trade",
+   "archetype": "Pharma Distributor",
+   "vintage_years": 18,
+   "proprietor": "Suresh Balaji",
+   "story": "Two decades of metronome-steady distribution. Flawless GST record, diversified chemist network. The benchmark book.",
+   "tier": "T3",
+   "headcount": 12,
+   "monthly_turnover": 5086793,
+   "scoring": {
+    "subscores": {
+     "L": 90.6,
+     "S": 94.5,
+     "G": 97.1,
+     "R": 94.7,
+     "C": 65.1,
+     "K": 86.3
+    },
+    "pd_12m": 0.0001,
+    "score": 805,
+    "band": 15,
+    "grade": "A+",
+    "posture": "Pre-approved offers"
+   },
+   "reasons": {
+    "positive": [
+     {
+      "code": "RC-C05",
+      "dimension": "C",
+      "dimension_label": "Compliance",
+      "points": 46.8,
+      "subscore": 65.1,
+      "text": "EPFO deposit regularity of 86%; worst GSTR-3B filing delay of 0 days"
+     },
+     {
+      "code": "RC-S02",
+      "dimension": "S",
+      "dimension_label": "Stability",
+      "points": 39.3,
+      "subscore": 94.5,
+      "text": "seasonal swing of 49% around mean revenue; turnover volatility of 11%"
+     },
+     {
+      "code": "RC-G03",
+      "dimension": "G",
+      "dimension_label": "Growth",
+      "points": 34.6,
+      "subscore": 97.1,
+      "text": "payroll wage growth of +11.5%; new-customer acquisition at 19.6%/month"
+     },
+     {
+      "code": "RC-L01",
+      "dimension": "L",
+      "dimension_label": "Liquidity",
+      "points": 30.3,
+      "subscore": 90.6,
+      "text": "worst-decile balance at 7% of monthly outflow; cash buffer of 3 days of outflow"
+     },
+     {
+      "code": "RC-K06",
+      "dimension": "K",
+      "dimension_label": "Concentration",
+      "points": 26.3,
+      "subscore": 86.3,
+      "text": "refund/reversal rate of 0.0%; top-3 payers at 53% of revenue"
+     }
+    ],
+    "negative": []
+   },
+   "what_if": [
+    {
+     "action": "Hold a 30-day cash buffer in the current account",
+     "delta": 4,
+     "new_score": 809
+    }
+   ],
+   "recommendation": {
+    "decision": "APPROVE",
+    "decision_label": "Approve",
+    "limit": 12930000,
+    "tenor_months": 36,
+    "indicative_rate": 0.105,
+    "serviceable_emi": 525388,
+    "monthly_surplus": 955252,
+    "guards": [
+     "Liquidity floor: buffer < 15 days \u2014 limit reduced 20%"
+    ],
+    "covenants": [
+     "Maintain minimum average balance of 15 days' outflow",
+     "File GSTR-3B on or before due date throughout the loan tenor",
+     "Route >= 60% of business receipts through the IDBI current account"
+    ],
+    "early_warning": [
+     "3-month turnover drawdown > 25% vs trailing average",
+     "Two consecutive delayed GSTR-3B filings",
+     "End-of-day negative balance on > 5 days in any month"
+    ]
+   },
+   "red_flags": [],
+   "features": {
+    "cash_buffer_days": 3.1617,
+    "balance_to_outflow": 0.1054,
+    "balance_p10_ratio": 0.0686,
+    "eod_negative_days": 1.0,
+    "turnover_cv": 0.1095,
+    "upi_inflow_cv": 0.1597,
+    "worst_3mo_drawdown": 0.2294,
+    "seasonal_amplitude": 0.4864,
+    "turnover_slope_6m": 0.0238,
+    "turnover_slope_12m": 0.0216,
+    "upi_txn_momentum": 0.0776,
+    "new_payer_rate": 0.1956,
+    "wage_growth": 0.1148,
+    "bounce_count": 0.0,
+    "bounce_rate": 0.0,
+    "emi_coverage": 4.1284,
+    "obligation_ratio": 0.0289,
+    "filing_delay_mean": 0.0,
+    "filing_delay_max": 0.0,
+    "on_time_streak": 24.0,
+    "itc_mismatch": 0.0341,
+    "epfo_regularity": 0.8593,
+    "top_payer_share": 0.3443,
+    "payer_hhi": 0.1915,
+    "top3_payer_share": 0.5324,
+    "b2b_share": 0.8,
+    "refund_rate": 0.0
+   },
+   "series": {
+    "months": [
+     "Jul '24",
+     "Aug '24",
+     "Sep '24",
+     "Oct '24",
+     "Nov '24",
+     "Dec '24",
+     "Jan '25",
+     "Feb '25",
+     "Mar '25",
+     "Apr '25",
+     "May '25",
+     "Jun '25",
+     "Jul '25",
+     "Aug '25",
+     "Sep '25",
+     "Oct '25",
+     "Nov '25",
+     "Dec '25",
+     "Jan '26",
+     "Feb '26",
+     "Mar '26",
+     "Apr '26",
+     "May '26",
+     "Jun '26"
+    ],
+    "turnover": [
+     4405377,
+     3786905,
+     3863275,
+     4497293,
+     4191928,
+     4550215,
+     4909453,
+     4447730,
+     4657092,
+     3402304,
+     4706370,
+     4306254,
+     4139708,
+     4623924,
+     4359195,
+     4504861,
+     4251588,
+     4899449,
+     4595236,
+     4829840,
+     5588882,
+     5225861,
+     4668867,
+     5612070
+    ],
+    "upi_inflow": [
+     1019320,
+     983286,
+     921258,
+     1044893,
+     880247,
+     1085415,
+     1080417,
+     1069416,
+     924890,
+     727465,
+     1245610,
+     1165666,
+     1001849,
+     1110411,
+     847152,
+     1096277,
+     942083,
+     960671,
+     988611,
+     1033671,
+     1376699,
+     1238273,
+     1323207,
+     1478571
+    ],
+    "balance": [
+     337548,
+     334555,
+     350752,
+     206179,
+     291072,
+     382126,
+     402015,
+     398587,
+     521358,
+     232258,
+     412116,
+     468175,
+     366411,
+     449562,
+     630448,
+     525788,
+     275920,
+     665413,
+     345748,
+     485503,
+     383249,
+     691633,
+     273971,
+     687529
+    ],
+    "upi_txn_count": [
+     26,
+     25,
+     23,
+     27,
+     22,
+     28,
+     28,
+     27,
+     24,
+     18,
+     32,
+     30,
+     26,
+     28,
+     22,
+     28,
+     24,
+     24,
+     25,
+     26,
+     35,
+     32,
+     34,
+     38
+    ]
+   },
+   "memo": "## Underwriting Memo \u2014 Shree Balaji Pharma Distributors\n*Pharma Trade \u00b7 Nagpur, MH \u00b7 18 yrs vintage \u00b7 Data tier T3 \u00b7 Proprietor: Suresh Balaji*\n\n**NAADI Score: 805 \u00b1 15 (Grade A+) \u00b7 PD(12m) 0.0% \u00b7 Pre-approved offers**\n\n### Recommendation: Approve\nWorking-capital line of **\u20b912,930,000** over **36 months** at an indicative 10.5% p.a. Serviceable EMI \u20b9525,388 against a verified monthly surplus of \u20b9955,252.\n\n### Why (evidence-linked)\n- **+46.8 pts \u00b7 Compliance** \u2014 EPFO deposit regularity of 86%; worst GSTR-3B filing delay of 0 days `[RC-C05]`\n- **+39.3 pts \u00b7 Stability** \u2014 seasonal swing of 49% around mean revenue; turnover volatility of 11% `[RC-S02]`\n- **+34.6 pts \u00b7 Growth** \u2014 payroll wage growth of +11.5%; new-customer acquisition at 19.6%/month `[RC-G03]`\n\n### Policy guards applied\n- Liquidity floor: buffer < 15 days \u2014 limit reduced 20%\n\n### Covenants\n- Maintain minimum average balance of 15 days' outflow\n- File GSTR-3B on or before due date throughout the loan tenor\n- Route >= 60% of business receipts through the IDBI current account\n\n### Early-warning triggers\n- 3-month turnover drawdown > 25% vs trailing average\n- Two consecutive delayed GSTR-3B filings\n- End-of-day negative balance on > 5 days in any month\n\n*Prepared by Munshi. Every figure traces to a consented data rail; final authority rests with the sanctioning officer.*",
+   "trace": [
+    {
+     "step": "verify_consent",
+     "label": "Consent verified",
+     "detail": "AA consent artefact MSME-2405-CA-0626 \u00b7 GSTN OTP \u00b7 purpose-bound (DPDP)",
+     "ms": 420
+    },
+    {
+     "step": "pull_gst",
+     "label": "GST rail",
+     "detail": "24 GSTR-3B returns fetched \u00b7 turnover & filing discipline extracted",
+     "ms": 1180
+    },
+    {
+     "step": "pull_upi",
+     "label": "UPI rail",
+     "detail": "652 transactions aggregated \u00b7 payer graph built",
+     "ms": 940
+    },
+    {
+     "step": "pull_aa",
+     "label": "Account Aggregator",
+     "detail": "Bank statement FI data normalized \u00b7 balances, bounces, obligations",
+     "ms": 1320
+    },
+    {
+     "step": "pull_epfo",
+     "label": "EPFO rail",
+     "detail": "ECR filings parsed \u00b7 headcount 12 \u00b7 wage trend computed",
+     "ms": 610
+    },
+    {
+     "step": "features",
+     "label": "Feature fusion",
+     "detail": "27 point-in-time features across 6 dimensions",
+     "ms": 240
+    },
+    {
+     "step": "score",
+     "label": "Score computed",
+     "detail": "NAADI 805 \u00b1 15 \u00b7 Grade A+ \u00b7 PD(12m) 0.0%",
+     "ms": 90
+    },
+    {
+     "step": "policy",
+     "label": "Policy & limits",
+     "detail": "Approve \u00b7 limit \u20b912,930,000",
+     "ms": 60
+    },
+    {
+     "step": "memo",
+     "label": "Memo drafted",
+     "detail": "Evidence-linked underwriting memo ready for officer review",
+     "ms": 850
+    }
+   ]
+  },
+  {
+   "id": "MSME-2406",
+   "name": "Kaveri Agri Tools",
+   "city": "Coimbatore",
+   "state": "TN",
+   "sector": "Agri Inputs",
+   "archetype": "Agri Equipment",
+   "vintage_years": 9,
+   "proprietor": "K. Murugan",
+   "story": "Solid monsoon-cycle business: strong seasons, thin off-seasons. Needs a working-capital line shaped to the crop calendar.",
+   "tier": "T2",
+   "headcount": 5,
+   "monthly_turnover": 2605544,
+   "scoring": {
+    "subscores": {
+     "L": 54.3,
+     "S": 15.3,
+     "G": 46.7,
+     "R": 89.7,
+     "C": 46.4,
+     "K": 73.5
+    },
+    "pd_12m": 0.0654,
+    "score": 621,
+    "band": 25,
+    "grade": "C",
+    "posture": "Refer: mitigants / secured variant"
+   },
+   "reasons": {
+    "positive": [
+     {
+      "code": "RC-C05",
+      "dimension": "C",
+      "dimension_label": "Compliance",
+      "points": 6.6,
+      "subscore": 46.4,
+      "text": "EPFO deposit regularity of 81%; worst GSTR-3B filing delay of 4 days"
+     },
+     {
+      "code": "RC-L01",
+      "dimension": "L",
+      "dimension_label": "Liquidity",
+      "points": 6.3,
+      "subscore": 54.3,
+      "text": "cash buffer of 2 days of outflow; worst-decile balance at 3% of monthly outflow"
+     },
+     {
+      "code": "RC-R04",
+      "dimension": "R",
+      "dimension_label": "Repayment",
+      "points": 1.6,
+      "subscore": 89.7,
+      "text": "0 EMI/NACH bounce(s) in 12 months; existing obligations at 5.8% of turnover"
+     }
+    ],
+    "negative": [
+     {
+      "code": "RC-S02",
+      "dimension": "S",
+      "dimension_label": "Stability",
+      "points": -9.7,
+      "subscore": 15.3,
+      "text": "seasonal swing of 92% around mean revenue; turnover volatility of 26%"
+     },
+     {
+      "code": "RC-K06",
+      "dimension": "K",
+      "dimension_label": "Concentration",
+      "points": -7.6,
+      "subscore": 73.5,
+      "text": "refund/reversal rate of 1.1%; payer concentration (HHI) of 0.08"
+     },
+     {
+      "code": "RC-G03",
+      "dimension": "G",
+      "dimension_label": "Growth",
+      "points": -2.9,
+      "subscore": 46.7,
+      "text": "payroll wage growth of +3.8%; 12-month turnover trend of +4.3%/month"
+     }
+    ]
+   },
+   "what_if": [
+    {
+     "action": "Hold a 30-day cash buffer in the current account",
+     "delta": 3,
+     "new_score": 624
+    }
+   ],
+   "recommendation": {
+    "decision": "REFER",
+    "decision_label": "Refer to credit committee",
+    "limit": 3280000,
+    "tenor_months": 18,
+    "indicative_rate": 0.13,
+    "serviceable_emi": 251685,
+    "monthly_surplus": 629213,
+    "guards": [
+     "Liquidity floor: buffer < 15 days \u2014 limit reduced 20%"
+    ],
+    "covenants": [
+     "Maintain minimum average balance of 15 days' outflow",
+     "File GSTR-3B on or before due date throughout the loan tenor",
+     "Route >= 60% of business receipts through the IDBI current account"
+    ],
+    "early_warning": [
+     "3-month turnover drawdown > 25% vs trailing average",
+     "Two consecutive delayed GSTR-3B filings",
+     "End-of-day negative balance on > 5 days in any month"
+    ]
+   },
+   "red_flags": [],
+   "features": {
+    "cash_buffer_days": 2.0325,
+    "balance_to_outflow": 0.0677,
+    "balance_p10_ratio": 0.0307,
+    "eod_negative_days": 5.0,
+    "turnover_cv": 0.2605,
+    "upi_inflow_cv": 0.2701,
+    "worst_3mo_drawdown": 0.5028,
+    "seasonal_amplitude": 0.9227,
+    "turnover_slope_6m": 0.1018,
+    "turnover_slope_12m": 0.0428,
+    "upi_txn_momentum": 0.1131,
+    "new_payer_rate": 0.0862,
+    "wage_growth": 0.0382,
+    "bounce_count": 0.0,
+    "bounce_rate": 0.0,
+    "emi_coverage": 2.2685,
+    "obligation_ratio": 0.0581,
+    "filing_delay_mean": 0.3324,
+    "filing_delay_max": 4.1508,
+    "on_time_streak": 7.0,
+    "itc_mismatch": 0.0194,
+    "epfo_regularity": 0.8101,
+    "top_payer_share": 0.2106,
+    "payer_hhi": 0.0784,
+    "top3_payer_share": 0.3268,
+    "b2b_share": 0.55,
+    "refund_rate": 0.0108
+   },
+   "series": {
+    "months": [
+     "Jul '24",
+     "Aug '24",
+     "Sep '24",
+     "Oct '24",
+     "Nov '24",
+     "Dec '24",
+     "Jan '25",
+     "Feb '25",
+     "Mar '25",
+     "Apr '25",
+     "May '25",
+     "Jun '25",
+     "Jul '25",
+     "Aug '25",
+     "Sep '25",
+     "Oct '25",
+     "Nov '25",
+     "Dec '25",
+     "Jan '26",
+     "Feb '26",
+     "Mar '26",
+     "Apr '26",
+     "May '26",
+     "Jun '26"
+    ],
+    "turnover": [
+     2449222,
+     1953242,
+     2016029,
+     1218074,
+     1757953,
+     1490748,
+     1723219,
+     1752229,
+     1834529,
+     2404096,
+     2983101,
+     2729568,
+     2749984,
+     2053299,
+     1903497,
+     1600106,
+     1325270,
+     1627929,
+     1752316,
+     2473436,
+     2422822,
+     2720110,
+     3077926,
+     3186654
+    ],
+    "upi_inflow": [
+     1061259,
+     742932,
+     776398,
+     473058,
+     595833,
+     714077,
+     708153,
+     622985,
+     757856,
+     985083,
+     1161876,
+     1090484,
+     1171353,
+     780751,
+     697240,
+     726577,
+     540837,
+     623188,
+     788577,
+     818870,
+     877190,
+     1131619,
+     1237609,
+     1289709
+    ],
+    "balance": [
+     94187,
+     88195,
+     74907,
+     55096,
+     69645,
+     61946,
+     74908,
+     60888,
+     64267,
+     156914,
+     256743,
+     158614,
+     281673,
+     102809,
+     107482,
+     67018,
+     53649,
+     43593,
+     106565,
+     180740,
+     172192,
+     243608,
+     266491,
+     169810
+    ],
+    "upi_txn_count": [
+     24,
+     17,
+     18,
+     11,
+     13,
+     16,
+     16,
+     14,
+     17,
+     22,
+     27,
+     25,
+     27,
+     18,
+     16,
+     16,
+     12,
+     14,
+     18,
+     19,
+     20,
+     26,
+     28,
+     30
+    ]
+   },
+   "memo": "## Underwriting Memo \u2014 Kaveri Agri Tools\n*Agri Inputs \u00b7 Coimbatore, TN \u00b7 9 yrs vintage \u00b7 Data tier T2 \u00b7 Proprietor: K. Murugan*\n\n**NAADI Score: 621 \u00b1 25 (Grade C) \u00b7 PD(12m) 6.5% \u00b7 Refer: mitigants / secured variant**\n\n### Recommendation: Refer to credit committee\nWorking-capital line of **\u20b93,280,000** over **18 months** at an indicative 13.0% p.a. Serviceable EMI \u20b9251,685 against a verified monthly surplus of \u20b9629,213.\n\n### Why (evidence-linked)\n- **+6.6 pts \u00b7 Compliance** \u2014 EPFO deposit regularity of 81%; worst GSTR-3B filing delay of 4 days `[RC-C05]`\n- **+6.3 pts \u00b7 Liquidity** \u2014 cash buffer of 2 days of outflow; worst-decile balance at 3% of monthly outflow `[RC-L01]`\n- **+1.6 pts \u00b7 Repayment** \u2014 0 EMI/NACH bounce(s) in 12 months; existing obligations at 5.8% of turnover `[RC-R04]`\n- **-9.7 pts \u00b7 Stability** \u2014 seasonal swing of 92% around mean revenue; turnover volatility of 26% `[RC-S02]`\n- **-7.6 pts \u00b7 Concentration** \u2014 refund/reversal rate of 1.1%; payer concentration (HHI) of 0.08 `[RC-K06]`\n- **-2.9 pts \u00b7 Growth** \u2014 payroll wage growth of +3.8%; 12-month turnover trend of +4.3%/month `[RC-G03]`\n\n### Policy guards applied\n- Liquidity floor: buffer < 15 days \u2014 limit reduced 20%\n\n### Covenants\n- Maintain minimum average balance of 15 days' outflow\n- File GSTR-3B on or before due date throughout the loan tenor\n- Route >= 60% of business receipts through the IDBI current account\n\n### Early-warning triggers\n- 3-month turnover drawdown > 25% vs trailing average\n- Two consecutive delayed GSTR-3B filings\n- End-of-day negative balance on > 5 days in any month\n\n*Prepared by Munshi. Every figure traces to a consented data rail; final authority rests with the sanctioning officer.*",
+   "trace": [
+    {
+     "step": "verify_consent",
+     "label": "Consent verified",
+     "detail": "AA consent artefact MSME-2406-CA-0626 \u00b7 GSTN OTP \u00b7 purpose-bound (DPDP)",
+     "ms": 420
+    },
+    {
+     "step": "pull_gst",
+     "label": "GST rail",
+     "detail": "24 GSTR-3B returns fetched \u00b7 turnover & filing discipline extracted",
+     "ms": 1180
+    },
+    {
+     "step": "pull_upi",
+     "label": "UPI rail",
+     "detail": "464 transactions aggregated \u00b7 payer graph built",
+     "ms": 940
+    },
+    {
+     "step": "pull_aa",
+     "label": "Account Aggregator",
+     "detail": "Bank statement FI data normalized \u00b7 balances, bounces, obligations",
+     "ms": 1320
+    },
+    {
+     "step": "pull_epfo",
+     "label": "EPFO rail",
+     "detail": "ECR filings parsed \u00b7 headcount 5 \u00b7 wage trend computed",
+     "ms": 610
+    },
+    {
+     "step": "features",
+     "label": "Feature fusion",
+     "detail": "27 point-in-time features across 6 dimensions",
+     "ms": 240
+    },
+    {
+     "step": "score",
+     "label": "Score computed",
+     "detail": "NAADI 621 \u00b1 25 \u00b7 Grade C \u00b7 PD(12m) 6.5%",
+     "ms": 90
+    },
+    {
+     "step": "policy",
+     "label": "Policy & limits",
+     "detail": "Refer to credit committee \u00b7 limit \u20b93,280,000",
+     "ms": 60
+    },
+    {
+     "step": "memo",
+     "label": "Memo drafted",
+     "detail": "Evidence-linked underwriting memo ready for officer review",
+     "ms": 850
+    }
+   ]
+  },
+  {
+   "id": "MSME-2407",
+   "name": "Noor Fashion House",
+   "city": "Lucknow",
+   "state": "UP",
+   "sector": "Apparel Retail",
+   "archetype": "Fashion Boutique",
+   "vintage_years": 4,
+   "proprietor": "Noor Fatima",
+   "story": "Young boutique formalising fast \u2014 filings improving quarter on quarter, Instagram-driven UPI sales climbing.",
+   "tier": "T1",
+   "headcount": 1,
+   "monthly_turnover": 404376,
+   "scoring": {
+    "subscores": {
+     "L": 39.4,
+     "S": 33.8,
+     "G": 28.5,
+     "R": 89.7,
+     "C": 49.7,
+     "K": 82.7
+    },
+    "pd_12m": 0.0654,
+    "score": 632,
+    "band": 40,
+    "grade": "C",
+    "posture": "Refer: mitigants / secured variant"
+   },
+   "reasons": {
+    "positive": [
+     {
+      "code": "RC-K06",
+      "dimension": "K",
+      "dimension_label": "Concentration",
+      "points": 19.5,
+      "subscore": 82.7,
+      "text": "top-3 payers at 9% of revenue; refund/reversal rate of 1.1%"
+     },
+     {
+      "code": "RC-C05",
+      "dimension": "C",
+      "dimension_label": "Compliance",
+      "points": 5.3,
+      "subscore": 49.7,
+      "text": "EPFO deposit regularity of 88%; 7 consecutive months of on-time GST filing"
+     },
+     {
+      "code": "RC-R04",
+      "dimension": "R",
+      "dimension_label": "Repayment",
+      "points": 1.6,
+      "subscore": 89.7,
+      "text": "0 EMI/NACH bounce(s) in 12 months; existing obligations at 6.2% of turnover"
+     }
+    ],
+    "negative": [
+     {
+      "code": "RC-S02",
+      "dimension": "S",
+      "dimension_label": "Stability",
+      "points": -9.1,
+      "subscore": 33.8,
+      "text": "turnover volatility of 21%; UPI inflow volatility of 25%"
+     },
+     {
+      "code": "RC-G03",
+      "dimension": "G",
+      "dimension_label": "Growth",
+      "points": -6.2,
+      "subscore": 28.5,
+      "text": "payroll wage growth of +0.5%; 6-month turnover trend of -5.0%/month"
+     },
+     {
+      "code": "RC-L01",
+      "dimension": "L",
+      "dimension_label": "Liquidity",
+      "points": -5.8,
+      "subscore": 39.4,
+      "text": "worst-decile balance at 1% of monthly outflow; cash buffer of 1 days of outflow"
+     }
+    ]
+   },
+   "what_if": [
+    {
+     "action": "File GSTR-3B on time for the next 3 months",
+     "delta": 33,
+     "new_score": 665
+    },
+    {
+     "action": "Hold a 30-day cash buffer in the current account",
+     "delta": 4,
+     "new_score": 636
+    }
+   ],
+   "recommendation": {
+    "decision": "REFER",
+    "decision_label": "Refer to credit committee",
+    "limit": 0,
+    "tenor_months": 18,
+    "indicative_rate": 0.13,
+    "serviceable_emi": 0,
+    "monthly_surplus": 0,
+    "guards": [
+     "Liquidity floor: buffer < 15 days \u2014 limit reduced 20%"
+    ],
+    "covenants": [
+     "Maintain minimum average balance of 15 days' outflow",
+     "File GSTR-3B on or before due date throughout the loan tenor",
+     "Route >= 60% of business receipts through the IDBI current account"
+    ],
+    "early_warning": [
+     "3-month turnover drawdown > 25% vs trailing average",
+     "Two consecutive delayed GSTR-3B filings",
+     "End-of-day negative balance on > 5 days in any month"
+    ]
+   },
+   "red_flags": [
+    "Turnover declining 5.0%/month over 6 months"
+   ],
+   "features": {
+    "cash_buffer_days": 0.9184,
+    "balance_to_outflow": 0.0306,
+    "balance_p10_ratio": 0.0146,
+    "eod_negative_days": 3.0,
+    "turnover_cv": 0.2143,
+    "upi_inflow_cv": 0.2462,
+    "worst_3mo_drawdown": 0.4663,
+    "seasonal_amplitude": 0.8458,
+    "turnover_slope_6m": -0.0503,
+    "turnover_slope_12m": 0.0012,
+    "upi_txn_momentum": -0.0302,
+    "new_payer_rate": 0.0882,
+    "wage_growth": 0.0047,
+    "bounce_count": 0.0,
+    "bounce_rate": 0.0,
+    "emi_coverage": 0.6232,
+    "obligation_ratio": 0.0619,
+    "filing_delay_mean": 0.2856,
+    "filing_delay_max": 4.7134,
+    "on_time_streak": 7.0,
+    "itc_mismatch": 0.0538,
+    "epfo_regularity": 0.8788,
+    "top_payer_share": 0.02,
+    "payer_hhi": 0.0483,
+    "top3_payer_share": 0.0918,
+    "b2b_share": 0.05,
+    "refund_rate": 0.0107
+   },
+   "series": {
+    "months": [
+     "Jul '24",
+     "Aug '24",
+     "Sep '24",
+     "Oct '24",
+     "Nov '24",
+     "Dec '24",
+     "Jan '25",
+     "Feb '25",
+     "Mar '25",
+     "Apr '25",
+     "May '25",
+     "Jun '25",
+     "Jul '25",
+     "Aug '25",
+     "Sep '25",
+     "Oct '25",
+     "Nov '25",
+     "Dec '25",
+     "Jan '26",
+     "Feb '26",
+     "Mar '26",
+     "Apr '26",
+     "May '26",
+     "Jun '26"
+    ],
+    "turnover": [
+     324260,
+     466839,
+     306446,
+     466186,
+     411037,
+     593824,
+     424550,
+     392492,
+     521963,
+     450052,
+     324055,
+     243650,
+     265226,
+     401424,
+     443376,
+     357273,
+     583533,
+     533773,
+     443313,
+     447380,
+     435378,
+     352453,
+     404176,
+     343555
+    ],
+    "upi_inflow": [
+     212358,
+     393023,
+     231815,
+     369007,
+     302969,
+     536033,
+     336968,
+     333629,
+     387902,
+     388135,
+     261625,
+     180883,
+     207345,
+     303225,
+     329397,
+     316749,
+     473329,
+     409118,
+     308903,
+     384845,
+     342659,
+     271291,
+     298815,
+     307216
+    ],
+    "balance": [
+     6885,
+     18724,
+     7118,
+     14861,
+     9022,
+     25510,
+     14598,
+     12904,
+     25041,
+     12347,
+     5948,
+     5142,
+     4123,
+     12389,
+     13109,
+     5749,
+     22546,
+     17746,
+     11804,
+     11686,
+     8922,
+     7023,
+     9365,
+     9871
+    ],
+    "upi_txn_count": [
+     536,
+     992,
+     585,
+     931,
+     764,
+     1353,
+     850,
+     842,
+     979,
+     979,
+     660,
+     456,
+     523,
+     765,
+     831,
+     799,
+     1194,
+     1032,
+     779,
+     971,
+     864,
+     684,
+     754,
+     775
+    ]
+   },
+   "memo": "## Underwriting Memo \u2014 Noor Fashion House\n*Apparel Retail \u00b7 Lucknow, UP \u00b7 4 yrs vintage \u00b7 Data tier T1 \u00b7 Proprietor: Noor Fatima*\n\n**NAADI Score: 632 \u00b1 40 (Grade C) \u00b7 PD(12m) 6.5% \u00b7 Refer: mitigants / secured variant**\n\n### Recommendation: Refer to credit committee\n\n### Why (evidence-linked)\n- **+19.5 pts \u00b7 Concentration** \u2014 top-3 payers at 9% of revenue; refund/reversal rate of 1.1% `[RC-K06]`\n- **+5.3 pts \u00b7 Compliance** \u2014 EPFO deposit regularity of 88%; 7 consecutive months of on-time GST filing `[RC-C05]`\n- **+1.6 pts \u00b7 Repayment** \u2014 0 EMI/NACH bounce(s) in 12 months; existing obligations at 6.2% of turnover `[RC-R04]`\n- **-9.1 pts \u00b7 Stability** \u2014 turnover volatility of 21%; UPI inflow volatility of 25% `[RC-S02]`\n- **-6.2 pts \u00b7 Growth** \u2014 payroll wage growth of +0.5%; 6-month turnover trend of -5.0%/month `[RC-G03]`\n- **-5.8 pts \u00b7 Liquidity** \u2014 worst-decile balance at 1% of monthly outflow; cash buffer of 1 days of outflow `[RC-L01]`\n\n### Policy guards applied\n- Liquidity floor: buffer < 15 days \u2014 limit reduced 20%\n\n### Covenants\n- Maintain minimum average balance of 15 days' outflow\n- File GSTR-3B on or before due date throughout the loan tenor\n- Route >= 60% of business receipts through the IDBI current account\n\n### Early-warning triggers\n- 3-month turnover drawdown > 25% vs trailing average\n- Two consecutive delayed GSTR-3B filings\n- End-of-day negative balance on > 5 days in any month\n\n*Prepared by Munshi. Every figure traces to a consented data rail; final authority rests with the sanctioning officer.*",
+   "trace": [
+    {
+     "step": "verify_consent",
+     "label": "Consent verified",
+     "detail": "AA consent artefact MSME-2407-CA-0626 \u00b7 GSTN OTP \u00b7 purpose-bound (DPDP)",
+     "ms": 420
+    },
+    {
+     "step": "pull_gst",
+     "label": "GST rail",
+     "detail": "24 GSTR-3B returns fetched \u00b7 turnover & filing discipline extracted",
+     "ms": 1180
+    },
+    {
+     "step": "pull_upi",
+     "label": "UPI rail",
+     "detail": "19,898 transactions aggregated \u00b7 payer graph built",
+     "ms": 940
+    },
+    {
+     "step": "pull_aa",
+     "label": "Account Aggregator",
+     "detail": "Bank statement FI data normalized \u00b7 balances, bounces, obligations",
+     "ms": 1320
+    },
+    {
+     "step": "pull_epfo",
+     "label": "EPFO rail",
+     "detail": "ECR filings parsed \u00b7 headcount 1 \u00b7 wage trend computed",
+     "ms": 610
+    },
+    {
+     "step": "features",
+     "label": "Feature fusion",
+     "detail": "27 point-in-time features across 6 dimensions",
+     "ms": 240
+    },
+    {
+     "step": "score",
+     "label": "Score computed",
+     "detail": "NAADI 632 \u00b1 40 \u00b7 Grade C \u00b7 PD(12m) 6.5%",
+     "ms": 90
+    },
+    {
+     "step": "policy",
+     "label": "Policy & limits",
+     "detail": "Refer to credit committee \u00b7 limit \u20b90",
+     "ms": 60
+    },
+    {
+     "step": "memo",
+     "label": "Memo drafted",
+     "detail": "Evidence-linked underwriting memo ready for officer review",
+     "ms": 850
+    }
+   ]
+  },
+  {
+   "id": "MSME-2408",
+   "name": "Ganpati Constructions",
+   "city": "Ahmedabad",
+   "state": "GJ",
+   "sector": "Construction",
+   "archetype": "Construction Contractor",
+   "vintage_years": 12,
+   "proprietor": "Jignesh Trivedi",
+   "story": "Capable contractor trapped in lumpy government receivables \u2014 long dry spells, then a flood. Referral case: viable with covenants.",
+   "tier": "T2",
+   "headcount": 65,
+   "monthly_turnover": 14415590,
+   "scoring": {
+    "subscores": {
+     "L": 19.6,
+     "S": 0.5,
+     "G": 45.3,
+     "R": 8.8,
+     "C": 34.0,
+     "K": 14.5
+    },
+    "pd_12m": 0.2192,
+    "score": 543,
+    "band": 25,
+    "grade": "D",
+    "posture": "Small-ticket starter products"
+   },
+   "reasons": {
+    "positive": [],
+    "negative": [
+     {
+      "code": "RC-S02",
+      "dimension": "S",
+      "dimension_label": "Stability",
+      "points": -26.9,
+      "subscore": 0.5,
+      "text": "seasonal swing of 226% around mean revenue; turnover volatility of 84%"
+     },
+     {
+      "code": "RC-C05",
+      "dimension": "C",
+      "dimension_label": "Compliance",
+      "points": -25.7,
+      "subscore": 34.0,
+      "text": "EPFO deposit regularity of 74%; average GSTR-3B filing delay of 0.6 days"
+     },
+     {
+      "code": "RC-L01",
+      "dimension": "L",
+      "dimension_label": "Liquidity",
+      "points": -13.8,
+      "subscore": 19.6,
+      "text": "worst-decile balance at 0% of monthly outflow; cash buffer of 1 days of outflow"
+     },
+     {
+      "code": "RC-K06",
+      "dimension": "K",
+      "dimension_label": "Concentration",
+      "points": -13.3,
+      "subscore": 14.5,
+      "text": "refund/reversal rate of 2.0%; top-3 payers at 60% of revenue"
+     },
+     {
+      "code": "RC-R04",
+      "dimension": "R",
+      "dimension_label": "Repayment",
+      "points": -3.0,
+      "subscore": 8.8,
+      "text": "3 EMI/NACH bounce(s) in 12 months; existing obligations at 6.4% of turnover"
+     }
+    ]
+   },
+   "what_if": [
+    {
+     "action": "Hold a 30-day cash buffer in the current account",
+     "delta": 21,
+     "new_score": 564
+    },
+    {
+     "action": "Route all EMIs through the surplus account (zero bounces for 6 months)",
+     "delta": 7,
+     "new_score": 550
+    }
+   ],
+   "recommendation": {
+    "decision": "SMALL_TICKET",
+    "decision_label": "Offer starter product",
+    "limit": 0,
+    "tenor_months": 12,
+    "indicative_rate": 0.14,
+    "serviceable_emi": 0,
+    "monthly_surplus": 0,
+    "guards": [
+     "Liquidity floor: buffer < 15 days \u2014 limit reduced 20%"
+    ],
+    "covenants": [
+     "Maintain minimum average balance of 15 days' outflow",
+     "File GSTR-3B on or before due date throughout the loan tenor",
+     "Zero EMI/NACH bounces; auto-review on first bounce",
+     "Route >= 60% of business receipts through the IDBI current account"
+    ],
+    "early_warning": [
+     "3-month turnover drawdown > 25% vs trailing average",
+     "Two consecutive delayed GSTR-3B filings",
+     "End-of-day negative balance on > 5 days in any month"
+    ]
+   },
+   "red_flags": [
+    "3 EMI/NACH bounce(s) in the last 12 months",
+    "Turnover declining 10.2%/month over 6 months"
+   ],
+   "features": {
+    "cash_buffer_days": 1.0643,
+    "balance_to_outflow": 0.0355,
+    "balance_p10_ratio": 0.0006,
+    "eod_negative_days": 5.0,
+    "turnover_cv": 0.8353,
+    "upi_inflow_cv": 0.8297,
+    "worst_3mo_drawdown": 0.9035,
+    "seasonal_amplitude": 2.2624,
+    "turnover_slope_6m": -0.1021,
+    "turnover_slope_12m": -0.1087,
+    "upi_txn_momentum": -0.0887,
+    "new_payer_rate": 0.088,
+    "wage_growth": 0.0511,
+    "bounce_count": 3.0,
+    "bounce_rate": 0.25,
+    "emi_coverage": 2.2027,
+    "obligation_ratio": 0.064,
+    "filing_delay_mean": 0.5506,
+    "filing_delay_max": 5.463,
+    "on_time_streak": 1.0,
+    "itc_mismatch": 0.0609,
+    "epfo_regularity": 0.7407,
+    "top_payer_share": 0.4815,
+    "payer_hhi": 0.3025,
+    "top3_payer_share": 0.6017,
+    "b2b_share": 0.9,
+    "refund_rate": 0.0197
+   },
+   "series": {
+    "months": [
+     "Jul '24",
+     "Aug '24",
+     "Sep '24",
+     "Oct '24",
+     "Nov '24",
+     "Dec '24",
+     "Jan '25",
+     "Feb '25",
+     "Mar '25",
+     "Apr '25",
+     "May '25",
+     "Jun '25",
+     "Jul '25",
+     "Aug '25",
+     "Sep '25",
+     "Oct '25",
+     "Nov '25",
+     "Dec '25",
+     "Jan '26",
+     "Feb '26",
+     "Mar '26",
+     "Apr '26",
+     "May '26",
+     "Jun '26"
+    ],
+    "turnover": [
+     5288513,
+     3241059,
+     36064667,
+     5493257,
+     24393737,
+     32248286,
+     36249027,
+     46568716,
+     25957557,
+     4126815,
+     3077003,
+     31152572,
+     43320868,
+     39294578,
+     3295950,
+     27363653,
+     3541942,
+     4192871,
+     3372894,
+     44127530,
+     3920473,
+     5465156,
+     25921725,
+     3685759
+    ],
+    "upi_inflow": [
+     186877,
+     148193,
+     1436826,
+     215210,
+     892147,
+     1428106,
+     1471091,
+     1946398,
+     1028711,
+     151970,
+     127475,
+     1304956,
+     1644877,
+     1488072,
+     132125,
+     1068607,
+     161940,
+     202931,
+     132503,
+     1681986,
+     172564,
+     229184,
+     1060399,
+     148697
+    ],
+    "balance": [
+     20647,
+     5911,
+     648972,
+     23978,
+     339854,
+     1301038,
+     1314560,
+     1789714,
+     772633,
+     16187,
+     7713,
+     1242288,
+     1792544,
+     1412741,
+     11130,
+     753319,
+     13269,
+     14210,
+     9697,
+     2066769,
+     14779,
+     30847,
+     445752,
+     11588
+    ],
+    "upi_txn_count": [
+     6,
+     5,
+     50,
+     7,
+     31,
+     49,
+     51,
+     67,
+     35,
+     5,
+     4,
+     45,
+     57,
+     51,
+     4,
+     37,
+     5,
+     7,
+     4,
+     58,
+     6,
+     7,
+     36,
+     5
+    ]
+   },
+   "memo": "## Underwriting Memo \u2014 Ganpati Constructions\n*Construction \u00b7 Ahmedabad, GJ \u00b7 12 yrs vintage \u00b7 Data tier T2 \u00b7 Proprietor: Jignesh Trivedi*\n\n**NAADI Score: 543 \u00b1 25 (Grade D) \u00b7 PD(12m) 21.9% \u00b7 Small-ticket starter products**\n\n### Recommendation: Offer starter product\n\n### Why (evidence-linked)\n- **-26.9 pts \u00b7 Stability** \u2014 seasonal swing of 226% around mean revenue; turnover volatility of 84% `[RC-S02]`\n- **-25.7 pts \u00b7 Compliance** \u2014 EPFO deposit regularity of 74%; average GSTR-3B filing delay of 0.6 days `[RC-C05]`\n- **-13.8 pts \u00b7 Liquidity** \u2014 worst-decile balance at 0% of monthly outflow; cash buffer of 1 days of outflow `[RC-L01]`\n\n### Policy guards applied\n- Liquidity floor: buffer < 15 days \u2014 limit reduced 20%\n\n### Covenants\n- Maintain minimum average balance of 15 days' outflow\n- File GSTR-3B on or before due date throughout the loan tenor\n- Zero EMI/NACH bounces; auto-review on first bounce\n- Route >= 60% of business receipts through the IDBI current account\n\n### Early-warning triggers\n- 3-month turnover drawdown > 25% vs trailing average\n- Two consecutive delayed GSTR-3B filings\n- End-of-day negative balance on > 5 days in any month\n\n*Prepared by Munshi. Every figure traces to a consented data rail; final authority rests with the sanctioning officer.*",
+   "trace": [
+    {
+     "step": "verify_consent",
+     "label": "Consent verified",
+     "detail": "AA consent artefact MSME-2408-CA-0626 \u00b7 GSTN OTP \u00b7 purpose-bound (DPDP)",
+     "ms": 420
+    },
+    {
+     "step": "pull_gst",
+     "label": "GST rail",
+     "detail": "24 GSTR-3B returns fetched \u00b7 turnover & filing discipline extracted",
+     "ms": 1180
+    },
+    {
+     "step": "pull_upi",
+     "label": "UPI rail",
+     "detail": "632 transactions aggregated \u00b7 payer graph built",
+     "ms": 940
+    },
+    {
+     "step": "pull_aa",
+     "label": "Account Aggregator",
+     "detail": "Bank statement FI data normalized \u00b7 balances, bounces, obligations",
+     "ms": 1320
+    },
+    {
+     "step": "pull_epfo",
+     "label": "EPFO rail",
+     "detail": "ECR filings parsed \u00b7 headcount 65 \u00b7 wage trend computed",
+     "ms": 610
+    },
+    {
+     "step": "features",
+     "label": "Feature fusion",
+     "detail": "27 point-in-time features across 6 dimensions",
+     "ms": 240
+    },
+    {
+     "step": "score",
+     "label": "Score computed",
+     "detail": "NAADI 543 \u00b1 25 \u00b7 Grade D \u00b7 PD(12m) 21.9%",
+     "ms": 90
+    },
+    {
+     "step": "policy",
+     "label": "Policy & limits",
+     "detail": "Offer starter product \u00b7 limit \u20b90",
+     "ms": 60
+    },
+    {
+     "step": "memo",
+     "label": "Memo drafted",
+     "detail": "Evidence-linked underwriting memo ready for officer review",
+     "ms": 850
+    }
+   ]
+  }
+ ]
+}

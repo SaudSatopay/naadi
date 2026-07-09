@@ -1,0 +1,18 @@
+{
+  "n_train": 3000,
+  "n_val": 1000,
+  "n_test": 1000,
+  "default_rate": 0.168,
+  "auroc_test": 0.8709,
+  "ks_test": 0.5755,
+  "dimension_auroc_test": {
+    "L": 0.8643,
+    "S": 0.7394,
+    "G": 0.8493,
+    "R": 0.735,
+    "C": 0.8686,
+    "K": 0.7987
+  },
+  "n_features": 27,
+  "note": "Synthetic-population validation of the architecture \u2014 not a real-world performance claim. Re-estimated on IDBI sandbox data post-shortlist."
+}
