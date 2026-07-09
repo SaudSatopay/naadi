@@ -23,8 +23,11 @@ __pycache__/
 engine/artifacts/*.txt
 engine/artifacts/*.pkl
 
-# OS / editor
+# OS / editor / local tooling
 .DS_Store
 Thumbs.db
 .vscode/
 .idea/
+.claude/
+CLAUDE.md
+AGENTS.md
