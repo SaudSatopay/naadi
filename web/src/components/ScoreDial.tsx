@@ -22,9 +22,12 @@ const BANDS: [number, number, string][] = [
 ];
 
 const angleOf = (score: number) => 180 + (180 * (score - 300)) / 600; // degrees
+// coordinates rounded to 2dp so server prerender and client hydrate to
+// byte-identical SVG attributes (float trig differs in the last ulps)
+const r2 = (v: number) => Math.round(v * 100) / 100;
 const pt = (angleDeg: number, r: number) => {
   const a = (angleDeg * Math.PI) / 180;
-  return [CX + r * Math.cos(a), CY + r * Math.sin(a)] as const;
+  return [r2(CX + r * Math.cos(a)), r2(CY + r * Math.sin(a))] as const;
 };
 const arcPath = (s0: number, s1: number, r: number) => {
   const [x0, y0] = pt(angleOf(s0), r);
