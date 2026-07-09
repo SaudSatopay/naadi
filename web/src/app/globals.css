@@ -1,0 +1,171 @@
+@import "tailwindcss";
+
+/* ————— NAADI design tokens: ledger-ink instrument panel ————— */
+@theme {
+  --color-ink-950: #070f0c;
+  --color-ink-900: #0b1512;
+  --color-ink-850: #0e1a16;
+  --color-ink-800: #122019;
+  --color-ink-700: #1a2c24;
+  --color-ink-600: #24382e;
+
+  --color-pulse-300: #7cf0bd;
+  --color-pulse-400: #3be39a;
+  --color-pulse-500: #1fc77e;
+
+  --color-marigold-300: #f2cb7c;
+  --color-marigold-400: #e9b44c;
+  --color-marigold-500: #d89a26;
+
+  --color-verm-300: #f6837a;
+  --color-verm-400: #f0564a;
+
+  --color-bone: #ecf4ee;
+  --color-sage: #8ea79a;
+  --color-sage-dim: #5f7a6d;
+}
+
+@theme inline {
+  --font-display: var(--font-fraunces);
+  --font-body: var(--font-archivo);
+  --font-ledger: var(--font-spline-mono);
+}
+
+::selection {
+  background: color-mix(in oklab, var(--color-pulse-400) 30%, transparent);
+  color: var(--color-bone);
+}
+
+html {
+  scrollbar-color: var(--color-ink-600) var(--color-ink-950);
+}
+
+body {
+  background-color: var(--color-ink-950);
+  color: var(--color-bone);
+  font-family: var(--font-body);
+  /* ledger hairlines + vignette atmosphere */
+  background-image:
+    radial-gradient(1100px 500px at 18% -8%, rgba(59, 227, 154, 0.07), transparent 60%),
+    radial-gradient(900px 420px at 92% 4%, rgba(233, 180, 76, 0.05), transparent 55%),
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0px,
+      transparent 31px,
+      rgba(142, 167, 154, 0.045) 31px,
+      rgba(142, 167, 154, 0.045) 32px
+    );
+  background-attachment: fixed;
+}
+
+/* film grain, kept dead subtle */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 60;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.6'/%3E%3C/svg%3E");
+}
+
+/* ————— reusable primitives ————— */
+.card {
+  background: linear-gradient(180deg, var(--color-ink-850), var(--color-ink-900));
+  border: 1px solid var(--color-ink-700);
+  border-radius: 14px;
+  box-shadow: 0 1px 0 rgba(236, 244, 238, 0.04) inset, 0 18px 40px -28px rgba(0, 0, 0, 0.8);
+}
+
+.hairline-t { border-top: 1px solid var(--color-ink-700); }
+.hairline-b { border-bottom: 1px solid var(--color-ink-700); }
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: 1px solid var(--color-ink-600);
+  border-radius: 999px;
+  padding: 0.22rem 0.7rem;
+  font-family: var(--font-ledger);
+  font-size: 0.66rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-sage);
+  white-space: nowrap;
+}
+
+.num {
+  font-family: var(--font-ledger);
+  font-variant-numeric: tabular-nums;
+}
+
+.label-caps {
+  font-family: var(--font-ledger);
+  font-size: 0.64rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-sage-dim);
+}
+
+/* ————— ECG pulse ————— */
+@keyframes ecg-run {
+  from { stroke-dashoffset: 1000; }
+  to { stroke-dashoffset: 0; }
+}
+.ecg-path {
+  stroke-dasharray: 260 740;
+  animation: ecg-run 3.2s linear infinite;
+}
+
+@keyframes blip {
+  0%, 100% { opacity: 0.35; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.35); }
+}
+.blip { animation: blip 1.6s ease-in-out infinite; }
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.rise { animation: rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.rise-1 { animation-delay: 0.05s; }
+.rise-2 { animation-delay: 0.14s; }
+.rise-3 { animation-delay: 0.23s; }
+.rise-4 { animation-delay: 0.32s; }
+.rise-5 { animation-delay: 0.45s; }
+
+/* memo typography */
+.memo h2 {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--color-bone);
+  margin-bottom: 0.25rem;
+}
+.memo h3 {
+  font-family: var(--font-ledger);
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-marigold-400);
+  margin-top: 1.1rem;
+  margin-bottom: 0.4rem;
+}
+.memo p, .memo li {
+  font-size: 0.85rem;
+  line-height: 1.65;
+  color: color-mix(in oklab, var(--color-bone) 88%, transparent);
+}
+.memo ul { display: grid; gap: 0.3rem; padding-left: 1rem; }
+.memo li { list-style: "— "; }
+.memo code {
+  font-family: var(--font-ledger);
+  font-size: 0.7rem;
+  color: var(--color-pulse-300);
+  background: rgba(59, 227, 154, 0.08);
+  border-radius: 4px;
+  padding: 0.08rem 0.3rem;
+}
+.memo em { color: var(--color-sage); }
+.memo strong { color: var(--color-bone); font-weight: 650; }
