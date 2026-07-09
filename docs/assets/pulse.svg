@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 44" width="900" height="44">
+  <defs>
+    <linearGradient id="fade" x1="0" x2="1">
+      <stop offset="0" stop-color="#3be39a" stop-opacity="0"/>
+      <stop offset="0.12" stop-color="#3be39a" stop-opacity="0.9"/>
+      <stop offset="0.88" stop-color="#3be39a" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#3be39a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <g stroke="url(#fade)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M0,22 L120,22 L136,22 L144,12 L152,30 L160,22 L210,22 L222,4 L234,40 L246,22 L330,22 L344,17 L358,22 L450,22 L466,22 L474,12 L482,30 L490,22 L540,22 L552,4 L564,40 L576,22 L660,22 L674,17 L688,22 L780,22 L792,10 L804,32 L816,22 L900,22"
+          stroke-dasharray="240 1200" pathLength="1440">
+      <animate attributeName="stroke-dashoffset" from="1440" to="0" dur="4s" repeatCount="indefinite"/>
+    </path>
+    <path d="M0,22 L120,22 L136,22 L144,12 L152,30 L160,22 L210,22 L222,4 L234,40 L246,22 L330,22 L344,17 L358,22 L450,22 L466,22 L474,12 L482,30 L490,22 L540,22 L552,4 L564,40 L576,22 L660,22 L674,17 L688,22 L780,22 L792,10 L804,32 L816,22 L900,22"
+          stroke-opacity="0.18"/>
+  </g>
+</svg>
