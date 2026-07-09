@@ -1,0 +1,30 @@
+# Node / Next.js
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+next-env.d.ts
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.python-version
+*.egg-info/
+.ruff_cache/
+.pytest_cache/
+
+# Env & secrets
+.env
+.env.*
+!.env.example
+
+# ML artifacts (regenerable)
+engine/artifacts/*.txt
+engine/artifacts/*.pkl
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
