@@ -102,6 +102,43 @@ _SCENARIOS = [
 ]
 
 
+# ---------------------------------------------------------------- stress ----
+# Adverse scenarios a risk committee will ask about. Feature-space
+# approximations of the shock, rescored through the same brain.
+_STRESS = [
+    ("Revenue shock −20% for two quarters",
+     lambda f: {**f,
+                "cash_buffer_days": f["cash_buffer_days"] * 0.80,
+                "balance_to_outflow": f["balance_to_outflow"] * 0.80,
+                "balance_p10_ratio": f["balance_p10_ratio"] * 0.80,
+                "emi_coverage": f["emi_coverage"] * 0.70,
+                "turnover_slope_6m": f["turnover_slope_6m"] - 0.030,
+                "worst_3mo_drawdown": min(f["worst_3mo_drawdown"] + 0.15, 1.0)}),
+    ("Anchor payer delays receipts by 60 days",
+     lambda f: {**f,
+                "cash_buffer_days": f["cash_buffer_days"] * 0.55,
+                "balance_p10_ratio": f["balance_p10_ratio"] * 0.40,
+                "eod_negative_days": f["eod_negative_days"] + 8,
+                "bounce_count": f["bounce_count"] + 1,
+                "bounce_rate": (f["bounce_count"] + 1) / 12.0}),
+]
+
+
+def stress_test(scorer: NaadiScorer, feats: dict, tier: str, base_score: int) -> list[dict]:
+    from .scoring import grade_for
+
+    out = []
+    for label, transform in _STRESS:
+        res = scorer.score(transform(dict(feats)), tier)
+        out.append({
+            "scenario": label,
+            "score": res["score"],
+            "delta": int(res["score"] - base_score),
+            "grade": grade_for(res["score"])[0],
+        })
+    return out
+
+
 def what_if(scorer: NaadiScorer, feats: dict, tier: str, base_score: int) -> list[dict]:
     tips = []
     for label, transform in _SCENARIOS:

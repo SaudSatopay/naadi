@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import PrintButton from "./PrintButton";
 
 /** Minimal renderer for Munshi's markdown memo (headings, bullets, inline
  *  bold/italic/code). No external markdown dependency. */
@@ -61,10 +62,13 @@ export default function MemoPanel({ memo }: { memo: string }) {
       >
         <span className="label-caps !text-marigold-400/70 mt-10 mr-8">munshi</span>
       </div>
-      <div className="flex items-center gap-2 mb-4">
+      <div className="flex items-center gap-2 mb-4 flex-wrap">
         <h3 className="label-caps">Underwriting memo — drafted by Munshi</h3>
-        <span className="chip !text-pulse-300 !border-pulse-500/30">
+        <span className="chip !text-pulse-300 !border-pulse-500/30 print:hidden">
           LLM writes prose · engine writes numbers
+        </span>
+        <span className="ml-auto print:hidden">
+          <PrintButton />
         </span>
       </div>
       <div className="memo">{render(memo)}</div>

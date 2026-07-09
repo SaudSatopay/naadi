@@ -169,3 +169,23 @@ body::after {
 }
 .memo em { color: var(--color-sage); }
 .memo strong { color: var(--color-bone); font-weight: 650; }
+
+/* ————— print: the sanction memo becomes bank paper ————— */
+@media print {
+  body {
+    background: #fff !important;
+    color: #111;
+  }
+  body::after { display: none; }
+  .memo h2, .memo p, .memo li, .memo strong { color: #111 !important; }
+  .memo h3 { color: #7a5a10 !important; }
+  .memo em { color: #555 !important; }
+  .memo code { color: #0a6b46 !important; background: #eef7f1 !important; }
+  .card {
+    background: #fff !important;
+    border-color: #ddd !important;
+    box-shadow: none !important;
+  }
+  .chip { color: #666 !important; border-color: #ccc !important; }
+  .label-caps { color: #888 !important; }
+}

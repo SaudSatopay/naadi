@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { DecisionChip, TierBadge } from "@/components/Chips";
@@ -6,7 +7,9 @@ import MemoPanel from "@/components/MemoPanel";
 import Radar6 from "@/components/Radar6";
 import ReasonLedger from "@/components/ReasonLedger";
 import ScoreDial from "@/components/ScoreDial";
+import ScoreHistory from "@/components/ScoreHistory";
 import Spark from "@/components/Spark";
+import StressLab from "@/components/StressLab";
 import TraceReplay from "@/components/TraceReplay";
 import WhatIf from "@/components/WhatIf";
 import { allMsmes, demo, msmeById } from "@/lib/data";
@@ -15,6 +18,20 @@ import type { Dim } from "@/lib/types";
 
 export function generateStaticParams() {
   return allMsmes().map((m) => ({ id: m.id }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}): Promise<Metadata> {
+  const { id } = await params;
+  const m = msmeById(id);
+  if (!m) return { title: "NAADI" };
+  return {
+    title: `${m.name} · NAADI ${m.scoring.score} ${m.scoring.grade}`,
+    description: m.story,
+  };
 }
 
 const DIM_ORDER: Dim[] = ["L", "S", "G", "R", "C", "K"];
@@ -37,14 +54,14 @@ export default async function HealthCard({
     <>
       <Header />
       <main className="mx-auto w-full max-w-6xl px-5 pb-20 flex-1">
-        <nav className="pt-6 rise">
+        <nav className="pt-6 rise print:hidden">
           <Link href="/" className="chip hover:text-bone transition-colors">
             ← back to the book
           </Link>
         </nav>
 
         {/* identity + dial + decision */}
-        <section className="mt-6 grid gap-4 lg:grid-cols-[1.15fr_auto_1fr]">
+        <section className="mt-6 grid gap-4 lg:grid-cols-[1.15fr_auto_1fr] print:hidden">
           <div className="card p-6 rise">
             <div className="flex items-center gap-2 flex-wrap">
               <span className="chip">{m.id}</span>
@@ -75,6 +92,14 @@ export default async function HealthCard({
                 <div className="label-caps">Monthly turnover (6-mo avg)</div>
                 <div className="mt-1 num text-sm text-marigold-300">{inrFull(m.monthly_turnover)}</div>
               </div>
+            </div>
+            <div className="mt-4 flex flex-wrap gap-2">
+              <span className="chip">
+                beats <b className="text-pulse-300 mx-1">{Math.round(m.benchmark.sector * 100)}%</b> of {m.benchmark.sector_name} peers
+              </span>
+              <span className="chip">
+                <b className="text-pulse-300 mr-1">{Math.round(m.benchmark.overall * 100)}th</b> percentile, all MSMEs
+              </span>
             </div>
             <div className="mt-5">
               <TraceReplay m={m} />
@@ -137,7 +162,7 @@ export default async function HealthCard({
         </section>
 
         {/* six dimensions */}
-        <section className="mt-4 grid gap-4 lg:grid-cols-[1fr_1.4fr]">
+        <section className="mt-4 grid gap-4 lg:grid-cols-[1fr_1.4fr] print:hidden">
           <div className="card p-5 rise rise-2">
             <h3 className="label-caps">The NAADI six — dimension radar</h3>
             <Radar6 scoring={m.scoring} />
@@ -181,8 +206,13 @@ export default async function HealthCard({
           </div>
         </section>
 
+        {/* score trajectory — the portfolio-radar money shot */}
+        <section className="mt-4 rise rise-2 print:hidden">
+          <ScoreHistory history={m.score_history} grade={m.scoring.grade} />
+        </section>
+
         {/* rails / trends */}
-        <section className="mt-4 grid gap-4 md:grid-cols-3 rise rise-3">
+        <section className="mt-4 grid gap-4 md:grid-cols-3 rise rise-3 print:hidden">
           {[
             { t: "GST turnover · 24 mo", v: m.series.turnover, c: "var(--color-pulse-400)" },
             { t: "UPI inflow · 24 mo", v: m.series.upi_inflow, c: "var(--color-marigold-400)" },
@@ -203,7 +233,7 @@ export default async function HealthCard({
         </section>
 
         {/* reasons + right rail */}
-        <section className="mt-4 grid gap-4 lg:grid-cols-[1.5fr_1fr]">
+        <section className="mt-4 grid gap-4 lg:grid-cols-[1.5fr_1fr] print:hidden">
           <div className="rise rise-2">
             <ReasonLedger positive={m.reasons.positive} negative={m.reasons.negative} />
           </div>
@@ -222,6 +252,7 @@ export default async function HealthCard({
                 </ul>
               </div>
             )}
+            <StressLab m={m} />
             <WhatIf m={m} />
             <div className="card p-5">
               <h3 className="label-caps">Early-warning triggers armed</h3>

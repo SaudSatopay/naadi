@@ -25,7 +25,7 @@ import polars as pl
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
-from naadi.explain import reason_codes, what_if                      # noqa: E402
+from naadi.explain import reason_codes, stress_test, what_if         # noqa: E402
 from naadi.features import DIM_META, extract_features, population_frame  # noqa: E402
 from naadi.generate import MONTHS, generate_demo_msmes, generate_population  # noqa: E402
 from naadi.limits import recommend                                   # noqa: E402
@@ -84,7 +84,27 @@ def main() -> None:
         sc = scorer.score(f, rec_raw["tier"])
         reasons = reason_codes(scorer, f)
         tips = what_if(scorer, f, rec_raw["tier"], sc["score"])
+        stress = stress_test(scorer, f, rec_raw["tier"], sc["score"])
         monthly_turnover = float(np.mean(rec_raw["turnover"][-6:]))
+
+        # Rolling rescore: "what would NAADI have said each month?" — the
+        # portfolio-radar view. Series features recompute on each window;
+        # point-in-time scalars carry.
+        history = []
+        for k in range(13, MONTHS + 1):
+            rec_k = {
+                **rec_raw,
+                "turnover": rec_raw["turnover"][:k],
+                "upi_inflow": rec_raw["upi_inflow"][:k],
+                "balance_series": rec_raw["balance_series"][:k],
+                "filing_delay": rec_raw["filing_delay"][:k],
+                "upi_txn_count": rec_raw["upi_txn_count"][:k],
+            }
+            fk = extract_features(rec_k)
+            history.append({
+                "month": MONTH_LABELS[k - 1],
+                "score": scorer.score(fk, rec_raw["tier"])["score"],
+            })
         recommendation = recommend(
             sc["grade"], f,
             monthly_inflow=monthly_turnover,
@@ -107,6 +127,13 @@ def main() -> None:
             "scoring": sc,
             "reasons": reasons,
             "what_if": tips,
+            "stress": stress,
+            "score_history": history,
+            "benchmark": {
+                "overall": round(scorer.percentile(sc["score"]), 3),
+                "sector": round(scorer.percentile(sc["score"], rec_raw["sector"]), 3),
+                "sector_name": rec_raw["sector"],
+            },
             "recommendation": recommendation,
             "red_flags": red_flags(f, recommendation),
             "features": {k: round(float(v), 4) for k, v in f.items()},

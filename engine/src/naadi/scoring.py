@@ -63,6 +63,8 @@ class NaadiScorer:
         self.logit_lo: float = -6.0
         self.logit_hi: float = 0.0
         self.metrics: dict = {}
+        self.pop_scores: np.ndarray | None = None        # population benchmark
+        self.sector_scores: dict[str, np.ndarray] = {}
 
     # ------------------------------------------------------------------ train
     def fit(self, df: pl.DataFrame) -> dict:
@@ -101,6 +103,15 @@ class NaadiScorer:
         raw_tr = comp.predict_proba(sub[tr])[:, 1]
         lo_hi = np.percentile(_logit(raw_tr), [1, 99])
         self.logit_lo, self.logit_hi = float(lo_hi[0]), float(lo_hi[1])
+
+        # Peer benchmarks: full-population and per-sector score distributions
+        raw_all = comp.predict_proba(sub)[:, 1]
+        span = self.logit_hi - self.logit_lo
+        scores_all = np.clip(300 + 600 * (self.logit_hi - _logit(raw_all)) / span, 300, 900)
+        self.pop_scores = np.sort(scores_all)
+        sectors = df["sector"].to_numpy()
+        for sec in np.unique(sectors):
+            self.sector_scores[str(sec)] = np.sort(scores_all[sectors == sec])
 
         # Held-out test metrics
         raw_te = comp.predict_proba(sub[te])[:, 1]
@@ -154,6 +165,13 @@ class NaadiScorer:
             "grade": grade,
             "posture": posture,
         }
+
+    def percentile(self, score: float, sector: str | None = None) -> float:
+        """Share of peers scoring at or below `score` (0..1)."""
+        arr = self.sector_scores.get(sector or "", self.pop_scores)
+        if arr is None or not len(arr):
+            return 0.5
+        return float(np.searchsorted(arr, score, side="right") / len(arr))
 
     @property
     def points_per_logit(self) -> float:

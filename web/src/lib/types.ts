@@ -54,6 +54,9 @@ export interface Msme {
   scoring: Scoring;
   reasons: { positive: ReasonEntry[]; negative: ReasonEntry[] };
   what_if: { action: string; delta: number; new_score: number }[];
+  stress: { scenario: string; score: number; delta: number; grade: string }[];
+  score_history: { month: string; score: number }[];
+  benchmark: { overall: number; sector: number; sector_name: string };
   recommendation: Recommendation;
   red_flags: string[];
   features: Record<string, number>;

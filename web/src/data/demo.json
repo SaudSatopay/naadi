@@ -155,6 +155,75 @@
      "new_score": 785
     }
    ],
+   "stress": [
+    {
+     "scenario": "Revenue shock \u221220% for two quarters",
+     "score": 759,
+     "delta": -3,
+     "grade": "A"
+    },
+    {
+     "scenario": "Anchor payer delays receipts by 60 days",
+     "score": 745,
+     "delta": -17,
+     "grade": "A"
+    }
+   ],
+   "score_history": [
+    {
+     "month": "Jul '25",
+     "score": 760
+    },
+    {
+     "month": "Aug '25",
+     "score": 760
+    },
+    {
+     "month": "Sep '25",
+     "score": 760
+    },
+    {
+     "month": "Oct '25",
+     "score": 778
+    },
+    {
+     "month": "Nov '25",
+     "score": 762
+    },
+    {
+     "month": "Dec '25",
+     "score": 762
+    },
+    {
+     "month": "Jan '26",
+     "score": 771
+    },
+    {
+     "month": "Feb '26",
+     "score": 786
+    },
+    {
+     "month": "Mar '26",
+     "score": 780
+    },
+    {
+     "month": "Apr '26",
+     "score": 780
+    },
+    {
+     "month": "May '26",
+     "score": 762
+    },
+    {
+     "month": "Jun '26",
+     "score": 762
+    }
+   ],
+   "benchmark": {
+    "overall": 0.822,
+    "sector": 0.784,
+    "sector_name": "Retail Trade"
+   },
    "recommendation": {
     "decision": "APPROVE",
     "decision_label": "Approve",
@@ -482,6 +551,75 @@
     ]
    },
    "what_if": [],
+   "stress": [
+    {
+     "scenario": "Revenue shock \u221220% for two quarters",
+     "score": 711,
+     "delta": 0,
+     "grade": "B"
+    },
+    {
+     "scenario": "Anchor payer delays receipts by 60 days",
+     "score": 676,
+     "delta": -35,
+     "grade": "B"
+    }
+   ],
+   "score_history": [
+    {
+     "month": "Jul '25",
+     "score": 675
+    },
+    {
+     "month": "Aug '25",
+     "score": 675
+    },
+    {
+     "month": "Sep '25",
+     "score": 674
+    },
+    {
+     "month": "Oct '25",
+     "score": 674
+    },
+    {
+     "month": "Nov '25",
+     "score": 674
+    },
+    {
+     "month": "Dec '25",
+     "score": 674
+    },
+    {
+     "month": "Jan '26",
+     "score": 674
+    },
+    {
+     "month": "Feb '26",
+     "score": 675
+    },
+    {
+     "month": "Mar '26",
+     "score": 675
+    },
+    {
+     "month": "Apr '26",
+     "score": 678
+    },
+    {
+     "month": "May '26",
+     "score": 711
+    },
+    {
+     "month": "Jun '26",
+     "score": 711
+    }
+   ],
+   "benchmark": {
+    "overall": 0.733,
+    "sector": 0.718,
+    "sector_name": "Textiles"
+   },
    "recommendation": {
     "decision": "APPROVE",
     "decision_label": "Approve",
@@ -818,6 +956,75 @@
      "new_score": 445
     }
    ],
+   "stress": [
+    {
+     "scenario": "Revenue shock \u221220% for two quarters",
+     "score": 424,
+     "delta": -18,
+     "grade": "E"
+    },
+    {
+     "scenario": "Anchor payer delays receipts by 60 days",
+     "score": 421,
+     "delta": -21,
+     "grade": "E"
+    }
+   ],
+   "score_history": [
+    {
+     "month": "Jul '25",
+     "score": 457
+    },
+    {
+     "month": "Aug '25",
+     "score": 458
+    },
+    {
+     "month": "Sep '25",
+     "score": 458
+    },
+    {
+     "month": "Oct '25",
+     "score": 458
+    },
+    {
+     "month": "Nov '25",
+     "score": 458
+    },
+    {
+     "month": "Dec '25",
+     "score": 458
+    },
+    {
+     "month": "Jan '26",
+     "score": 454
+    },
+    {
+     "month": "Feb '26",
+     "score": 443
+    },
+    {
+     "month": "Mar '26",
+     "score": 424
+    },
+    {
+     "month": "Apr '26",
+     "score": 426
+    },
+    {
+     "month": "May '26",
+     "score": 442
+    },
+    {
+     "month": "Jun '26",
+     "score": 442
+    }
+   ],
+   "benchmark": {
+    "overall": 0.086,
+    "sector": 0.06,
+    "sector_name": "Manufacturing"
+   },
    "recommendation": {
     "decision": "DECLINE",
     "decision_label": "Decline with improvement path",
@@ -1158,6 +1365,75 @@
      "new_score": 636
     }
    ],
+   "stress": [
+    {
+     "scenario": "Revenue shock \u221220% for two quarters",
+     "score": 632,
+     "delta": 0,
+     "grade": "C"
+    },
+    {
+     "scenario": "Anchor payer delays receipts by 60 days",
+     "score": 620,
+     "delta": -12,
+     "grade": "C"
+    }
+   ],
+   "score_history": [
+    {
+     "month": "Jul '25",
+     "score": 618
+    },
+    {
+     "month": "Aug '25",
+     "score": 618
+    },
+    {
+     "month": "Sep '25",
+     "score": 583
+    },
+    {
+     "month": "Oct '25",
+     "score": 583
+    },
+    {
+     "month": "Nov '25",
+     "score": 583
+    },
+    {
+     "month": "Dec '25",
+     "score": 591
+    },
+    {
+     "month": "Jan '26",
+     "score": 591
+    },
+    {
+     "month": "Feb '26",
+     "score": 591
+    },
+    {
+     "month": "Mar '26",
+     "score": 591
+    },
+    {
+     "month": "Apr '26",
+     "score": 591
+    },
+    {
+     "month": "May '26",
+     "score": 632
+    },
+    {
+     "month": "Jun '26",
+     "score": 632
+    }
+   ],
+   "benchmark": {
+    "overall": 0.508,
+    "sector": 0.545,
+    "sector_name": "Food Services"
+   },
    "recommendation": {
     "decision": "REFER",
     "decision_label": "Refer to credit committee",
@@ -1484,6 +1760,75 @@
      "new_score": 809
     }
    ],
+   "stress": [
+    {
+     "scenario": "Revenue shock \u221220% for two quarters",
+     "score": 780,
+     "delta": -25,
+     "grade": "A"
+    },
+    {
+     "scenario": "Anchor payer delays receipts by 60 days",
+     "score": 760,
+     "delta": -45,
+     "grade": "A"
+    }
+   ],
+   "score_history": [
+    {
+     "month": "Jul '25",
+     "score": 773
+    },
+    {
+     "month": "Aug '25",
+     "score": 805
+    },
+    {
+     "month": "Sep '25",
+     "score": 778
+    },
+    {
+     "month": "Oct '25",
+     "score": 773
+    },
+    {
+     "month": "Nov '25",
+     "score": 773
+    },
+    {
+     "month": "Dec '25",
+     "score": 805
+    },
+    {
+     "month": "Jan '26",
+     "score": 805
+    },
+    {
+     "month": "Feb '26",
+     "score": 805
+    },
+    {
+     "month": "Mar '26",
+     "score": 805
+    },
+    {
+     "month": "Apr '26",
+     "score": 805
+    },
+    {
+     "month": "May '26",
+     "score": 805
+    },
+    {
+     "month": "Jun '26",
+     "score": 805
+    }
+   ],
+   "benchmark": {
+    "overall": 0.885,
+    "sector": 0.819,
+    "sector_name": "Pharma Trade"
+   },
    "recommendation": {
     "decision": "APPROVE",
     "decision_label": "Approve",
@@ -1815,6 +2160,75 @@
      "new_score": 624
     }
    ],
+   "stress": [
+    {
+     "scenario": "Revenue shock \u221220% for two quarters",
+     "score": 621,
+     "delta": 0,
+     "grade": "C"
+    },
+    {
+     "scenario": "Anchor payer delays receipts by 60 days",
+     "score": 599,
+     "delta": -22,
+     "grade": "C"
+    }
+   ],
+   "score_history": [
+    {
+     "month": "Jul '25",
+     "score": 622
+    },
+    {
+     "month": "Aug '25",
+     "score": 617
+    },
+    {
+     "month": "Sep '25",
+     "score": 617
+    },
+    {
+     "month": "Oct '25",
+     "score": 614
+    },
+    {
+     "month": "Nov '25",
+     "score": 614
+    },
+    {
+     "month": "Dec '25",
+     "score": 611
+    },
+    {
+     "month": "Jan '26",
+     "score": 611
+    },
+    {
+     "month": "Feb '26",
+     "score": 614
+    },
+    {
+     "month": "Mar '26",
+     "score": 614
+    },
+    {
+     "month": "Apr '26",
+     "score": 619
+    },
+    {
+     "month": "May '26",
+     "score": 621
+    },
+    {
+     "month": "Jun '26",
+     "score": 621
+    }
+   ],
+   "benchmark": {
+    "overall": 0.469,
+    "sector": 0.543,
+    "sector_name": "Agri Inputs"
+   },
    "recommendation": {
     "decision": "REFER",
     "decision_label": "Refer to credit committee",
@@ -2151,6 +2565,75 @@
      "new_score": 636
     }
    ],
+   "stress": [
+    {
+     "scenario": "Revenue shock \u221220% for two quarters",
+     "score": 632,
+     "delta": 0,
+     "grade": "C"
+    },
+    {
+     "scenario": "Anchor payer delays receipts by 60 days",
+     "score": 622,
+     "delta": -10,
+     "grade": "C"
+    }
+   ],
+   "score_history": [
+    {
+     "month": "Jul '25",
+     "score": 621
+    },
+    {
+     "month": "Aug '25",
+     "score": 621
+    },
+    {
+     "month": "Sep '25",
+     "score": 632
+    },
+    {
+     "month": "Oct '25",
+     "score": 632
+    },
+    {
+     "month": "Nov '25",
+     "score": 628
+    },
+    {
+     "month": "Dec '25",
+     "score": 628
+    },
+    {
+     "month": "Jan '26",
+     "score": 632
+    },
+    {
+     "month": "Feb '26",
+     "score": 632
+    },
+    {
+     "month": "Mar '26",
+     "score": 632
+    },
+    {
+     "month": "Apr '26",
+     "score": 632
+    },
+    {
+     "month": "May '26",
+     "score": 632
+    },
+    {
+     "month": "Jun '26",
+     "score": 632
+    }
+   ],
+   "benchmark": {
+    "overall": 0.508,
+    "sector": 0.612,
+    "sector_name": "Apparel Retail"
+   },
    "recommendation": {
     "decision": "REFER",
     "decision_label": "Refer to credit committee",
@@ -2480,6 +2963,75 @@
      "new_score": 550
     }
    ],
+   "stress": [
+    {
+     "scenario": "Revenue shock \u221220% for two quarters",
+     "score": 543,
+     "delta": 0,
+     "grade": "D"
+    },
+    {
+     "scenario": "Anchor payer delays receipts by 60 days",
+     "score": 517,
+     "delta": -26,
+     "grade": "D"
+    }
+   ],
+   "score_history": [
+    {
+     "month": "Jul '25",
+     "score": 538
+    },
+    {
+     "month": "Aug '25",
+     "score": 539
+    },
+    {
+     "month": "Sep '25",
+     "score": 545
+    },
+    {
+     "month": "Oct '25",
+     "score": 543
+    },
+    {
+     "month": "Nov '25",
+     "score": 543
+    },
+    {
+     "month": "Dec '25",
+     "score": 543
+    },
+    {
+     "month": "Jan '26",
+     "score": 544
+    },
+    {
+     "month": "Feb '26",
+     "score": 546
+    },
+    {
+     "month": "Mar '26",
+     "score": 544
+    },
+    {
+     "month": "Apr '26",
+     "score": 544
+    },
+    {
+     "month": "May '26",
+     "score": 543
+    },
+    {
+     "month": "Jun '26",
+     "score": 543
+    }
+   ],
+   "benchmark": {
+    "overall": 0.254,
+    "sector": 0.41,
+    "sector_name": "Construction"
+   },
    "recommendation": {
     "decision": "SMALL_TICKET",
     "decision_label": "Offer starter product",
