@@ -1,0 +1,451 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>NAADI — IDBI Innovate 2026 · Track 03</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Archivo:wght@400;500;600;700&family=Spline+Sans+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink0:#070f0c; --ink1:#0b1512; --ink2:#0e1a16; --ink3:#122019;
+    --line:#1e332a; --line2:#24382e;
+    --pulse:#3be39a; --pulse2:#1fc77e; --gold:#e9b44c; --gold2:#f2cb7c;
+    --verm:#f0564a; --bone:#ecf4ee; --sage:#8ea79a; --dim:#5f7a6d;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{font-family:'Archivo',sans-serif;color:var(--bone);background:var(--ink0)}
+  @page{size:13.333in 7.5in;margin:0}
+  .slide{position:relative;width:13.333in;height:7.5in;overflow:hidden;page-break-after:always;
+    background:
+      radial-gradient(900px 420px at 14% -10%, rgba(59,227,154,.08), transparent 60%),
+      radial-gradient(760px 380px at 96% 6%, rgba(233,180,76,.06), transparent 55%),
+      repeating-linear-gradient(to bottom, transparent 0 30px, rgba(142,167,154,.045) 30px 31px),
+      var(--ink0);
+    padding:.62in .75in .5in}
+  .disp{font-family:'Fraunces',serif}
+  .num{font-family:'Spline Sans Mono',monospace;font-variant-numeric:tabular-nums}
+  .caps{font-family:'Spline Sans Mono',monospace;text-transform:uppercase;letter-spacing:.16em;color:var(--dim);font-size:9.5px}
+  .chip{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line2);border-radius:999px;
+    padding:4px 12px;font-family:'Spline Sans Mono',monospace;font-size:9.5px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--sage);white-space:nowrap}
+  .chip b{color:var(--pulse);font-weight:600}
+  .chip.gold{color:var(--gold);border-color:rgba(233,180,76,.4)}
+  .chip.red{color:var(--verm);border-color:rgba(240,86,74,.4)}
+  .card{background:linear-gradient(180deg,var(--ink2),var(--ink1));border:1px solid var(--line);
+    border-radius:14px;box-shadow:inset 0 1px 0 rgba(236,244,238,.04)}
+  .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:.28in}
+  .foot{position:absolute;left:.75in;right:.75in;bottom:.34in;display:flex;justify-content:space-between;
+    align-items:center;border-top:1px solid var(--line);padding-top:10px}
+  .foot span{font-family:'Spline Sans Mono',monospace;font-size:8.5px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--dim)}
+  .g{color:var(--pulse)} .y{color:var(--gold)} .r{color:var(--verm)} .s{color:var(--sage)}
+  h1{font-weight:500} h2{font-family:'Fraunces',serif;font-weight:500;font-size:34px;line-height:1.08;margin:6px 0 4px}
+  .lead{color:var(--sage);font-size:12.5px;line-height:1.55;max-width:7.6in}
+  table{border-collapse:collapse;width:100%}
+  th{font-family:'Spline Sans Mono',monospace;font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--dim);text-align:left;padding:7px 10px;border-bottom:1px solid var(--line2)}
+  td{font-size:11px;padding:9.5px 10px;border-bottom:1px solid var(--line);vertical-align:middle}
+  td.sc{white-space:nowrap}
+  .ecg{width:100%;height:30px}
+</style>
+</head>
+<body>
+
+<!-- ============ 01 · COVER ============ -->
+<section class="slide" style="display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center">
+  <div style="position:absolute;top:.62in;left:.75in;display:flex;gap:8px">
+    <span class="chip gold">IDBI Innovate 2026 · Track 03</span>
+    <span class="chip">Financial Health Score</span>
+  </div>
+  <div style="position:absolute;top:.62in;right:.75in"><span class="chip">“Build. Integrate. Transform.”</span></div>
+
+  <svg class="ecg" style="height:44px;max-width:9.4in;margin-bottom:.34in" viewBox="0 0 900 44">
+    <defs><linearGradient id="f1" x1="0" x2="1">
+      <stop offset="0" stop-color="#3be39a" stop-opacity="0"/><stop offset=".14" stop-color="#3be39a" stop-opacity=".95"/>
+      <stop offset=".86" stop-color="#3be39a" stop-opacity=".95"/><stop offset="1" stop-color="#3be39a" stop-opacity="0"/>
+    </linearGradient></defs>
+    <path d="M0,22 L150,22 L166,22 L174,12 L182,30 L190,22 L280,22 L294,3 L308,41 L322,22 L440,22 L456,16 L472,22 L580,22 L594,3 L608,41 L622,22 L730,22 L744,12 L758,30 L772,22 L900,22"
+      stroke="url(#f1)" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+
+  <h1 class="disp" style="font-size:110px;letter-spacing:-.01em;line-height:.95">NAADI</h1>
+  <div class="disp" style="font-size:30px;color:var(--sage);margin-top:2px">नाड़ी <span style="font-size:16px">·</span> <em>the pulse</em></div>
+
+  <p class="disp" style="font-style:italic;font-size:21px;max-width:8.6in;margin-top:.32in;line-height:1.4;color:var(--bone)">
+    Reading the financial pulse of businesses<br>the balance sheet never sees.</p>
+
+  <p class="lead" style="margin-top:.2in;max-width:8in">An AI-native <b style="color:var(--bone)">MSME Financial Health Card</b> and
+    <b style="color:var(--bone)">Munshi</b>, an agentic underwriting copilot — GST · UPI · Account Aggregator · EPFO,
+    fused into a score, a reason, a decision, and a memo.</p>
+
+  <div style="display:flex;gap:10px;margin-top:.3in">
+    <span class="chip">held-out AUROC <b>0.871</b></span>
+    <span class="chip">KS <b>0.576</b></span>
+    <span class="chip">live demo <b>naadi-kappa.vercel.app</b></span>
+  </div>
+
+  <div style="position:absolute;right:.75in;bottom:.62in;display:flex;align-items:center;gap:12px">
+    <div style="text-align:right">
+      <div class="caps" style="color:var(--sage)">scan for the live console</div>
+      <div class="num" style="font-size:10px;color:var(--pulse);margin-top:3px">naadi-kappa.vercel.app</div>
+    </div>
+    <img src="qr-live.png" style="width:.92in;height:.92in;border-radius:10px;border:4px solid #fff">
+  </div>
+  <div style="position:absolute;left:.75in;bottom:.62in;text-align:left">
+    <div class="caps">team naadi · concept build</div>
+    <div class="num" style="font-size:10px;color:var(--sage);margin-top:3px">github.com/SaudSatopay/naadi</div>
+  </div>
+</section>
+
+<!-- ============ 02 · THE GAP ============ -->
+<section class="slide">
+  <div class="top"><span class="caps">the problem, as the bank stated it</span><span class="caps">02 / 08</span></div>
+  <h2 style="font-size:40px;max-width:10.5in">India's credit engine reads balance sheets.<br>
+    <em class="g">Most of India's businesses don't have one.</em></h2>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;margin-top:.35in">
+    <div class="card" style="padding:22px">
+      <div class="disp num" style="font-size:58px;color:var(--pulse)">6.4 Cr+</div>
+      <div class="caps" style="margin-top:6px;color:var(--sage)">registered MSMEs — Bharat's real economy</div>
+    </div>
+    <div class="card" style="padding:22px">
+      <div class="disp num" style="font-size:58px;color:var(--gold)">₹25L Cr</div>
+      <div class="caps" style="margin-top:6px;color:var(--sage)">estimated credit gap (IFC est.) — demand nobody can underwrite</div>
+    </div>
+    <div class="card" style="padding:22px">
+      <div class="disp num" style="font-size:58px;color:var(--verm)">0</div>
+      <div class="caps" style="margin-top:6px;color:var(--sage)">unified frameworks turning alternate data into decisions</div>
+    </div>
+  </div>
+
+  <div style="display:flex;gap:10px;margin-top:.32in;align-items:center">
+    <span class="chip">GST — real turnover, filing discipline</span>
+    <span class="chip">UPI — the daily revenue pulse</span>
+    <span class="chip">Account Aggregator — cash reality</span>
+    <span class="chip">EPFO — formal employment</span>
+    <span class="caps" style="margin-left:8px;color:var(--verm)">← four consented rails, sitting unused</span>
+  </div>
+
+  <p class="disp" style="font-style:italic;font-size:27px;margin-top:.66in;color:var(--bone);max-width:11in;line-height:1.5">
+    New-to-Credit ≠ not creditworthy. The borrowers exist. The data exists.
+    <span class="g" style="font-style:normal;font-weight:600">The bridge doesn't. NAADI is the bridge.</span></p>
+
+  <div class="foot"><span>naadi · idbi innovate 2026</span><span>high rejection rates · missed viable borrowers · slow inclusion — the bank's own framing</span></div>
+</section>
+
+<!-- ============ 03 · THE LOOP ============ -->
+<section class="slide">
+  <div class="top"><span class="caps">what naadi does</span><span class="caps">03 / 08</span></div>
+  <h2>One pulse, five superpowers.</h2>
+  <p class="lead">Most entries train a model and show a number. A number is not a product — NAADI closes the whole loop.</p>
+
+  <div style="display:flex;align-items:center;gap:10px;margin:.3in 0 .28in">
+    <span class="chip" style="border-color:rgba(59,227,154,.5);color:var(--pulse)">score</span><span class="s">→</span>
+    <span class="chip" style="border-color:rgba(59,227,154,.5);color:var(--pulse)">reasons</span><span class="s">→</span>
+    <span class="chip" style="border-color:rgba(59,227,154,.5);color:var(--pulse)">decision</span><span class="s">→</span>
+    <span class="chip" style="border-color:rgba(59,227,154,.5);color:var(--pulse)">memo</span><span class="s">→</span>
+    <span class="chip" style="border-color:rgba(59,227,154,.5);color:var(--pulse)">monitoring</span>
+    <span class="caps" style="margin-left:10px">most entries stop at step one</span>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:.1in">
+    <style>.sp{min-height:2.5in;padding:20px 16px !important}</style>
+    <div class="card sp" style="padding:16px"><div style="font-size:22px">🩺</div><div class="disp" style="font-size:15px;margin:7px 0 5px">The Health Card</div>
+      <p style="font-size:10px;color:var(--sage);line-height:1.5">Six dimensions — L·S·G·R·C·K — into a calibrated PD(12m) and a 300–900 score <b style="color:var(--bone)">with an honest confidence band</b>.</p>
+    </div>
+    <div class="card sp" style="padding:16px"><div style="font-size:22px">🔍</div><div class="disp" style="font-size:15px;margin:7px 0 5px">Glass-box scoring</div>
+      <p style="font-size:10px;color:var(--sage);line-height:1.5">Monotone scorecards + TreeSHAP reason codes. <b style="color:var(--bone)">“More bounces can never raise the score.”</b></p>
+    </div>
+    <div class="card sp" style="padding:16px"><div style="font-size:22px">🪄</div><div class="disp" style="font-size:15px;margin:7px 0 5px">The what-if engine</div>
+      <p style="font-size:10px;color:var(--sage);line-height:1.5">“File GSTR-3B on time 3 months → <b class="g">+24 pts</b>.” Every decline ships with a comeback path.</p>
+    </div>
+    <div class="card sp" style="padding:16px"><div style="font-size:22px">📉</div><div class="disp" style="font-size:15px;margin:7px 0 5px">Portfolio radar</div>
+      <p style="font-size:10px;color:var(--sage);line-height:1.5">Rolling 12-month rescore — deterioration surfaces <b style="color:var(--bone)">quarters before default</b>. Origination <i>and</i> monitoring.</p>
+    </div>
+    <div class="card sp" style="padding:16px;border-color:rgba(233,180,76,.35)"><div style="font-size:22px">🧾</div><div class="disp" style="font-size:15px;margin:7px 0 5px">Munshi, the copilot</div>
+      <p style="font-size:10px;color:var(--sage);line-height:1.5">An agentic pipeline drafts the sanction memo. <b class="y">The LLM writes prose, never numbers.</b></p>
+    </div>
+  </div>
+
+  <div style="display:flex;gap:9px;margin-top:.42in">
+    <span class="chip">⌘K command palette</span><span class="chip">stress lab — rescored, not guessed</span>
+    <span class="chip">peer percentiles per sector</span><span class="chip">replayable agentic run</span>
+    <span class="chip">print-ready sanction memo</span><span class="chip">POST /score decision API</span>
+  </div>
+
+  <div class="foot"><span>naadi · idbi innovate 2026</span><span>consent-first · dpdp-aligned · uli / ocen / aa native</span></div>
+</section>
+
+<!-- ============ 04 · ANATOMY ============ -->
+<section class="slide">
+  <div class="top"><span class="caps">the health card, dissected — real engine output</span><span class="caps">04 / 08</span></div>
+
+  <div style="display:grid;grid-template-columns:3.2in 3.1in 1fr;gap:16px;align-items:stretch;height:4.6in">
+    <!-- gauge card -->
+    <div class="card" style="padding:18px;text-align:center">
+      <div class="caps" style="text-align:left">msme-2401 · chandra kirana stores, indore</div>
+      <div class="caps" style="text-align:left;color:var(--gold);margin-top:3px">tier T1 — upi-first thin file · no bureau record</div>
+      <svg viewBox="0 0 220 130" style="width:100%;margin-top:8px">
+        <path d="M 20 115 A 90 90 0 0 1 200 115" stroke="#1a2c24" stroke-width="9" fill="none" stroke-linecap="round"/>
+        <path d="M 20 115 A 90 90 0 0 1 200 115" stroke="#3be39a" stroke-width="9" fill="none" stroke-linecap="round"
+          pathLength="100" stroke-dasharray="77 23"/>
+        <line x1="110" y1="115" x2="167" y2="53" stroke="#ecf4ee" stroke-width="1.8"/>
+        <circle cx="110" cy="115" r="4.5" fill="#1a2c24" stroke="#ecf4ee" stroke-width="1.4"/>
+        <text x="20" y="128" font-family="Spline Sans Mono" font-size="8" fill="#5f7a6d">300</text>
+        <text x="188" y="128" font-family="Spline Sans Mono" font-size="8" fill="#5f7a6d">900</text>
+      </svg>
+      <div class="disp num" style="font-size:54px;color:var(--pulse);line-height:1;margin-top:-30px">762 <span style="font-size:16px;color:var(--sage)">± 40</span></div>
+      <div style="margin-top:8px;display:flex;gap:8px;justify-content:center">
+        <span class="chip" style="color:var(--pulse);border-color:rgba(59,227,154,.5)">grade A</span>
+        <span class="chip">PD 12m · 1.4%</span>
+      </div>
+      <div style="margin-top:10px;display:flex;gap:6px;justify-content:center;flex-wrap:wrap">
+        <span class="chip">beats <b>78%</b> of retail trade peers</span>
+      </div>
+    </div>
+
+    <!-- radar card -->
+    <div class="card" style="padding:18px">
+      <div class="caps">the naadi six — dimension radar</div>
+      <svg viewBox="0 0 220 214" style="width:100%;margin-top:4px">
+        <g transform="translate(110,108)" stroke="#1e332a" fill="none">
+          <polygon points="0,-88 76.2,-44 76.2,44 0,88 -76.2,44 -76.2,-44"/>
+          <polygon points="0,-66 57.2,-33 57.2,33 0,66 -57.2,33 -57.2,-33"/>
+          <polygon points="0,-44 38.1,-22 38.1,22 0,44 -38.1,22 -38.1,-22"/>
+          <polygon points="0,-22 19.1,-11 19.1,11 0,22 -19.1,11 -19.1,-11"/>
+          <line x1="0" y1="0" x2="0" y2="-88"/><line x1="0" y1="0" x2="76.2" y2="-44"/>
+          <line x1="0" y1="0" x2="76.2" y2="44"/><line x1="0" y1="0" x2="0" y2="88"/>
+          <line x1="0" y1="0" x2="-76.2" y2="44"/><line x1="0" y1="0" x2="-76.2" y2="-44"/>
+          <polygon points="0,-73.3 67.3,-38.9 50.0,28.9 0,78.9 -62.5,36.1 -63.1,-36.4"
+            fill="rgba(59,227,154,.16)" stroke="#3be39a" stroke-width="2"/>
+        </g>
+        <g font-family="Spline Sans Mono" font-size="8.5" fill="#8ea79a">
+          <text x="110" y="10" text-anchor="middle">L · liquidity 83</text>
+          <text x="218" y="60" text-anchor="end">S · stability 88</text>
+          <text x="218" y="162" text-anchor="end">G · growth 66</text>
+          <text x="110" y="208" text-anchor="middle">R · repayment 90</text>
+          <text x="2" y="162" text-anchor="start">C · compliance 82</text>
+          <text x="2" y="60" text-anchor="start">K · concentr. 83</text>
+        </g>
+      </svg>
+    </div>
+
+    <!-- reasons + decision -->
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <div class="card" style="padding:16px;flex:1">
+        <div class="caps">reason codes — treeshap, in score points</div>
+        <div style="margin-top:10px;font-size:10.5px;display:grid;gap:8px">
+          <div style="display:flex;justify-content:space-between;gap:10px"><span class="s">EPFO regular · <b style="color:var(--bone)">22-month on-time GST streak</b></span><b class="num g">+88.2</b></div>
+          <div style="display:flex;justify-content:space-between;gap:10px"><span class="s">Diversified payers — top-3 only 13% of revenue</span><b class="num g">+25.9</b></div>
+          <div style="display:flex;justify-content:space-between;gap:10px"><span class="s">Steady cash engine, tame volatility</span><b class="num g">+20.9</b></div>
+          <div style="display:flex;justify-content:space-between;gap:10px"><span class="s">Soft recent patch — new-payer rate cooling</span><b class="num r">−7.7</b></div>
+          <div style="border-top:1px solid var(--line);padding-top:8px;display:flex;justify-content:space-between;gap:10px">
+            <span class="s">what-if: on-time GSTR-3B ×3 months</span><b class="num g">+24 → 786</b></div>
+        </div>
+      </div>
+      <div class="card" style="padding:16px;border-color:rgba(233,180,76,.4)">
+        <div class="caps" style="color:var(--gold)">munshi recommends · approve</div>
+        <div class="disp num" style="font-size:30px;color:var(--gold2);margin-top:6px">₹9.2 L <span style="font-size:12px;color:var(--sage)">/ 36 months</span></div>
+        <div class="num" style="font-size:9.5px;color:var(--sage);margin-top:5px">EMI room ₹37,743 · GST-filing covenant · flow-routing covenant · 3 EWS triggers armed</div>
+      </div>
+    </div>
+  </div>
+
+  <p class="disp" style="font-style:italic;font-size:19px;margin-top:.42in;color:var(--bone)">
+    No balance sheet. No bureau file. <span class="g">A real, defensible, explainable approval — in seconds.</span>
+    <span class="s" style="font-size:13px">The ± 40 band is the thin-file tier being honest.</span></p>
+
+  <div class="foot"><span>naadi · idbi innovate 2026</span><span>every number above computed by the trained engine — not a mock-up</span></div>
+</section>
+
+<!-- ============ 05 · THE BOOK ============ -->
+<section class="slide">
+  <div class="top"><span class="caps">the demo book — eight files, scored by the trained brain</span><span class="caps">05 / 08</span></div>
+
+  <div style="display:grid;grid-template-columns:7.5in 1fr;gap:18px">
+    <div class="card" style="padding:6px 8px">
+      <table>
+        <tr><th>file</th><th>who</th><th>tier</th><th>score</th><th>grade</th><th>pd 12m</th><th>munshi says</th></tr>
+        <tr><td class="num s">2401</td><td><b>Chandra Kirana Stores</b> · Indore — the hero</td><td class="num">T1</td><td class="num g sc"><b>762 ± 40</b></td><td class="num g">A</td><td class="num">1.4%</td><td class="g">✓ Approve ₹9.2L / 36mo</td></tr>
+        <tr><td class="num s">2405</td><td><b>Shree Balaji Pharma</b> · Nagpur — the benchmark</td><td class="num">T3</td><td class="num g sc">805 ± 15</td><td class="num g">A+</td><td class="num">&lt;0.1%</td><td class="g">✓ Pre-approved</td></tr>
+        <tr><td class="num s">2402</td><td><b>Meenakshi Textiles</b> · Surat — one buyer = 56%</td><td class="num">T3</td><td class="num g sc">711 ± 15</td><td class="num g">B</td><td class="num">2.0%</td><td class="g">✓ Approve + concentration covenant</td></tr>
+        <tr><td class="num s">2404</td><td><b>Blue Tiffin Kitchens</b> · Bengaluru — hyper-growth</td><td class="num">T2</td><td class="num y sc">632 ± 25</td><td class="num y">C</td><td class="num">6.5%</td><td class="y">◐ Refer</td></tr>
+        <tr><td class="num s">2407</td><td><b>Noor Fashion House</b> · Lucknow — formalising fast</td><td class="num">T1</td><td class="num y sc">632 ± 40</td><td class="num y">C</td><td class="num">6.5%</td><td class="y">◐ Refer</td></tr>
+        <tr><td class="num s">2406</td><td><b>Kaveri Agri Tools</b> · Coimbatore — monsoon cycles</td><td class="num">T2</td><td class="num y sc">621 ± 25</td><td class="num y">C</td><td class="num">6.5%</td><td class="y">◐ Refer</td></tr>
+        <tr><td class="num s">2408</td><td><b>Ganpati Constructions</b> · Ahmedabad — lumpy receivables</td><td class="num">T2</td><td class="num sc" style="color:#e98a3c">543 ± 25</td><td class="num" style="color:#e98a3c">D</td><td class="num">21.9%</td><td style="color:#e98a3c">◔ Starter product</td></tr>
+        <tr><td class="num s">2403</td><td><b>Rathod Auto Components</b> · Pune — sliding 5 months</td><td class="num">T3</td><td class="num r sc">442 ± 15</td><td class="num r">E</td><td class="num">62.9%</td><td class="r">✕ Decline — radar-flagged all year</td></tr>
+      </table>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <div class="card" style="padding:16px">
+        <div class="caps" style="color:var(--verm)">portfolio radar · rathod auto</div>
+        <svg viewBox="0 0 232 70" style="width:100%;margin-top:8px">
+          <line x1="0" y1="10" x2="232" y2="10" stroke="#f0564a" stroke-width="1" stroke-dasharray="4 4" opacity=".7"/>
+          <text x="2" y="7" font-family="Spline Sans Mono" font-size="7" fill="#f6837a">EWS 580 — under it all 12 months</text>
+          <polyline points="4,26 24,25 44,25 64,25 84,25 104,25 124,30 144,44 164,66 184,63 204,45 224,45"
+            stroke="#f0564a" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <circle cx="224" cy="45" r="3" fill="#f0564a"/>
+        </svg>
+        <p style="font-size:9.5px;color:var(--sage);margin-top:8px;line-height:1.5">
+          Rolling rescore, month by month. <b style="color:var(--bone)">Nobody at the branch is surprised</b> — that's monitoring, free, from the same brain.</p>
+      </div>
+      <div class="card" style="padding:16px">
+        <div class="caps">validated, honestly</div>
+        <div style="display:flex;gap:8px;margin-top:9px;flex-wrap:wrap">
+          <span class="chip">AUROC <b>0.871</b></span><span class="chip">KS <b>0.576</b></span>
+        </div>
+        <p style="font-size:9.5px;color:var(--sage);margin-top:9px;line-height:1.5">
+          Held-out, on a 5,000-MSME synthetic population — <b style="color:var(--bone)">architecture proof, not a market claim.</b>
+          Default is rare; raw “accuracy” is a broken yardstick, and we'll defend why.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot"><span>naadi · idbi innovate 2026</span><span>connector layer swaps to idbi sandbox data (jul 22) with zero downstream changes</span></div>
+</section>
+
+<!-- ============ 06 · THE BRAIN ============ -->
+<section class="slide">
+  <div class="top"><span class="caps">how it works — the scoring brain</span><span class="caps">06 / 08</span></div>
+  <h2>Deterministic where it must be.<br><em class="g">Agentic where it pays.</em></h2>
+
+  <div style="display:grid;grid-template-columns:1.25fr .28in 1.5fr .28in 1.25fr;align-items:stretch;gap:0;margin-top:.3in">
+    <div class="card" style="padding:16px">
+      <div class="caps" style="color:var(--pulse)">consented rails</div>
+      <div style="display:grid;gap:7px;margin-top:10px;font-size:10.5px">
+        <div>🧾 <b>GSTN</b> — GSTR-1/3B, filing discipline</div>
+        <div>⚡ <b>UPI</b> — daily pulse, payer graph</div>
+        <div>🏦 <b>Account Aggregator</b> — balances, bounces</div>
+        <div>👥 <b>EPFO</b> — headcount, wage trend</div>
+      </div>
+      <div class="chip" style="margin-top:12px">consent-first · DPDP · immutable audit</div>
+    </div>
+    <div style="display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:18px">→</div>
+    <div class="card" style="padding:16px;border-color:rgba(59,227,154,.35)">
+      <div class="caps" style="color:var(--pulse)">the two-layer brain</div>
+      <div style="display:grid;gap:7px;margin-top:10px;font-size:10.5px;line-height:1.45">
+        <div><b>27 point-in-time features</b> — Polars, leak-proof as-of joins</div>
+        <div><b>6 monotone LightGBM scorecards</b> — L·S·G·R·C·K, committee-trustable directionality</div>
+        <div><b>Composite → isotonic PD(12m) → 300–900</b> with tier-based confidence bands</div>
+        <div><b>TreeSHAP reason codes</b> · what-if counterfactuals · feature-space stress lab</div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:18px">→</div>
+    <div class="card" style="padding:16px;border-color:rgba(233,180,76,.4)">
+      <div class="caps" style="color:var(--gold)">munshi — the copilot</div>
+      <div style="display:grid;gap:7px;margin-top:10px;font-size:10.5px;line-height:1.45">
+        <div>policy &amp; limit engine — <b>deterministic</b></div>
+        <div>sanction memo — Claude drafts prose around an <b>injected fact sheet</b></div>
+        <div>every claim carries an <b>evidence anchor</b>; every decline routes to a human</div>
+        <div>offline fallback in the box — <b>the stage demo cannot break</b></div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:flex;gap:9px;margin-top:.3in">
+    <span class="chip gold">guardrail — the LLM writes prose, never numbers</span>
+    <span class="chip">serving: FastAPI POST /score · p95 &lt; 300 ms</span>
+    <span class="chip">rails-ready: ULI · OCEN 4.0 · AA · LOS plug-in</span>
+    <span class="chip">scale path: Kafka → Iceberg · Feast · MLflow · EKS</span>
+  </div>
+
+  <div class="foot"><span>naadi · idbi innovate 2026</span><span>python 3.13 · polars · duckdb · lightgbm 4.6 · next.js 16 · react 19 · claude opus 4.8</span></div>
+</section>
+
+<!-- ============ 07 · WHY WE WIN ============ -->
+<section class="slide">
+  <div class="top"><span class="caps">why this wins track 03</span><span class="caps">07 / 08</span></div>
+
+  <div style="display:grid;grid-template-columns:6.6in 1fr;gap:18px;margin-top:.05in">
+    <div class="card" style="padding:8px 10px">
+      <table>
+        <tr><th style="width:38%">the typical entry</th><th>naadi</th></tr>
+        <tr><td class="s">One opaque score</td><td><b>Six explainable dimensions</b> + 300–900 with an honest ± band</td></tr>
+        <tr><td class="s">“Trust the model”</td><td><b>TreeSHAP reason codes</b> — committee-ready, adverse-action-ready</td></tr>
+        <tr><td class="s">Stops at scoring</td><td><b>Munshi drafts the full memo</b> — decision, limit, covenants, triggers</td></tr>
+        <tr><td class="s">Rejects thin files</td><td><b>Tier system widens uncertainty</b> instead of penalising data poverty</td></tr>
+        <tr><td class="s">Score as a verdict</td><td><b>What-if paths</b> turn declines into financial literacy</td></tr>
+        <tr><td class="s">Origination only</td><td><b>Rolling radar</b> = monitoring free — a bridge into Track 04</td></tr>
+        <tr><td class="s">Slideware “integration”</td><td><b>Working decision API</b> + ULI/OCEN-native design, live today</td></tr>
+      </table>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <div class="card" style="padding:16px;flex:1">
+        <div class="caps" style="color:var(--gold)">stress lab · meenakshi textiles</div>
+        <p style="font-size:10.5px;color:var(--sage);margin-top:8px;line-height:1.55">
+          “Anchor payer delays 60 days” →<br><b class="num r" style="font-size:16px">711 → 676 (−35)</b><br>
+          Her 56% buyer concentration, <b style="color:var(--bone)">made visceral before the committee asks.</b></p>
+      </div>
+      <div class="card" style="padding:16px;flex:1">
+        <div class="caps" style="color:var(--pulse)">inclusion, engineered</div>
+        <p style="font-size:10.5px;color:var(--sage);margin-top:8px;line-height:1.55">
+          Every decline ships with a comeback plan. Declined-today <b style="color:var(--bone)">≠ lost-forever</b> —
+          that is Track 03's financial-inclusion mandate, shipped as software.</p>
+      </div>
+    </div>
+  </div>
+
+  <p class="disp" style="font-style:italic;font-size:26px;margin-top:.5in;max-width:10.6in;line-height:1.45">
+    Most teams will show the judges a model.
+    <span class="g" style="font-style:normal;font-weight:600">We're handing the bank a product</span> —
+    scored, explained, stress-tested, memo signed, radar armed.</p>
+
+  <div class="foot"><span>naadi · idbi innovate 2026</span><span>score → reasons → decision → memo → monitoring · one pulse</span></div>
+</section>
+
+<!-- ============ 08 · ROAD + ASK ============ -->
+<section class="slide" style="display:flex;flex-direction:column">
+  <div class="top"><span class="caps">road to demo day</span><span class="caps">08 / 08</span></div>
+
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:.1in">
+    <div class="card" style="padding:16px;border-color:rgba(59,227,154,.4)">
+      <div class="caps" style="color:var(--pulse)">jul 9 · submitted</div>
+      <p style="font-size:10.5px;color:var(--sage);margin-top:8px;line-height:1.5">Docs, trained engine, live console — <b style="color:var(--bone)">this deck's numbers all run today.</b></p>
+    </div>
+    <div class="card" style="padding:16px">
+      <div class="caps">jul 22–31 · sandbox</div>
+      <p style="font-size:10.5px;color:var(--sage);margin-top:8px;line-height:1.5">Retrain on IDBI data, publish the validation report, live-data demo. Connectors swap; nothing downstream changes.</p>
+    </div>
+    <div class="card" style="padding:16px">
+      <div class="caps">aug 13 · demo day</div>
+      <p style="font-size:10.5px;color:var(--sage);margin-top:8px;line-height:1.5">End-to-end consented flow: walk-in applicant → Munshi run → sanction memo, on stage.</p>
+    </div>
+    <div class="card" style="padding:16px">
+      <div class="caps">beyond · poc</div>
+      <p style="font-size:10.5px;color:var(--sage);margin-top:8px;line-height:1.5">LOS integration, pilot branch cohort, swap-set study: <b style="color:var(--bone)">how many good NTC borrowers were we declining?</b></p>
+    </div>
+  </div>
+
+  <div style="flex:1;display:flex;align-items:center;justify-content:space-between;gap:.5in;margin-top:.15in">
+    <div>
+      <svg class="ecg" style="height:34px;width:5.9in" viewBox="0 0 900 44">
+        <path d="M0,22 L150,22 L166,22 L174,12 L182,30 L190,22 L280,22 L294,3 L308,41 L322,22 L440,22 L456,16 L472,22 L580,22 L594,3 L608,41 L622,22 L730,22 L744,12 L758,30 L772,22 L900,22"
+          stroke="#3be39a" stroke-width="2" fill="none" opacity=".8" stroke-linecap="round"/>
+      </svg>
+      <p class="disp" style="font-style:italic;font-size:24px;line-height:1.45;margin-top:14px">
+        नाड़ी — the pulse. A vaidya reads it to diagnose the body.<br>
+        <b style="font-style:normal" class="g">NAADI reads it to diagnose a business.</b></p>
+      <p class="caps" style="margin-top:14px">team naadi · idbi innovate 2026 · track 03 · “build. integrate. transform.”</p>
+    </div>
+    <div style="display:flex;gap:16px">
+      <div style="text-align:center">
+        <img src="qr-live.png" style="width:1.15in;height:1.15in;border-radius:12px;border:5px solid #fff">
+        <div class="caps" style="margin-top:7px;color:var(--pulse)">live console</div>
+        <div class="num" style="font-size:8.5px;color:var(--sage)">naadi-kappa.vercel.app</div>
+      </div>
+      <div style="text-align:center">
+        <img src="qr-repo.png" style="width:1.15in;height:1.15in;border-radius:12px;border:5px solid #fff">
+        <div class="caps" style="margin-top:7px">source · public</div>
+        <div class="num" style="font-size:8.5px;color:var(--sage)">github.com/SaudSatopay/naadi</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot"><span>naadi · concept deck · synthetic-data validation</span><span>scan either code — no install, no login</span></div>
+</section>
+
+</body>
+</html>
