@@ -28,6 +28,7 @@
 ### 🩺 **[→ OPEN THE LIVE CONSOLE ←](https://naadi-kappa.vercel.app)**
 
 *no install, no login — press <kbd>⌘K</kbd> once inside*
+<br/>*or flip the [9-page concept deck (PDF)](docs/NAADI-pitch-deck.pdf)*
 
 <img src="docs/assets/pulse.svg" width="100%" alt="" />
 

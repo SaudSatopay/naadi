@@ -21,9 +21,27 @@ const splineMono = Spline_Sans_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "NAADI — the financial pulse of MSMEs",
+  metadataBase: new URL("https://naadi-kappa.vercel.app"),
+  title: {
+    default: "NAADI — the financial pulse of MSMEs",
+    template: "%s",
+  },
   description:
     "AI-native MSME Financial Health Card and agentic underwriting copilot. IDBI Innovate 2026, Track 03.",
+  openGraph: {
+    title: "NAADI — the financial pulse of MSMEs",
+    description:
+      "GST · UPI · Account Aggregator · EPFO — fused into an explainable Health Card, a decision, and a memo.",
+    url: "https://naadi-kappa.vercel.app",
+    siteName: "NAADI",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "NAADI — the financial pulse of MSMEs",
+    description:
+      "An AI-native MSME Financial Health Card + agentic underwriting copilot.",
+  },
 };
 
 export default function RootLayout({

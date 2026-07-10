@@ -109,7 +109,7 @@ export default async function HealthCard({
             </div>
           </div>
 
-          <div className="card p-6 flex items-center justify-center rise rise-2 min-w-[340px]">
+          <div className="card p-6 flex items-center justify-center rise rise-2 min-w-0 lg:min-w-[340px]">
             <ScoreDial
               score={m.scoring.score}
               band={m.scoring.band}

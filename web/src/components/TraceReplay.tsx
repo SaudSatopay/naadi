@@ -4,7 +4,7 @@
  *  score, policy, memo — step by step with real pipeline timings. */
 
 import { AnimatePresence, motion } from "motion/react";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import type { Msme } from "@/lib/types";
 import PulseLine from "./PulseLine";
 
@@ -13,23 +13,21 @@ const SPEED = 0.45; // replay faster than real time
 export default function TraceReplay({ m }: { m: Msme }) {
   const [open, setOpen] = useState(false);
   const [reached, setReached] = useState(0);
-  const timers = useRef<ReturnType<typeof setTimeout>[]>([]);
 
   const cum = useMemo(() => {
-    let acc = 0;
-    return m.trace.map((s) => (acc += s.ms * SPEED));
+    const out: number[] = [];
+    for (const [i, s] of m.trace.entries()) {
+      out.push((i > 0 ? out[i - 1] : 0) + s.ms * SPEED);
+    }
+    return out;
   }, [m.trace]);
 
   useEffect(() => {
     if (!open) return;
-    setReached(0);
-    m.trace.forEach((_, i) => {
-      timers.current.push(setTimeout(() => setReached(i + 1), cum[i]));
-    });
-    return () => {
-      timers.current.forEach(clearTimeout);
-      timers.current = [];
-    };
+    const handles = m.trace.map((_, i) =>
+      setTimeout(() => setReached(i + 1), cum[i])
+    );
+    return () => handles.forEach(clearTimeout);
   }, [open, cum, m.trace]);
 
   const done = reached >= m.trace.length;
@@ -37,7 +35,10 @@ export default function TraceReplay({ m }: { m: Msme }) {
   return (
     <>
       <button
-        onClick={() => setOpen(true)}
+        onClick={() => {
+          setReached(0);
+          setOpen(true);
+        }}
         className="group inline-flex items-center gap-2 rounded-full border border-pulse-500/40 bg-pulse-500/10 px-4 py-2 text-sm font-medium text-pulse-300 hover:bg-pulse-500/20 transition-colors"
       >
         <span className="size-2 rounded-full bg-pulse-400 blip" />

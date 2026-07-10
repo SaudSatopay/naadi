@@ -34,8 +34,9 @@ Most entries will train a model and show a number. A number is not a product:
 2. **The hero moment** — open **Chandra Kirana Stores** (New-to-Credit, no financials, UPI-heavy): consent → rails light up → six dimensions animate in → **762 ± 40, Grade A** (the wide band is the thin-file tier being honest). *"No balance sheet. Real, defensible score."*
 3. **Explainability** — reason codes with signed points: liquidity buffer and payer diversity lifting the score, a soft recent revenue patch flagged and priced in. Click the what-if: **"file GSTR-3B on time for 3 months → +24 pts" — an improvement path shown to the borrower.**
 4. **Munshi** — the memo writes itself: recommend **approve ₹9.2L working-capital line, 36m**, GST-filing covenant, flow-routing covenant, three early-warning triggers — every number traceable to a feature. *"Officer reviews, clicks approve. Minutes, not weeks."*
-5. **The stressed case** — auto-parts maker sliding: Stability and Repayment dims flash early-warning 5 months before the cliff. *"NAADI isn't just origination — it's portfolio radar."*
-6. **Close** — *"Score → reasons → decision → memo → monitoring. One pulse. That's NAADI."*
+5. **The stressed case** — auto-parts maker sliding: the rolling-rescore trajectory has been under the EWS line all year. *"NAADI isn't just origination — it's portfolio radar."*
+6. **Interrogate it** — drag the sensitivity-lab lever (filing delay → −74 pts, live from the model), press `c`: **Chandra vs Rathod on one radar**, then the officer concurs — or overrides, on the record.
+7. **Close** — *"Score → reasons → decision → memo → monitoring. One pulse. That's NAADI."*
 
 ## Business impact (sandbox-measurable)
 

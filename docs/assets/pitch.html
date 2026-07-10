@@ -101,7 +101,7 @@
 
 <!-- ============ 02 · THE GAP ============ -->
 <section class="slide">
-  <div class="top"><span class="caps">the problem, as the bank stated it</span><span class="caps">02 / 08</span></div>
+  <div class="top"><span class="caps">the problem, as the bank stated it</span><span class="caps">02 / 09</span></div>
   <h2 style="font-size:40px;max-width:10.5in">India's credit engine reads balance sheets.<br>
     <em class="g">Most of India's businesses don't have one.</em></h2>
 
@@ -137,7 +137,7 @@
 
 <!-- ============ 03 · THE LOOP ============ -->
 <section class="slide">
-  <div class="top"><span class="caps">what naadi does</span><span class="caps">03 / 08</span></div>
+  <div class="top"><span class="caps">what naadi does</span><span class="caps">03 / 09</span></div>
   <h2>One pulse, five superpowers.</h2>
   <p class="lead">Most entries train a model and show a number. A number is not a product — NAADI closes the whole loop.</p>
 
@@ -169,10 +169,14 @@
     </div>
   </div>
 
-  <div style="display:flex;gap:9px;margin-top:.42in">
-    <span class="chip">⌘K command palette</span><span class="chip">stress lab — rescored, not guessed</span>
-    <span class="chip">peer percentiles per sector</span><span class="chip">replayable agentic run</span>
-    <span class="chip">print-ready sanction memo</span><span class="chip">POST /score decision API</span>
+  <div style="display:flex;gap:9px;margin-top:.42in;flex-wrap:wrap">
+    <span class="chip gold">sensitivity lab — drag a lever, the model answers</span>
+    <span class="chip">risk map of the whole book</span><span class="chip">EWS alert feed</span>
+    <span class="chip">⇄ compare — two files, one radar</span>
+    <span class="chip gold">officer override, on the record</span>
+    <span class="chip">stress lab</span><span class="chip">peer percentiles</span>
+    <span class="chip">⌘K + hotkeys</span><span class="chip">replayable agentic run</span>
+    <span class="chip">print-ready memo</span><span class="chip">POST /score API</span>
   </div>
 
   <div class="foot"><span>naadi · idbi innovate 2026</span><span>consent-first · dpdp-aligned · uli / ocen / aa native</span></div>
@@ -180,7 +184,7 @@
 
 <!-- ============ 04 · ANATOMY ============ -->
 <section class="slide">
-  <div class="top"><span class="caps">the health card, dissected — real engine output</span><span class="caps">04 / 08</span></div>
+  <div class="top"><span class="caps">the health card, dissected — real engine output</span><span class="caps">04 / 09</span></div>
 
   <div style="display:grid;grid-template-columns:3.2in 3.1in 1fr;gap:16px;align-items:stretch;height:4.6in">
     <!-- gauge card -->
@@ -260,9 +264,73 @@
   <div class="foot"><span>naadi · idbi innovate 2026</span><span>every number above computed by the trained engine — not a mock-up</span></div>
 </section>
 
-<!-- ============ 05 · THE BOOK ============ -->
+<!-- ============ 05 · DECISION INTELLIGENCE ============ -->
 <section class="slide">
-  <div class="top"><span class="caps">the demo book — eight files, scored by the trained brain</span><span class="caps">05 / 08</span></div>
+  <div class="top"><span class="caps">beyond the score — the decision-intelligence layer</span><span class="caps">05 / 09</span></div>
+  <h2>The layer most teams never build.</h2>
+  <p class="lead">Trust isn't claimed, it's demonstrated — interrogate the model, compare its judgements, and keep a human signature on every decision.</p>
+
+  <div style="display:grid;grid-template-columns:1.15fr 1fr 1fr;gap:16px;margin-top:.28in;height:3.9in">
+    <div class="card" style="padding:18px">
+      <div class="caps" style="color:var(--gold)">sensitivity lab · live in the console</div>
+      <p style="font-size:10px;color:var(--sage);margin-top:6px;line-height:1.5">
+        Drag a lever — the trained model answers with a projected score.<br>
+        <b style="color:var(--bone)">Chandra × GSTR-3B filing delay:</b></p>
+      <svg viewBox="0 0 250 130" style="width:100%;margin-top:8px">
+        <line x1="5" y1="112" x2="245" y2="112" stroke="#1e332a"/>
+        <polyline points="5,10 34,17 63,71 91,75 134,99 178,99 235,99"
+          stroke="#3be39a" stroke-width="2.2" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+        <circle cx="7" cy="10" r="3.5" fill="#3be39a"/>
+        <text x="16" y="9" font-family="Spline Sans Mono" font-size="8.5" fill="#8ea79a">today · 0 days late · 762</text>
+        <circle cx="178" cy="99" r="4" fill="#f0564a"/>
+        <text x="98" y="91" font-family="Spline Sans Mono" font-size="9" fill="#f6837a">12 days late → 688 (−74)</text>
+        <text x="5" y="126" font-family="Spline Sans Mono" font-size="7.5" fill="#5f7a6d">0d</text>
+        <text x="230" y="126" font-family="Spline Sans Mono" font-size="7.5" fill="#5f7a6d">16d</text>
+      </svg>
+      <p style="font-size:9px;color:var(--dim);margin-top:6px;line-height:1.5">
+        1-D partial dependence, precomputed through the real LightGBM brain — honest numbers, not slider theatre.</p>
+    </div>
+
+    <div class="card" style="padding:18px">
+      <div class="caps" style="color:var(--pulse)">⇄ compare — two files, one radar</div>
+      <svg viewBox="0 0 200 170" style="width:100%;margin-top:6px">
+        <g transform="translate(100,88)" stroke="#1e332a" fill="none">
+          <polygon points="0,-70 60.6,-35 60.6,35 0,70 -60.6,35 -60.6,-35"/>
+          <polygon points="0,-46.7 40.4,-23.3 40.4,23.3 0,46.7 -40.4,23.3 -40.4,-23.3"/>
+          <polygon points="0,-23.3 20.2,-11.7 20.2,11.7 0,23.3 -20.2,11.7 -20.2,-11.7"/>
+          <polygon points="0,-58.1 53.5,-30.9 39.8,23 0,62.8 -49.8,28.7 -50.2,-29"
+            fill="rgba(59,227,154,.16)" stroke="#3be39a" stroke-width="1.8"/>
+          <polygon points="0,-4 1.9,-1.1 7.8,4.5 0,15.4 -8.6,5 -18.7,-10.8"
+            fill="rgba(240,86,74,.2)" stroke="#f0564a" stroke-width="1.8"/>
+        </g>
+        <text x="100" y="10" font-family="Spline Sans Mono" font-size="8" fill="#3be39a" text-anchor="middle">chandra · 762 A</text>
+        <text x="100" y="166" font-family="Spline Sans Mono" font-size="8" fill="#f6837a" text-anchor="middle">rathod · 442 E</text>
+      </svg>
+      <p style="font-size:9px;color:var(--dim);margin-top:4px;line-height:1.5">
+        Same brain, same yardstick — why two businesses with similar turnover deserve different answers.</p>
+    </div>
+
+    <div class="card" style="padding:18px;border-color:rgba(233,180,76,.4);display:flex;flex-direction:column">
+      <div class="caps" style="color:var(--gold)">officer review — the human gate</div>
+      <div style="margin-top:12px;border:1px solid rgba(59,227,154,.4);background:rgba(59,227,154,.06);border-radius:10px;padding:12px">
+        <div class="num" style="font-size:11px;color:var(--pulse)">✓ OFFICER CONCURRED</div>
+        <div class="num" style="font-size:8px;color:var(--dim);margin-top:4px">recorded · demo audit trail</div>
+      </div>
+      <div style="margin-top:8px;border:1px solid rgba(233,180,76,.35);border-radius:10px;padding:12px">
+        <div class="num" style="font-size:11px;color:var(--gold)">⚖ OVERRIDE — RATIONALE REQUIRED</div>
+        <div style="font-size:9px;color:var(--sage);margin-top:4px;line-height:1.45">“Local market intel: anchor payer renewing contract. Holding limit at ₹9.2L.”</div>
+      </div>
+      <p style="font-size:9.5px;color:var(--sage);margin-top:auto;line-height:1.5">
+        Munshi recommends; <b style="color:var(--bone)">the officer decides</b> — and the audit trail writes itself.</p>
+    </div>
+  </div>
+
+  <div class="foot"><span>naadi · idbi innovate 2026</span><span>plus: risk map of the book · ews alert feed · score waterfall — all live at naadi-kappa.vercel.app</span></div>
+</section>
+
+<!-- ============ 06 · THE BOOK ============ -->
+<section class="slide">
+  <div class="top"><span class="caps">the demo book — eight files, scored by the trained brain</span><span class="caps">06 / 09</span></div>
 
   <div style="display:grid;grid-template-columns:7.5in 1fr;gap:18px">
     <div class="card" style="padding:6px 8px">
@@ -309,7 +377,7 @@
 
 <!-- ============ 06 · THE BRAIN ============ -->
 <section class="slide">
-  <div class="top"><span class="caps">how it works — the scoring brain</span><span class="caps">06 / 08</span></div>
+  <div class="top"><span class="caps">how it works — the scoring brain</span><span class="caps">07 / 09</span></div>
   <h2>Deterministic where it must be.<br><em class="g">Agentic where it pays.</em></h2>
 
   <div style="display:grid;grid-template-columns:1.25fr .28in 1.5fr .28in 1.25fr;align-items:stretch;gap:0;margin-top:.3in">
@@ -357,7 +425,7 @@
 
 <!-- ============ 07 · WHY WE WIN ============ -->
 <section class="slide">
-  <div class="top"><span class="caps">why this wins track 03</span><span class="caps">07 / 08</span></div>
+  <div class="top"><span class="caps">why this wins track 03</span><span class="caps">08 / 09</span></div>
 
   <div style="display:grid;grid-template-columns:6.6in 1fr;gap:18px;margin-top:.05in">
     <div class="card" style="padding:8px 10px">
@@ -398,7 +466,7 @@
 
 <!-- ============ 08 · ROAD + ASK ============ -->
 <section class="slide" style="display:flex;flex-direction:column">
-  <div class="top"><span class="caps">road to demo day</span><span class="caps">08 / 08</span></div>
+  <div class="top"><span class="caps">road to demo day</span><span class="caps">09 / 09</span></div>
 
   <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:.1in">
     <div class="card" style="padding:16px;border-color:rgba(59,227,154,.4)">

@@ -27,7 +27,7 @@ without a key.
 | `naadi/generate.py` | latent-risk synthetic data (GST/UPI/AA/EPFO rails) |
 | `naadi/features.py` | 27 point-in-time features across the NAADI six dimensions |
 | `naadi/scoring.py` | 6 monotone LightGBM scorecards → composite → isotonic PD → 300-900 |
-| `naadi/explain.py` | native TreeSHAP reason codes + actionable what-if engine |
+| `naadi/explain.py` | native TreeSHAP reason codes · what-if engine · sensitivity curves · stress lab |
 | `naadi/limits.py` | cash-flow affordability limit engine + policy guards |
 | `naadi/munshi.py` | agentic memo copilot (Claude claude-opus-4-8, offline fallback) |
 | `naadi/api.py` | FastAPI: /portfolio, /msme/{id}, /score |

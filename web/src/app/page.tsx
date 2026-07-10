@@ -165,7 +165,7 @@ export default function Portfolio() {
             NAADI · IDBI Innovate 2026 · Track 03 — Financial Health Score · “Build. Integrate. Transform.”
           </span>
           <span className="num text-[0.65rem] text-sage-dim">
-            every figure on this screen was computed by the engine on synthetic rails
+            every figure on this screen was computed by the engine on synthetic rails — architecture proof, not a market claim
           </span>
         </footer>
       </main>

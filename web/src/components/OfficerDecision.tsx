@@ -15,8 +15,11 @@ export default function OfficerDecision({ m }: { m: Msme }) {
   const [note, setNote] = useState("");
 
   useEffect(() => {
+    // hydrate once from storage post-mount — a state initializer would
+    // desync server HTML from the client and trip hydration
     try {
       const raw = localStorage.getItem(key);
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       if (raw) setDecision(JSON.parse(raw));
     } catch {}
   }, [key]);
