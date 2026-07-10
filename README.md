@@ -55,7 +55,7 @@ The borrowers exist. The data exists. **The bridge doesn't.** NAADI is the bridg
 | 📉 **Portfolio radar** | Rolling 12-month rescore per MSME with an early-warning threshold — deterioration surfaces **quarters before default** | Origination *and* monitoring from the same brain (a free bridge into Track 04) |
 | 🧾 **Munshi, the copilot** | An agentic pipeline (Claude Opus 4.8) drafts the full sanction memo — decision, limit, tenor, covenants, triggers — every figure injected by the deterministic engine | **The LLM writes prose, never numbers.** Officer reviews, clicks approve. Minutes, not weeks |
 
-Plus the console details judges remember: a **⌘K command palette** across the book, a **stress lab** (adverse scenarios rescored, not guessed), **peer percentile benchmarks** per sector, a **replayable agentic run** with real pipeline timings, and a **print-ready sanction memo** that turns into bank paper.
+Plus the console details judges remember: a **sensitivity lab** (drag a lever — filing delay, bounces, concentration, buffer — and the trained model answers with a projected score), a **score waterfall** (base + six signed dimension contributions, assembled), a **risk-map scatter** of the whole book (score × PD × exposure), a **live EWS alert feed**, **⇄ compare mode** (two files, one radar), an **officer-review gate** with a recorded override rationale (human-in-the-loop, demonstrated), a **stress lab** (adverse scenarios rescored, not guessed), **peer percentile benchmarks**, a **⌘K command palette** + `1–8`/`c` hotkeys, a **replayable agentic run** with real pipeline timings, and a **print-ready sanction memo** that turns into bank paper.
 
 <div align="center"><img src="docs/assets/pulse.svg" width="100%" alt="" /></div>
 
@@ -98,7 +98,8 @@ Then walk the demo:
 2. **The hero** — Chandra Kirana Stores: watch the needle sweep to **762**, six dimensions radar in, *"beats 78% of Retail Trade peers"*.
 3. **▶ Replay Munshi's run** — consent → four rails → 27 features → score → policy → memo, with real timings.
 4. **The radar** — open Rathod Auto: the trajectory has been under the early-warning line **all year**. Nobody at the branch is surprised.
-5. **The memo** — evidence-linked, covenants armed, `⎙ print` turns it into sanction paper.
+5. **The sensitivity lab** — drag Chandra's filing-delay lever to 12 days and watch the trained model take back 74 points. Then press <kbd>c</kbd>: **Chandra vs Rathod, one radar.**
+6. **The memo** — evidence-linked, covenants armed, officer concurs (or overrides, on the record), `⎙ print` turns it into sanction paper.
 
 Optional extras: `uv run uvicorn naadi.api:app --port 8000` for the `POST /score` decision API · `--live-memos` (with `ANTHROPIC_API_KEY`) lets Munshi polish memos through Claude — with a deterministic fallback so the stage demo can never break.
 

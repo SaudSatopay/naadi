@@ -18,6 +18,9 @@ export default function Header() {
         </Link>
         <PulseLine className="h-7 flex-1 min-w-0 opacity-80" />
         <div className="hidden md:flex items-center gap-2">
+          <Link href="/compare" className="chip hover:text-bone hover:border-sage transition-colors">
+            ⇄ compare <kbd className="text-pulse-300">c</kbd>
+          </Link>
           <button data-commandk className="chip hover:text-bone hover:border-sage transition-colors cursor-pointer">
             search <kbd className="text-pulse-300">⌘K</kbd>
           </button>

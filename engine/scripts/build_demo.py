@@ -25,7 +25,7 @@ import polars as pl
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
-from naadi.explain import reason_codes, stress_test, what_if         # noqa: E402
+from naadi.explain import reason_codes, sensitivity, stress_test, what_if  # noqa: E402
 from naadi.features import DIM_META, extract_features, population_frame  # noqa: E402
 from naadi.generate import MONTHS, generate_demo_msmes, generate_population  # noqa: E402
 from naadi.limits import recommend                                   # noqa: E402
@@ -128,6 +128,7 @@ def main() -> None:
             "reasons": reasons,
             "what_if": tips,
             "stress": stress,
+            "sensitivity": sensitivity(scorer, f, rec_raw["tier"]),
             "score_history": history,
             "benchmark": {
                 "overall": round(scorer.percentile(sc["score"]), 3),
@@ -175,6 +176,30 @@ def main() -> None:
     grade_dist = {g: int(c) for g, c in con.sql(
         "SELECT grade, count(*) FROM book GROUP BY grade ORDER BY grade").fetchall()}
 
+    # rule-based portfolio radar: what should the RM look at this morning?
+    alerts = []
+    for m in msmes:
+        hist = [p["score"] for p in m["score_history"]]
+        f, sev = m["features"], None
+        if hist[-1] < 580:
+            alerts.append({"id": m["id"], "name": m["name"], "severity": "red",
+                           "text": f"Below EWS threshold — {hist[-1]} today, "
+                                   f"{sum(1 for s in hist if s < 580)} of last 12 months under the line"})
+        elif hist[-1] - hist[0] <= -15:
+            alerts.append({"id": m["id"], "name": m["name"], "severity": "amber",
+                           "text": f"Score deteriorating: {hist[0]} → {hist[-1]} over 12 months"})
+        if f["bounce_count"] > 0:
+            alerts.append({"id": m["id"], "name": m["name"], "severity": "amber",
+                           "text": f"{int(f['bounce_count'])} EMI/NACH bounce(s) on the wire"})
+        if f["filing_delay_mean"] > 5:
+            alerts.append({"id": m["id"], "name": m["name"], "severity": "amber",
+                           "text": f"GSTR-3B late by {f['filing_delay_mean']:.0f} days on average"})
+        if f["top_payer_share"] > 0.5:
+            alerts.append({"id": m["id"], "name": m["name"], "severity": "watch",
+                           "text": f"Top payer at {f['top_payer_share']:.0%} of revenue"})
+    sev_rank = {"red": 0, "amber": 1, "watch": 2}
+    alerts.sort(key=lambda a: sev_rank[a["severity"]])
+
     payload = {
         "generated_for": "IDBI Innovate 2026 · Track 03 · concept build (synthetic data)",
         "validation": metrics,
@@ -184,6 +209,7 @@ def main() -> None:
             "total_recommended_limit": int(agg[3]),
             "approvals": int(agg[4]), "referrals": int(agg[5]),
             "grade_distribution": grade_dist,
+            "alerts": alerts[:7],
         },
         "msmes": msmes,
     }

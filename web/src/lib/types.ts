@@ -55,6 +55,10 @@ export interface Msme {
   reasons: { positive: ReasonEntry[]; negative: ReasonEntry[] };
   what_if: { action: string; delta: number; new_score: number }[];
   stress: { scenario: string; score: number; delta: number; grade: string }[];
+  sensitivity: Record<
+    string,
+    { label: string; unit: string; current: number; points: { x: number; score: number }[] }
+  >;
   score_history: { month: string; score: number }[];
   benchmark: { overall: number; sector: number; sector_name: string };
   recommendation: Recommendation;
@@ -92,6 +96,7 @@ export interface DemoData {
     approvals: number;
     referrals: number;
     grade_distribution: Record<string, number>;
+    alerts: { id: string; name: string; severity: "red" | "amber" | "watch"; text: string }[];
   };
   msmes: Msme[];
 }

@@ -1,6 +1,8 @@
 import Link from "next/link";
+import AlertsStrip from "@/components/AlertsStrip";
 import { DecisionChip, GradeChip } from "@/components/Chips";
 import Header from "@/components/Header";
+import RiskScatter from "@/components/RiskScatter";
 import Spark from "@/components/Spark";
 import { demo } from "@/lib/data";
 import { GRADE_COLOR, inr, pct } from "@/lib/format";
@@ -86,10 +88,17 @@ export default function Portfolio() {
           </div>
         </section>
 
+        {/* risk map + radar feed */}
+        <section className="mt-4 grid gap-4 lg:grid-cols-[1.25fr_1fr] rise rise-3">
+          <RiskScatter />
+          <AlertsStrip />
+        </section>
+
         {/* book */}
         <section className="mt-8">
           <div className="flex items-baseline justify-between rise rise-3">
             <h2 className="label-caps">This morning’s book — click a file to open its Health Card</h2>
+            <span className="text-[0.65rem] num text-sage-dim">press 1–8 to open a file · c to compare</span>
           </div>
           <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {msmes.map((m, i) => (

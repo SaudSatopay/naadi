@@ -102,6 +102,48 @@ _SCENARIOS = [
 ]
 
 
+# ------------------------------------------------------------ sensitivity ----
+# 1-D partial-dependence curves over actionable levers: sweep one lever,
+# adjust its physically-linked features, rescore through the real brain.
+# Powers the console's drag-a-slider "sensitivity lab" with honest numbers.
+def _set_filing(f: dict, x: float) -> dict:
+    return {**f, "filing_delay_mean": x, "filing_delay_max": max(x * 2.2, x),
+            "on_time_streak": 6.0 if x < 0.5 else 0.0}
+
+
+def _set_bounces(f: dict, x: float) -> dict:
+    return {**f, "bounce_count": x, "bounce_rate": x / 12.0}
+
+
+def _set_top_payer(f: dict, x: float) -> dict:
+    return {**f, "top_payer_share": x, "top3_payer_share": min(x + 0.15, 0.99),
+            "payer_hhi": min(x * x + 0.05, 0.95)}
+
+
+def _set_buffer(f: dict, x: float) -> dict:
+    return {**f, "cash_buffer_days": x, "balance_to_outflow": x / 30.0,
+            "balance_p10_ratio": x / 30.0 * 0.4,
+            "eod_negative_days": 0.0 if x >= 30 else f["eod_negative_days"]}
+
+
+_LEVERS = [
+    ("filing_delay_mean", "GSTR-3B filing delay", "days", [0, 2, 4, 6, 9, 12, 16], _set_filing),
+    ("bounce_count", "EMI/NACH bounces (12m)", "count", [0, 1, 2, 3, 4, 5, 6], _set_bounces),
+    ("top_payer_share", "Top-payer share", "%", [0.05, 0.2, 0.35, 0.5, 0.65, 0.8, 0.9], _set_top_payer),
+    ("cash_buffer_days", "Cash buffer", "days", [0, 5, 12, 20, 30, 45, 60], _set_buffer),
+]
+
+
+def sensitivity(scorer: NaadiScorer, feats: dict, tier: str) -> dict:
+    out = {}
+    for key, label, unit, grid, setter in _LEVERS:
+        pts = [{"x": float(x), "score": scorer.score(setter(dict(feats), x), tier)["score"]}
+               for x in grid]
+        out[key] = {"label": label, "unit": unit,
+                    "current": round(float(feats[key]), 3), "points": pts}
+    return out
+
+
 # ---------------------------------------------------------------- stress ----
 # Adverse scenarios a risk committee will ask about. Feature-space
 # approximations of the shock, rescored through the same brain.

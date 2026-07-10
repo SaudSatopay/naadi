@@ -58,7 +58,45 @@
    "C": 3,
    "D": 1,
    "E": 1
-  }
+  },
+  "alerts": [
+   {
+    "id": "MSME-2403",
+    "name": "Rathod Auto Components",
+    "severity": "red",
+    "text": "Below EWS threshold \u2014 442 today, 12 of last 12 months under the line"
+   },
+   {
+    "id": "MSME-2408",
+    "name": "Ganpati Constructions",
+    "severity": "red",
+    "text": "Below EWS threshold \u2014 543 today, 12 of last 12 months under the line"
+   },
+   {
+    "id": "MSME-2403",
+    "name": "Rathod Auto Components",
+    "severity": "amber",
+    "text": "2 EMI/NACH bounce(s) on the wire"
+   },
+   {
+    "id": "MSME-2408",
+    "name": "Ganpati Constructions",
+    "severity": "amber",
+    "text": "3 EMI/NACH bounce(s) on the wire"
+   },
+   {
+    "id": "MSME-2402",
+    "name": "Meenakshi Textiles",
+    "severity": "watch",
+    "text": "Top payer at 56% of revenue"
+   },
+   {
+    "id": "MSME-2404",
+    "name": "Blue Tiffin Kitchens",
+    "severity": "watch",
+    "text": "Top payer at 62% of revenue"
+   }
+  ]
  },
  "msmes": [
   {
@@ -169,6 +207,148 @@
      "grade": "A"
     }
    ],
+   "sensitivity": {
+    "filing_delay_mean": {
+     "label": "GSTR-3B filing delay",
+     "unit": "days",
+     "current": 0.156,
+     "points": [
+      {
+       "x": 0.0,
+       "score": 768
+      },
+      {
+       "x": 2.0,
+       "score": 762
+      },
+      {
+       "x": 4.0,
+       "score": 713
+      },
+      {
+       "x": 6.0,
+       "score": 710
+      },
+      {
+       "x": 9.0,
+       "score": 688
+      },
+      {
+       "x": 12.0,
+       "score": 688
+      },
+      {
+       "x": 16.0,
+       "score": 688
+      }
+     ]
+    },
+    "bounce_count": {
+     "label": "EMI/NACH bounces (12m)",
+     "unit": "count",
+     "current": 0.0,
+     "points": [
+      {
+       "x": 0.0,
+       "score": 762
+      },
+      {
+       "x": 1.0,
+       "score": 762
+      },
+      {
+       "x": 2.0,
+       "score": 753
+      },
+      {
+       "x": 3.0,
+       "score": 753
+      },
+      {
+       "x": 4.0,
+       "score": 753
+      },
+      {
+       "x": 5.0,
+       "score": 753
+      },
+      {
+       "x": 6.0,
+       "score": 753
+      }
+     ]
+    },
+    "top_payer_share": {
+     "label": "Top-payer share",
+     "unit": "%",
+     "current": 0.02,
+     "points": [
+      {
+       "x": 0.05,
+       "score": 735
+      },
+      {
+       "x": 0.2,
+       "score": 735
+      },
+      {
+       "x": 0.35,
+       "score": 723
+      },
+      {
+       "x": 0.5,
+       "score": 704
+      },
+      {
+       "x": 0.65,
+       "score": 704
+      },
+      {
+       "x": 0.8,
+       "score": 704
+      },
+      {
+       "x": 0.9,
+       "score": 704
+      }
+     ]
+    },
+    "cash_buffer_days": {
+     "label": "Cash buffer",
+     "unit": "days",
+     "current": 2.136,
+     "points": [
+      {
+       "x": 0.0,
+       "score": 735
+      },
+      {
+       "x": 5.0,
+       "score": 785
+      },
+      {
+       "x": 12.0,
+       "score": 785
+      },
+      {
+       "x": 20.0,
+       "score": 785
+      },
+      {
+       "x": 30.0,
+       "score": 785
+      },
+      {
+       "x": 45.0,
+       "score": 785
+      },
+      {
+       "x": 60.0,
+       "score": 785
+      }
+     ]
+    }
+   },
    "score_history": [
     {
      "month": "Jul '25",
@@ -565,6 +745,148 @@
      "grade": "B"
     }
    ],
+   "sensitivity": {
+    "filing_delay_mean": {
+     "label": "GSTR-3B filing delay",
+     "unit": "days",
+     "current": 0.08,
+     "points": [
+      {
+       "x": 0.0,
+       "score": 711
+      },
+      {
+       "x": 2.0,
+       "score": 650
+      },
+      {
+       "x": 4.0,
+       "score": 620
+      },
+      {
+       "x": 6.0,
+       "score": 618
+      },
+      {
+       "x": 9.0,
+       "score": 597
+      },
+      {
+       "x": 12.0,
+       "score": 597
+      },
+      {
+       "x": 16.0,
+       "score": 597
+      }
+     ]
+    },
+    "bounce_count": {
+     "label": "EMI/NACH bounces (12m)",
+     "unit": "count",
+     "current": 0.0,
+     "points": [
+      {
+       "x": 0.0,
+       "score": 711
+      },
+      {
+       "x": 1.0,
+       "score": 711
+      },
+      {
+       "x": 2.0,
+       "score": 707
+      },
+      {
+       "x": 3.0,
+       "score": 707
+      },
+      {
+       "x": 4.0,
+       "score": 705
+      },
+      {
+       "x": 5.0,
+       "score": 705
+      },
+      {
+       "x": 6.0,
+       "score": 705
+      }
+     ]
+    },
+    "top_payer_share": {
+     "label": "Top-payer share",
+     "unit": "%",
+     "current": 0.56,
+     "points": [
+      {
+       "x": 0.05,
+       "score": 744
+      },
+      {
+       "x": 0.2,
+       "score": 744
+      },
+      {
+       "x": 0.35,
+       "score": 711
+      },
+      {
+       "x": 0.5,
+       "score": 711
+      },
+      {
+       "x": 0.65,
+       "score": 711
+      },
+      {
+       "x": 0.8,
+       "score": 711
+      },
+      {
+       "x": 0.9,
+       "score": 711
+      }
+     ]
+    },
+    "cash_buffer_days": {
+     "label": "Cash buffer",
+     "unit": "days",
+     "current": 2.672,
+     "points": [
+      {
+       "x": 0.0,
+       "score": 668
+      },
+      {
+       "x": 5.0,
+       "score": 736
+      },
+      {
+       "x": 12.0,
+       "score": 736
+      },
+      {
+       "x": 20.0,
+       "score": 736
+      },
+      {
+       "x": 30.0,
+       "score": 736
+      },
+      {
+       "x": 45.0,
+       "score": 736
+      },
+      {
+       "x": 60.0,
+       "score": 736
+      }
+     ]
+    }
+   },
    "score_history": [
     {
      "month": "Jul '25",
@@ -970,6 +1292,148 @@
      "grade": "E"
     }
    ],
+   "sensitivity": {
+    "filing_delay_mean": {
+     "label": "GSTR-3B filing delay",
+     "unit": "days",
+     "current": 2.121,
+     "points": [
+      {
+       "x": 0.0,
+       "score": 482
+      },
+      {
+       "x": 2.0,
+       "score": 442
+      },
+      {
+       "x": 4.0,
+       "score": 426
+      },
+      {
+       "x": 6.0,
+       "score": 424
+      },
+      {
+       "x": 9.0,
+       "score": 420
+      },
+      {
+       "x": 12.0,
+       "score": 420
+      },
+      {
+       "x": 16.0,
+       "score": 420
+      }
+     ]
+    },
+    "bounce_count": {
+     "label": "EMI/NACH bounces (12m)",
+     "unit": "count",
+     "current": 2.0,
+     "points": [
+      {
+       "x": 0.0,
+       "score": 445
+      },
+      {
+       "x": 1.0,
+       "score": 442
+      },
+      {
+       "x": 2.0,
+       "score": 442
+      },
+      {
+       "x": 3.0,
+       "score": 439
+      },
+      {
+       "x": 4.0,
+       "score": 425
+      },
+      {
+       "x": 5.0,
+       "score": 425
+      },
+      {
+       "x": 6.0,
+       "score": 425
+      }
+     ]
+    },
+    "top_payer_share": {
+     "label": "Top-payer share",
+     "unit": "%",
+     "current": 0.461,
+     "points": [
+      {
+       "x": 0.05,
+       "score": 442
+      },
+      {
+       "x": 0.2,
+       "score": 442
+      },
+      {
+       "x": 0.35,
+       "score": 442
+      },
+      {
+       "x": 0.5,
+       "score": 442
+      },
+      {
+       "x": 0.65,
+       "score": 441
+      },
+      {
+       "x": 0.8,
+       "score": 441
+      },
+      {
+       "x": 0.9,
+       "score": 441
+      }
+     ]
+    },
+    "cash_buffer_days": {
+     "label": "Cash buffer",
+     "unit": "days",
+     "current": 0.062,
+     "points": [
+      {
+       "x": 0.0,
+       "score": 424
+      },
+      {
+       "x": 5.0,
+       "score": 467
+      },
+      {
+       "x": 12.0,
+       "score": 467
+      },
+      {
+       "x": 20.0,
+       "score": 467
+      },
+      {
+       "x": 30.0,
+       "score": 482
+      },
+      {
+       "x": 45.0,
+       "score": 482
+      },
+      {
+       "x": 60.0,
+       "score": 482
+      }
+     ]
+    }
+   },
    "score_history": [
     {
      "month": "Jul '25",
@@ -1379,6 +1843,148 @@
      "grade": "C"
     }
    ],
+   "sensitivity": {
+    "filing_delay_mean": {
+     "label": "GSTR-3B filing delay",
+     "unit": "days",
+     "current": 0.245,
+     "points": [
+      {
+       "x": 0.0,
+       "score": 632
+      },
+      {
+       "x": 2.0,
+       "score": 599
+      },
+      {
+       "x": 4.0,
+       "score": 558
+      },
+      {
+       "x": 6.0,
+       "score": 558
+      },
+      {
+       "x": 9.0,
+       "score": 525
+      },
+      {
+       "x": 12.0,
+       "score": 525
+      },
+      {
+       "x": 16.0,
+       "score": 525
+      }
+     ]
+    },
+    "bounce_count": {
+     "label": "EMI/NACH bounces (12m)",
+     "unit": "count",
+     "current": 0.0,
+     "points": [
+      {
+       "x": 0.0,
+       "score": 632
+      },
+      {
+       "x": 1.0,
+       "score": 626
+      },
+      {
+       "x": 2.0,
+       "score": 626
+      },
+      {
+       "x": 3.0,
+       "score": 625
+      },
+      {
+       "x": 4.0,
+       "score": 622
+      },
+      {
+       "x": 5.0,
+       "score": 622
+      },
+      {
+       "x": 6.0,
+       "score": 622
+      }
+     ]
+    },
+    "top_payer_share": {
+     "label": "Top-payer share",
+     "unit": "%",
+     "current": 0.62,
+     "points": [
+      {
+       "x": 0.05,
+       "score": 636
+      },
+      {
+       "x": 0.2,
+       "score": 636
+      },
+      {
+       "x": 0.35,
+       "score": 636
+      },
+      {
+       "x": 0.5,
+       "score": 636
+      },
+      {
+       "x": 0.65,
+       "score": 632
+      },
+      {
+       "x": 0.8,
+       "score": 632
+      },
+      {
+       "x": 0.9,
+       "score": 632
+      }
+     ]
+    },
+    "cash_buffer_days": {
+     "label": "Cash buffer",
+     "unit": "days",
+     "current": 5.658,
+     "points": [
+      {
+       "x": 0.0,
+       "score": 618
+      },
+      {
+       "x": 5.0,
+       "score": 675
+      },
+      {
+       "x": 12.0,
+       "score": 675
+      },
+      {
+       "x": 20.0,
+       "score": 675
+      },
+      {
+       "x": 30.0,
+       "score": 675
+      },
+      {
+       "x": 45.0,
+       "score": 675
+      },
+      {
+       "x": 60.0,
+       "score": 675
+      }
+     ]
+    }
+   },
    "score_history": [
     {
      "month": "Jul '25",
@@ -1774,6 +2380,148 @@
      "grade": "A"
     }
    ],
+   "sensitivity": {
+    "filing_delay_mean": {
+     "label": "GSTR-3B filing delay",
+     "unit": "days",
+     "current": 0.0,
+     "points": [
+      {
+       "x": 0.0,
+       "score": 805
+      },
+      {
+       "x": 2.0,
+       "score": 757
+      },
+      {
+       "x": 4.0,
+       "score": 740
+      },
+      {
+       "x": 6.0,
+       "score": 737
+      },
+      {
+       "x": 9.0,
+       "score": 712
+      },
+      {
+       "x": 12.0,
+       "score": 712
+      },
+      {
+       "x": 16.0,
+       "score": 712
+      }
+     ]
+    },
+    "bounce_count": {
+     "label": "EMI/NACH bounces (12m)",
+     "unit": "count",
+     "current": 0.0,
+     "points": [
+      {
+       "x": 0.0,
+       "score": 805
+      },
+      {
+       "x": 1.0,
+       "score": 805
+      },
+      {
+       "x": 2.0,
+       "score": 802
+      },
+      {
+       "x": 3.0,
+       "score": 802
+      },
+      {
+       "x": 4.0,
+       "score": 800
+      },
+      {
+       "x": 5.0,
+       "score": 800
+      },
+      {
+       "x": 6.0,
+       "score": 800
+      }
+     ]
+    },
+    "top_payer_share": {
+     "label": "Top-payer share",
+     "unit": "%",
+     "current": 0.344,
+     "points": [
+      {
+       "x": 0.05,
+       "score": 849
+      },
+      {
+       "x": 0.2,
+       "score": 849
+      },
+      {
+       "x": 0.35,
+       "score": 810
+      },
+      {
+       "x": 0.5,
+       "score": 805
+      },
+      {
+       "x": 0.65,
+       "score": 772
+      },
+      {
+       "x": 0.8,
+       "score": 772
+      },
+      {
+       "x": 0.9,
+       "score": 772
+      }
+     ]
+    },
+    "cash_buffer_days": {
+     "label": "Cash buffer",
+     "unit": "days",
+     "current": 3.162,
+     "points": [
+      {
+       "x": 0.0,
+       "score": 737
+      },
+      {
+       "x": 5.0,
+       "score": 809
+      },
+      {
+       "x": 12.0,
+       "score": 809
+      },
+      {
+       "x": 20.0,
+       "score": 809
+      },
+      {
+       "x": 30.0,
+       "score": 809
+      },
+      {
+       "x": 45.0,
+       "score": 809
+      },
+      {
+       "x": 60.0,
+       "score": 809
+      }
+     ]
+    }
+   },
    "score_history": [
     {
      "month": "Jul '25",
@@ -2174,6 +2922,148 @@
      "grade": "C"
     }
    ],
+   "sensitivity": {
+    "filing_delay_mean": {
+     "label": "GSTR-3B filing delay",
+     "unit": "days",
+     "current": 0.332,
+     "points": [
+      {
+       "x": 0.0,
+       "score": 621
+      },
+      {
+       "x": 2.0,
+       "score": 592
+      },
+      {
+       "x": 4.0,
+       "score": 571
+      },
+      {
+       "x": 6.0,
+       "score": 536
+      },
+      {
+       "x": 9.0,
+       "score": 535
+      },
+      {
+       "x": 12.0,
+       "score": 535
+      },
+      {
+       "x": 16.0,
+       "score": 535
+      }
+     ]
+    },
+    "bounce_count": {
+     "label": "EMI/NACH bounces (12m)",
+     "unit": "count",
+     "current": 0.0,
+     "points": [
+      {
+       "x": 0.0,
+       "score": 621
+      },
+      {
+       "x": 1.0,
+       "score": 621
+      },
+      {
+       "x": 2.0,
+       "score": 617
+      },
+      {
+       "x": 3.0,
+       "score": 617
+      },
+      {
+       "x": 4.0,
+       "score": 608
+      },
+      {
+       "x": 5.0,
+       "score": 608
+      },
+      {
+       "x": 6.0,
+       "score": 608
+      }
+     ]
+    },
+    "top_payer_share": {
+     "label": "Top-payer share",
+     "unit": "%",
+     "current": 0.211,
+     "points": [
+      {
+       "x": 0.05,
+       "score": 621
+      },
+      {
+       "x": 0.2,
+       "score": 621
+      },
+      {
+       "x": 0.35,
+       "score": 621
+      },
+      {
+       "x": 0.5,
+       "score": 621
+      },
+      {
+       "x": 0.65,
+       "score": 620
+      },
+      {
+       "x": 0.8,
+       "score": 620
+      },
+      {
+       "x": 0.9,
+       "score": 620
+      }
+     ]
+    },
+    "cash_buffer_days": {
+     "label": "Cash buffer",
+     "unit": "days",
+     "current": 2.032,
+     "points": [
+      {
+       "x": 0.0,
+       "score": 592
+      },
+      {
+       "x": 5.0,
+       "score": 636
+      },
+      {
+       "x": 12.0,
+       "score": 636
+      },
+      {
+       "x": 20.0,
+       "score": 636
+      },
+      {
+       "x": 30.0,
+       "score": 636
+      },
+      {
+       "x": 45.0,
+       "score": 636
+      },
+      {
+       "x": 60.0,
+       "score": 636
+      }
+     ]
+    }
+   },
    "score_history": [
     {
      "month": "Jul '25",
@@ -2579,6 +3469,148 @@
      "grade": "C"
     }
    ],
+   "sensitivity": {
+    "filing_delay_mean": {
+     "label": "GSTR-3B filing delay",
+     "unit": "days",
+     "current": 0.286,
+     "points": [
+      {
+       "x": 0.0,
+       "score": 665
+      },
+      {
+       "x": 2.0,
+       "score": 632
+      },
+      {
+       "x": 4.0,
+       "score": 608
+      },
+      {
+       "x": 6.0,
+       "score": 604
+      },
+      {
+       "x": 9.0,
+       "score": 585
+      },
+      {
+       "x": 12.0,
+       "score": 585
+      },
+      {
+       "x": 16.0,
+       "score": 585
+      }
+     ]
+    },
+    "bounce_count": {
+     "label": "EMI/NACH bounces (12m)",
+     "unit": "count",
+     "current": 0.0,
+     "points": [
+      {
+       "x": 0.0,
+       "score": 632
+      },
+      {
+       "x": 1.0,
+       "score": 631
+      },
+      {
+       "x": 2.0,
+       "score": 628
+      },
+      {
+       "x": 3.0,
+       "score": 628
+      },
+      {
+       "x": 4.0,
+       "score": 620
+      },
+      {
+       "x": 5.0,
+       "score": 620
+      },
+      {
+       "x": 6.0,
+       "score": 620
+      }
+     ]
+    },
+    "top_payer_share": {
+     "label": "Top-payer share",
+     "unit": "%",
+     "current": 0.02,
+     "points": [
+      {
+       "x": 0.05,
+       "score": 613
+      },
+      {
+       "x": 0.2,
+       "score": 613
+      },
+      {
+       "x": 0.35,
+       "score": 613
+      },
+      {
+       "x": 0.5,
+       "score": 613
+      },
+      {
+       "x": 0.65,
+       "score": 613
+      },
+      {
+       "x": 0.8,
+       "score": 613
+      },
+      {
+       "x": 0.9,
+       "score": 613
+      }
+     ]
+    },
+    "cash_buffer_days": {
+     "label": "Cash buffer",
+     "unit": "days",
+     "current": 0.918,
+     "points": [
+      {
+       "x": 0.0,
+       "score": 616
+      },
+      {
+       "x": 5.0,
+       "score": 648
+      },
+      {
+       "x": 12.0,
+       "score": 648
+      },
+      {
+       "x": 20.0,
+       "score": 648
+      },
+      {
+       "x": 30.0,
+       "score": 648
+      },
+      {
+       "x": 45.0,
+       "score": 648
+      },
+      {
+       "x": 60.0,
+       "score": 648
+      }
+     ]
+    }
+   },
    "score_history": [
     {
      "month": "Jul '25",
@@ -2977,6 +4009,148 @@
      "grade": "D"
     }
    ],
+   "sensitivity": {
+    "filing_delay_mean": {
+     "label": "GSTR-3B filing delay",
+     "unit": "days",
+     "current": 0.551,
+     "points": [
+      {
+       "x": 0.0,
+       "score": 544
+      },
+      {
+       "x": 2.0,
+       "score": 509
+      },
+      {
+       "x": 4.0,
+       "score": 477
+      },
+      {
+       "x": 6.0,
+       "score": 470
+      },
+      {
+       "x": 9.0,
+       "score": 454
+      },
+      {
+       "x": 12.0,
+       "score": 454
+      },
+      {
+       "x": 16.0,
+       "score": 454
+      }
+     ]
+    },
+    "bounce_count": {
+     "label": "EMI/NACH bounces (12m)",
+     "unit": "count",
+     "current": 3.0,
+     "points": [
+      {
+       "x": 0.0,
+       "score": 550
+      },
+      {
+       "x": 1.0,
+       "score": 545
+      },
+      {
+       "x": 2.0,
+       "score": 544
+      },
+      {
+       "x": 3.0,
+       "score": 543
+      },
+      {
+       "x": 4.0,
+       "score": 528
+      },
+      {
+       "x": 5.0,
+       "score": 528
+      },
+      {
+       "x": 6.0,
+       "score": 528
+      }
+     ]
+    },
+    "top_payer_share": {
+     "label": "Top-payer share",
+     "unit": "%",
+     "current": 0.481,
+     "points": [
+      {
+       "x": 0.05,
+       "score": 546
+      },
+      {
+       "x": 0.2,
+       "score": 546
+      },
+      {
+       "x": 0.35,
+       "score": 546
+      },
+      {
+       "x": 0.5,
+       "score": 541
+      },
+      {
+       "x": 0.65,
+       "score": 541
+      },
+      {
+       "x": 0.8,
+       "score": 541
+      },
+      {
+       "x": 0.9,
+       "score": 541
+      }
+     ]
+    },
+    "cash_buffer_days": {
+     "label": "Cash buffer",
+     "unit": "days",
+     "current": 1.064,
+     "points": [
+      {
+       "x": 0.0,
+       "score": 535
+      },
+      {
+       "x": 5.0,
+       "score": 583
+      },
+      {
+       "x": 12.0,
+       "score": 583
+      },
+      {
+       "x": 20.0,
+       "score": 583
+      },
+      {
+       "x": 30.0,
+       "score": 583
+      },
+      {
+       "x": 45.0,
+       "score": 583
+      },
+      {
+       "x": 60.0,
+       "score": 583
+      }
+     ]
+    }
+   },
    "score_history": [
     {
      "month": "Jul '25",

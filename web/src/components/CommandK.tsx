@@ -38,8 +38,23 @@ export default function CommandK() {
       if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
         e.preventDefault();
         setOpen((v) => !v);
-      } else if (e.key === "Escape") {
+        return;
+      }
+      if (e.key === "Escape") {
         close();
+        return;
+      }
+      // global hotkeys when the palette is closed and no field is focused
+      const tag = (e.target as HTMLElement)?.tagName;
+      if (open || tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT") return;
+      if (e.key === "/") {
+        e.preventDefault();
+        setOpen(true);
+      } else if (e.key.toLowerCase() === "c") {
+        router.push("/compare");
+      } else if (/^[1-8]$/.test(e.key)) {
+        const m = allMsmes()[Number(e.key) - 1];
+        if (m) router.push(`/m/${m.id}`);
       }
     };
     const onTrigger = (e: MouseEvent) => {
@@ -51,7 +66,7 @@ export default function CommandK() {
       window.removeEventListener("keydown", onKey);
       window.removeEventListener("click", onTrigger);
     };
-  }, [close]);
+  }, [close, open, router]);
 
   useEffect(() => {
     if (open) setTimeout(() => inputRef.current?.focus(), 30);

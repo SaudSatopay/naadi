@@ -4,13 +4,16 @@ import { notFound } from "next/navigation";
 import { DecisionChip, TierBadge } from "@/components/Chips";
 import Header from "@/components/Header";
 import MemoPanel from "@/components/MemoPanel";
+import OfficerDecision from "@/components/OfficerDecision";
 import Radar6 from "@/components/Radar6";
 import ReasonLedger from "@/components/ReasonLedger";
 import ScoreDial from "@/components/ScoreDial";
 import ScoreHistory from "@/components/ScoreHistory";
+import SensitivityLab from "@/components/SensitivityLab";
 import Spark from "@/components/Spark";
 import StressLab from "@/components/StressLab";
 import TraceReplay from "@/components/TraceReplay";
+import Waterfall from "@/components/Waterfall";
 import WhatIf from "@/components/WhatIf";
 import { allMsmes, demo, msmeById } from "@/lib/data";
 import { DECISION_STYLE, inr, inrFull, pct } from "@/lib/format";
@@ -234,10 +237,12 @@ export default async function HealthCard({
 
         {/* reasons + right rail */}
         <section className="mt-4 grid gap-4 lg:grid-cols-[1.5fr_1fr] print:hidden">
-          <div className="rise rise-2">
+          <div className="grid gap-4 content-start rise rise-2">
+            <Waterfall m={m} />
             <ReasonLedger positive={m.reasons.positive} negative={m.reasons.negative} />
           </div>
           <div className="grid gap-4 content-start rise rise-3">
+            <OfficerDecision m={m} />
             {m.red_flags.length > 0 && (
               <div className="card p-5" style={{ borderColor: "rgba(240,86,74,.3)" }}>
                 <h3 className="label-caps" style={{ color: "var(--color-verm-300)" }}>
@@ -267,8 +272,13 @@ export default async function HealthCard({
           </div>
         </section>
 
+        {/* sensitivity lab */}
+        <section className="mt-4 rise rise-2 print:hidden">
+          <SensitivityLab m={m} />
+        </section>
+
         {/* memo */}
-        <section className="mt-4 rise rise-2">
+        <section className="mt-4 rise rise-3">
           <MemoPanel memo={m.memo} />
         </section>
       </main>
