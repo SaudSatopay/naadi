@@ -2,6 +2,8 @@
 
 > **IDBI Innovate 2026 · Track 03 · Financial Health Score**
 > *"Build. Integrate. Transform."*
+>
+> **Live demo: https://naadi-kappa.vercel.app** · Code: https://github.com/SaudSatopay/naadi
 
 ## One-liner
 
