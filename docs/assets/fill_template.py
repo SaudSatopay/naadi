@@ -160,6 +160,12 @@ pic(s, c_hero, Inches(5.15), BODY_TOP, w=Inches(4.5))
 
 # --------------------------------------------------- slide 3: opportunities ----
 s = S[2]
+# blank the template's prompt bullets (keep the "Opportunities" heading)
+for sh in s.shapes:
+    if sh.has_text_frame and "Opportunities" in sh.text_frame.text:
+        for p in sh.text_frame.paragraphs[1:]:
+            for r in p.runs:
+                r.text = ""
 cols = [
     ("How is it different?", GRN, [
         "**Six explainable dimensions** + honest confidence band — not one opaque number",
@@ -213,42 +219,113 @@ for col in range(2):
         para(tf, f, size=10.5, bullet=True, first=(i == 0), space_after=9)
 
 # ------------------------------------------------------- slide 5: process ----
+# Serpentine flow: row 1 left->right, wrap down on the right, row 2 right->left.
+# Each step carries three detail lines; outcomes + feedback loop below.
 s = S[4]
+
+
+def flow_detail(slide, x, y, w, h, title, lines, accent=GRN):
+    sh = card(slide, x, y, w, h)
+    tf = sh.text_frame
+    tf.word_wrap = True
+    tf.margin_left = tf.margin_right = Inches(0.05)
+    tf.margin_top = Inches(0.05)
+    tf.margin_bottom = Inches(0.02)
+    p = tf.paragraphs[0]
+    p.alignment = PP_ALIGN.CENTER
+    p.space_after = Pt(3)
+    r = p.add_run(); r.text = title
+    r.font.name = "Arial"; r.font.size = Pt(10); r.font.bold = True
+    r.font.color.rgb = accent
+    for ln in lines:
+        p2 = tf.add_paragraph(); p2.alignment = PP_ALIGN.CENTER; p2.space_after = Pt(1)
+        r2 = p2.add_run(); r2.text = ln
+        r2.font.name = "Arial"; r2.font.size = Pt(7.3); r2.font.color.rgb = INK
+    return sh
+
+
+def arrow_left(slide, x, y, w=Inches(0.2)):
+    a = slide.shapes.add_shape(MSO_SHAPE.LEFT_ARROW, x, y, w, Inches(0.16))
+    a.fill.solid(); a.fill.fore_color.rgb = RGBColor(0x9C, 0xB5, 0xAA)
+    a.line.fill.background(); a.shadow.inherit = False
+    return a
+
+
+def arrow_down(slide, x, y, h=Inches(0.28)):
+    a = slide.shapes.add_shape(MSO_SHAPE.DOWN_ARROW, x, y, Inches(0.16), h)
+    a.fill.solid(); a.fill.fore_color.rgb = RGBColor(0x9C, 0xB5, 0xAA)
+    a.line.fill.background(); a.shadow.inherit = False
+    return a
+
+
 row1 = [
-    ("CONSENT", "AA artefact · GSTN OTP · DPDP purpose-bound"),
-    ("PULL RAILS", "GST · UPI · AA · EPFO"),
-    ("FEATURES", "27 point-in-time signals"),
-    ("6 SCORECARDS", "monotone LightGBM L·S·G·R·C·K"),
-    ("SCORE + PD", "isotonic PD(12m) → 300–900 ± band"),
+    ("1 · CONSENT", ["AA consent artefact", "GSTN OTP · DPDP purpose-bound", "immutable audit ledger"]),
+    ("2 · PULL RAILS", ["GSTR-1/3B returns", "UPI txns · AA bank statements", "EPFO payroll (ECR)"]),
+    ("3 · FEATURES", ["27 point-in-time signals", "leak-proof as-of joins", "tier T1/T2/T3 coverage"]),
+    ("4 · SIX SCORECARDS", ["monotone LightGBM", "L·S·G·R·C·K subscores 0–100", "sector-peer percentile scaled"]),
+    ("5 · SCORE + PD", ["composite → isotonic PD(12m)", "300–900 with ± tier band", "benchmarked vs 5,000 peers"]),
 ]
-row2 = [
-    ("EXPLAIN", "TreeSHAP reasons · what-if · stress"),
-    ("POLICY + LIMIT", "cash-flow affordability · guards"),
-    ("MUNSHI MEMO", "decision · covenants · triggers"),
-    ("OFFICER GATE", "concur / override on record"),
-    ("MONITOR", "rolling rescore · EWS alerts"),
+row2_right_to_left = [
+    ("6 · EXPLAIN", ["TreeSHAP reason codes", "what-if comeback paths", "sensitivity + stress labs"]),
+    ("7 · POLICY + LIMIT", ["cash-flow affordability (EMI room)", "guards: L-floor · K-cap · C-gate", "limit · tenor · covenants"]),
+    ("8 · MUNSHI MEMO", ["Claude drafts the prose only", "every figure injected by engine", "evidence-linked, committee-ready"]),
+    ("9 · OFFICER GATE", ["a human always decides", "concur / override + rationale", "recorded to audit trail"]),
+    ("10 · MONITOR", ["rolling monthly rescore", "EWS alerts below 580", "portfolio radar feed"]),
 ]
-bw, bh, gap = Inches(1.62), Inches(0.92), Inches(0.24)
-y1, y2 = BODY_TOP + Inches(0.25), BODY_TOP + Inches(1.95)
-for i, (t, sub) in enumerate(row1):
-    x = BODY_LEFT + Emu(int((bw + gap) * i))
-    flow_box(s, x, y1, bw, bh, t, sub)
+
+bw, bh, gap = Inches(1.68), Inches(1.06), Inches(0.20)
+y1 = BODY_TOP + Inches(0.06)
+y2 = y1 + bh + Inches(0.52)
+xs = [BODY_LEFT + Emu(int((bw + gap) * i)) for i in range(5)]
+
+for i, (t, lines) in enumerate(row1):
+    flow_box_accent = GRN
+    flow_detail(s, xs[i], y1, bw, bh, t, lines, flow_box_accent)
     if i < 4:
-        arrow(s, x + bw + Inches(0.01), y1 + Inches(0.38))
-for i, (t, sub) in enumerate(row2):
-    x = BODY_LEFT + Emu(int((bw + gap) * i))
-    flow_box(s, x, y2, bw, bh, t, sub, accent=ORG if t in ("MUNSHI MEMO", "OFFICER GATE") else GRN)
-    if i < 4:
-        arrow(s, x + bw + Inches(0.01), y2 + Inches(0.38))
-# connector row1 -> row2
-elbow = s.shapes.add_shape(MSO_SHAPE.BENT_ARROW, BODY_LEFT + Emu(int((bw + gap) * 4)) + Inches(0.6),
-                           y1 + bh + Inches(0.06), Inches(0.5), Inches(0.9))
-elbow.rotation = 90
-elbow.fill.solid(); elbow.fill.fore_color.rgb = RGBColor(0x9C, 0xB5, 0xAA)
-elbow.line.fill.background(); elbow.shadow.inherit = False
-tf = tb(s, BODY_LEFT, y2 + bh + Inches(0.28), BODY_W, Inches(0.4))
+        arrow(s, xs[i] + bw + Inches(0.0), y1 + Inches(0.45))
+
+# wrap-down connector on the right edge: step 5 -> step 6
+arrow_down(s, xs[4] + Emu(int(bw / 2)) - Inches(0.08), y1 + bh + Inches(0.10), h=Inches(0.32))
+
+# row 2 runs right -> left (serpentine), so step 6 sits under step 5
+for j, (t, lines) in enumerate(row2_right_to_left):
+    i = 4 - j  # column index from the right
+    accent = ORG if t.split(" · ")[1] in ("MUNSHI MEMO", "OFFICER GATE") else GRN
+    flow_detail(s, xs[i], y2, bw, bh, t, lines, accent)
+    if j < 4:
+        arrow_left(s, xs[i] - Inches(0.20), y2 + Inches(0.45))
+
+# outcomes strip under the officer gate + monitor
+oy = y2 + bh + Inches(0.16)
+outcomes = [
+    ("✓  APPROVE — sanction with limit, tenor, covenants", GRN),
+    ("◐  REFER — committee with mitigants", ORG),
+    ("✕  DECLINE — with a what-if comeback plan", RED),
+]
+ow = Inches(2.95)
+for i, (t, c) in enumerate(outcomes):
+    x = BODY_LEFT + Emu(int((ow + Inches(0.22)) * i))
+    ch = card(s, x, oy, ow, Inches(0.34))
+    tf = ch.text_frame
+    tf.margin_left = Inches(0.08); tf.margin_top = Inches(0.03); tf.margin_bottom = Inches(0.0)
+    p = tf.paragraphs[0]; p.alignment = PP_ALIGN.CENTER
+    r = p.add_run(); r.text = t
+    r.font.name = "Arial"; r.font.size = Pt(8.5); r.font.bold = True; r.font.color.rgb = c
+
+# feedback loop: MONITOR (bottom-left) feeds fresh data back into FEATURES
+from pptx.enum.shapes import MSO_CONNECTOR  # noqa: E402
+conn = s.shapes.add_connector(MSO_CONNECTOR.STRAIGHT,
+                              xs[0] + Emu(int(bw / 2)), y2 - Inches(0.02),
+                              xs[2] + Emu(int(bw / 2)), y1 + bh + Inches(0.02))
+conn.line.color.rgb = RGBColor(0x9C, 0xB5, 0xAA)
+conn.line.width = Pt(1.1)
+conn.line.dash_style = 2  # dashed
+tf = tb(s, xs[0] + Inches(0.5), y2 - Inches(0.34), Inches(2.6), Inches(0.28))
+para(tf, "feedback: monthly rescore", size=8, color=MUT, first=True)
+
+tf = tb(s, BODY_LEFT, oy + Inches(0.44), BODY_W, Inches(0.32))
 para(tf, "Every run is consent-first and fully audited; the officer — not the model — owns the final decision.",
-     size=10, color=MUT, first=True, align=PP_ALIGN.CENTER)
+     size=9.5, color=MUT, first=True, align=PP_ALIGN.CENTER)
 
 # ----------------------------------------------------- slide 6: wireframes ----
 s = S[5]
@@ -393,16 +470,13 @@ rows = [
     ("Final product (live)", "naadi-kappa.vercel.app", "qr-live.png"),
 ]
 for i, (k, v, qr) in enumerate(rows):
-    y = BODY_TOP + Emu(int(Inches(1.35) * i))
-    pic(s, HERE / qr, BODY_LEFT, y, w=Inches(1.05))
-    tf = tb(s, Inches(1.65), y + Inches(0.18), Inches(5.6), Inches(0.9))
+    y = BODY_TOP + Inches(0.25) + Emu(int(Inches(1.55) * i))
+    pic(s, HERE / qr, BODY_LEFT, y, w=Inches(1.15))
+    tf = tb(s, Inches(1.75), y + Inches(0.25), Inches(6.6), Inches(0.9))
     para(tf, k, size=12, bold=True, color=MUT, first=True, space_after=3)
-    para(tf, v, size=17, bold=True, color=GRN)
-tf = tb(s, BODY_LEFT, BODY_TOP + Inches(2.75), Inches(9.0), Inches(0.9))
-para(tf, "Demo video (≤ 3 min):", size=12, bold=True, color=MUT, first=True, space_after=3)
-para(tf, "submitted alongside this deck on the Hack2skill form", size=13, bold=True, color=ORG)
-tf = tb(s, BODY_LEFT, BODY_TOP + Inches(3.55), Inches(9.0), Inches(0.4))
-para(tf, "Docs in-repo: ARCHITECTURE.md · SCORING.md · PITCH.md · 9-page concept deck (PDF)",
+    para(tf, v, size=18, bold=True, color=GRN)
+tf = tb(s, BODY_LEFT, BODY_TOP + Inches(3.45), Inches(9.0), Inches(0.4))
+para(tf, "In-repo documentation: ARCHITECTURE.md · SCORING.md · PITCH.md · 9-page concept deck (PDF)",
      size=10, color=MUT, first=True)
 
 # ------------------------------------------------------- slide 14: closer ----
