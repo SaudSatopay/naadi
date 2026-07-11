@@ -1,4 +1,6 @@
-# NAADI — Demo Video Script (~3:15)
+# NAADI — Demo Video Script
+
+> ⚠️ **Hack2skill requires ≤ 3:00.** Record the 2:00-cut version below (drop the replay beat, compress explainability) or tighten the master to land under 3 minutes — do not submit 3:15.
 
 One continuous take, zero backtracking: the whole story flows down Chandra's page, then `c` → compare → Rathod → close.
 
