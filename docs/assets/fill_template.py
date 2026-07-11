@@ -136,7 +136,7 @@ S = list(prs.slides)
 for p in S[0].shapes[1].text_frame.paragraphs:
     joined = "".join(r.text for r in p.runs)
     if "Team name" in joined and p.runs:
-        p.runs[0].text = "Team name:  NAADI"
+        p.runs[0].text = "Team name:  SAS CODIES"
     elif "Team leader" in joined and p.runs:
         p.runs[0].text = "Team leader name:  Saud Satopay"
     elif "Problem Statement" in joined and p.runs:
